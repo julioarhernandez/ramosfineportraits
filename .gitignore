@@ -4,3 +4,4 @@ _site
 node-modules
 vendor
 .DS_Store
+/.idea
