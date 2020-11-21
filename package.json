@@ -1,0 +1,38 @@
+{
+  "name": "Ramos Fine Portraits",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch:eleventy": "eleventy --serve",
+    "start": "npm run-s watch:eleventy",
+    "prod:eleventy": "npm run ELEVENTY_PRODUCTION=true eleventy",
+    "build": "ELEVENTY_PRODUCTION=true eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julioarhernandez/ramosfineportraits.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/julioarhernandez/ramosfineportraits/issues"
+  },
+  "homepage": "https://github.com/julioarhernandez/ramosfineportraits#readme",
+  "devDependencies": {
+    "@11ty/eleventy-navigation": "^0.1.6",
+    "@fullhuman/postcss-purgecss": "^3.0.0",
+    "autoprefixer": "^9.8.6",
+    "browser-sync": "^2.26.3",
+    "cssnano": "^4.1.10",
+    "embed-json": "^1.2.0",
+    "npm-run-all": "^4.1.5"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy-img": "^0.2.5",
+    "@quasibit/eleventy-plugin-sitemap": "^2.0.3",
+    "html-minifier": "^4.0.0",
+    "jquery": "^3.3.1"
+  }
+}
