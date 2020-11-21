@@ -7,7 +7,7 @@
     "watch:eleventy": "eleventy --serve",
     "start": "npm run-s watch:eleventy",
     "prod:eleventy": "npm run ELEVENTY_PRODUCTION=true eleventy",
-    "build": "npm run-s prod:*"
+    "build": "eleventy"
   },
   "repository": {
     "type": "git",
