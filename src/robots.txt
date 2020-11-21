@@ -1,0 +1,4 @@
+Sitemap: https://ramosfineportraits.com/sitemap.xml
+User-agent: *
+Disallow: /cdn-cgi/
+Disallow: /admin/

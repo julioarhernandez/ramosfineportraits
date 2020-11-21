@@ -1,5 +1,5 @@
 {
-  "name": "ssg",
+  "name": "Ramos Fine Portraits",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "watch:eleventy": "eleventy --serve",
     "start": "npm run-s watch:eleventy",
     "prod:eleventy": "npm run ELEVENTY_PRODUCTION=true eleventy",
-    "build": "eleventy"
+    "build": "ELEVENTY_PRODUCTION=true eleventy"
   },
   "repository": {
     "type": "git",
@@ -26,17 +26,13 @@
     "browser-sync": "^2.26.3",
     "cssnano": "^4.1.10",
     "embed-json": "^1.2.0",
-    "npm-run-all": "^4.1.5",
-    "parcel-bundler": "^1.12.4",
-    "postcss-cli": "^8.1.0"
+    "npm-run-all": "^4.1.5"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.0",
     "@11ty/eleventy-img": "^0.2.5",
     "@quasibit/eleventy-plugin-sitemap": "^2.0.3",
     "html-minifier": "^4.0.0",
-    "jquery": "^3.3.1",
-    "popper.js": "^1.16.1",
-    "sass": "^1.27.0"
+    "jquery": "^3.3.1"
   }
 }
