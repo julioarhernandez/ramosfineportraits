@@ -54,13 +54,12 @@ module.exports = function (eleventyConfig) {
 
     eleventyConfig
         .addPassthroughCopy("./src/assets/*")
-        .addPassthroughCopy("./src/assets/wpcontent/plugins/lazyload")
-        .addPassthroughCopy("./src/assets/wpcontent/cache/autoptimize")
-        .addPassthroughCopy("./src/assets/wpincludes/js")
+        .addPassthroughCopy("./src/assets/fonts")
+        .addPassthroughCopy("./src/assets/css")
+        .addPassthroughCopy("./src/assets/js")
         .addPassthroughCopy("./src/robots.txt")
         .addPassthroughCopy("./src/favicon*")
         .addPassthroughCopy("./src/manifest.json")
-        .addPassthroughCopy("./src/assets/css")
         .addPassthroughCopy("./src/admin");
     eleventyConfig.addLayoutAlias("default", "layouts/default.njk");
     eleventyConfig.addFilter('dump', obj => {
