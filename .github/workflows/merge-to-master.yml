@@ -9,9 +9,10 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
-      - name: Merge Price -> Master
-        uses: devmasx/merge-branch@v1.3.1
-        with:
-          type: now
-          target_branch: master
-          github_token: ${{ github.token }}
+      - name: Merge development -> staging
+          uses: devmasx/merge-branch@v1.3.1
+          with:
+            type: now
+            from_branch: price
+            target_branch: master
+            github_token: ${{ github.token }}
