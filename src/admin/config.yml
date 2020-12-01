@@ -1,0 +1,22 @@
+backend:
+  name: git-gateway
+  branch: price
+
+media_folder: "src/assets/images/gallery" # Folder where user uploaded files should go
+public_folder: "/assets/images/gallery" # Folder where user uploaded files should go
+
+collections: # A list of collections the CMS should be able to edit
+  - label: "Product's image gallery"
+    name: "gallery"
+    files:
+      - label: "Image gallery"
+        name: "image-gallery"
+        file: "src/_data/gallery.json"
+        fields:
+          - label: "Image"
+            name: "image"
+            widget: "list"
+            fields:
+              - {label: "src", name: "src", widget: "image"}
+              - {label: "alt", name: "alt", widget: "string"}
+              - {label: "type", name: "type", widget: "select", options: ["Lifestyle", "Studio", "Outdoor", "Graduation", "Children", "Maternity"], default: "false"}

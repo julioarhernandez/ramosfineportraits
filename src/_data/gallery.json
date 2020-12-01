@@ -1,0 +1,19 @@
+{
+  "image": [
+    {
+      "category": "Lifestyle",
+      "src": "/assets/images/gallery/4.jpg",
+      "alt": "Lifestyle photos"
+    },
+    {
+      "category": "Maternity",
+      "src": "/assets/images/gallery/5.jpg",
+      "alt": "Maternity photos"
+    },
+    {
+      "category": "Maternity",
+      "src": "/assets/images/gallery/6.jpg",
+      "alt": "Maternity photos"
+    }
+  ]
+}
