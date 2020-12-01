@@ -22,7 +22,7 @@
                 </div>
                 <div class="portfolio-items row portfolio-type-masonry portfolio_hover_type_1 portfolio-59c3651ca7662 popup-gallery">
                     {% for image in gallery.image %}
-                    <article class="portfolio-item category-{{ image.category }} popup-item col-xs-12 col-sm-2 col-md-2">
+                    <article class="portfolio-item category-{{ image.type }} popup-item col-xs-12 col-sm-2 col-md-2">
                         {% popupImage image.src, image.alt, '',[1024,768] %}
                     </article>
                     {% endfor %}
