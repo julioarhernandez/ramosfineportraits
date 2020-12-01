@@ -7,7 +7,7 @@
     "watch:eleventy": "eleventy --serve",
     "start": "npm run-s watch:eleventy",
     "prod:eleventy": "ELEVENTY_PRODUCTION=true eleventy",
-    "prod:postcss": "postcss ./_site/assets/wpcontent/cache/autoptimize/autoptimize_398d365672f129d64022d936aef51a87.css --no-map --replace",
+    "prod:postcss": "postcss ./_site/assets/css/styles.css --no-map --replace",
     "build": "run-s prod:*"
   },
   "repository": {

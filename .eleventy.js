@@ -76,7 +76,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig
         .addPassthroughCopy("./src/assets/*")
         .addPassthroughCopy("./src/assets/fonts")
-        .addPassthroughCopy("./src/assets/css")
+        .addPassthroughCopy("./src/assets/css/*")
         .addPassthroughCopy("./src/assets/js")
         .addPassthroughCopy("./src/robots.txt")
         .addPassthroughCopy("./src/favicon*")
