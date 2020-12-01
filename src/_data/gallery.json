@@ -10,16 +10,16 @@
       "category": "Maternity",
       "src": "/assets/images/gallery/5.jpg",
       "alt": "Maternity photos",
-      "type": "Graduation"
+      "type": "Studio"
     },
     {
       "category": "Maternity",
       "src": "/assets/images/gallery/6.jpg",
       "alt": "Maternity photos",
-      "type": "Outdoor"
+      "type": "Studio"
     },
     {
-      "type": "Outdoor",
+      "type": "Studio",
       "src": "/assets/images/gallery/7.jpg",
       "alt": "Some photos"
     }
