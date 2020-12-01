@@ -3,17 +3,25 @@
     {
       "category": "Lifestyle",
       "src": "/assets/images/gallery/4.jpg",
-      "alt": "Lifestyle photos"
+      "alt": "Lifestyle photos",
+      "type": "Lifestyle"
     },
     {
       "category": "Maternity",
       "src": "/assets/images/gallery/5.jpg",
-      "alt": "Maternity photos"
+      "alt": "Maternity photos",
+      "type": "Lifestyle"
     },
     {
       "category": "Maternity",
       "src": "/assets/images/gallery/6.jpg",
-      "alt": "Maternity photos"
+      "alt": "Maternity photos",
+      "type": "Lifestyle"
+    },
+    {
+      "type": "Outdoor",
+      "src": "/assets/images/gallery/7.jpg",
+      "alt": "Some photos"
     }
   ]
 }
