@@ -1,19 +1,16 @@
 {
   "image": [
     {
-      "category": "Lifestyle",
       "src": "/assets/images/gallery/4.jpg",
       "alt": "Lifestyle photos",
       "type": "Studio"
     },
     {
-      "category": "Maternity",
       "src": "/assets/images/gallery/5.jpg",
       "alt": "Maternity photos",
       "type": "Graduation"
     },
     {
-      "category": "Maternity",
       "src": "/assets/images/gallery/6.jpg",
       "alt": "Maternity photos",
       "type": "Outdoor"
