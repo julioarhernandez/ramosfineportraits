@@ -31,6 +31,27 @@ module.exports = function (eleventyConfig) {
             hostname: "https://ramosfineportraits.com",
         },
     });
+    eleventyConfig.addNunjucksAsyncShortcode("popupImage", async function (src, alt, className, width = [1024, 768], outputFormat = "jpeg") {
+        if (alt === undefined) {
+            // You bet we throw an error on missing alt (alt="" works okay)
+            throw new Error(`Missing \`alt\` on myImage from: ${src}`);
+        }
+        var source = `./src${src}`;
+        // returns Promise
+        let stats = await Image(source, {
+            formats: [outputFormat],
+            // This uses the original image width
+            widths: width,
+            urlPath: "/assets/images/gallery/min/",
+            outputDir: "_site/assets/images/gallery/min/",
+        });
+
+        let prop = stats[outputFormat].pop();
+        return `<div class="a-img">
+            <img src="${prop.url}" loading="lazy"  width="${prop.width}" height="${prop.height}" alt="${alt}"/>
+        </div>
+        <a href="${prop.url}" data-size="${prop.width}x${prop.height}"></a>`;
+    });
     eleventyConfig.addTransform("embedjson", function (content, outputPath) {
         if (outputPath.endsWith(".html")) {
             let contentEmbedded = embedJson(content);
