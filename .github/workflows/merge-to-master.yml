@@ -2,7 +2,7 @@ name: Merge price branch to master
 on:
   push:
     branches:
-      - 'release/*'
+      - 'price'
 jobs:
   merge-branch:
     runs-on: ubuntu-latest
