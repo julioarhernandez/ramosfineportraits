@@ -1,18 +1,17 @@
-name: Merge Price branch to Master
+name: Merge price branch to master
 on:
   push:
     branches:
-      - 'price'
+      - 'release/*'
 jobs:
   merge-branch:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
 
-      - name: Merge development -> staging
-          uses: devmasx/merge-branch@v1.3.1
-          with:
-            type: now
-            from_branch: price
-            target_branch: master
-            github_token: ${{ github.token }}
+      - name: Merge price -> master
+        uses: devmasx/merge-branch@v1.3.1
+        with:
+          type: now
+          target_branch: master
+          github_token: ${{ github.token }}
