@@ -31,27 +31,13 @@
                             </h5>
                         </div>
                         <div class="gallery-module row">
+                            {% for image in footer.image %}
                            <div class="col-xs-6 col-md-3 item">
                                 <a href="/gallery">
-                                    <img width="150" height="150" src="/assets/wpcontent/uploads/2017/08/150x150(2).jpg"
-                                        class="attachment-thumbnail size-thumbnail" alt="" title="Miracle" srcset="/assets/wpcontent/uploads/2017/08/150x150(2).jpg 150w, /assets/wpcontent/uploads/2017/08/150x150(2).jpg 100w"
-                                        sizes="(max-width: 150px) 100vw, 150px" />
+                                    {% footerImage image.src, image.alt, 'attachment-thumbnail size-thumbnail',[150,150] %}
                                 </a>
                             </div>
-                            <div class="col-xs-6 col-md-3 item">
-                                <a href="/gallery">
-                                    <img width="150" height="150" src="/assets/wpcontent/uploads/2017/08/150x150(3).jpg"
-                                        class="attachment-thumbnail size-thumbnail" alt="" title="Layla" srcset="/assets/wpcontent/uploads/2017/08/150x150(3).jpg 150w, /assets/wpcontent/uploads/2017/08/150x150(3).jpg 300w, /assets/wpcontent/uploads/2017/08/150x150(3).jpg 768w, /assets/wpcontent/uploads/2017/08/150x150(3).jpg 1024w, /assets/wpcontent/uploads/2017/08/150x150(3).jpg 780w, /assets/wpcontent/uploads/2017/08/150x150(3).jpg 100w, /assets/wpcontent/uploads/2017/08/150x150(3).jpg 1362w"
-                                        sizes="(max-width: 150px) 100vw, 150px" />
-                                </a>
-                            </div>
-                            <div class="col-xs-6 col-md-3 item">
-                                <a href="/gallery">
-                                    <img width="150" height="150" src="/assets/wpcontent/uploads/2017/08/150x150(4).jpg"
-                                        class="attachment-thumbnail size-thumbnail" alt="" title="Welcome To The Jungle" srcset="/assets/wpcontent/uploads/2017/08/150x150(4).jpg 150w, /assets/wpcontent/uploads/2017/08/150x150(4).jpg 100w"
-                                        sizes="(max-width: 150px) 100vw, 150px" />
-                                </a>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>

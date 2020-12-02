@@ -1,0 +1,16 @@
+{
+  "image": [
+    {
+      "src": "/assets/images/gallery/150x150(2).jpg",
+      "alt": "Lifestyle photos"
+    },
+    {
+      "src": "/assets/images/gallery/150x150(3).jpg",
+      "alt": "Maternity photos"
+    },
+    {
+      "src": "/assets/images/gallery/150x150(4).jpg",
+      "alt": "Maternity photos"
+    }
+  ]
+}

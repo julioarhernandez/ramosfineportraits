@@ -48,9 +48,27 @@ module.exports = function (eleventyConfig) {
 
         let prop = stats[outputFormat].pop();
         return `<div class="a-img">
-            <img src="${prop.url}" loading="lazy"  width="${prop.width}" height="${prop.height}" alt="${alt}"/>
-        </div>
-        <a href="${prop.url}" data-size="${prop.width}x${prop.height}"></a>`;
+                    <img src="${prop.url}" loading="lazy"  width="${prop.width}" height="${prop.height}" alt="${alt}"/>
+                </div>
+                <a href="${prop.url}" data-size="${prop.width}x${prop.height}"></a>`;
+    });
+    eleventyConfig.addNunjucksAsyncShortcode("footerImage", async function (src, alt, className, width = [150, 150], outputFormat = "jpeg") {
+        if (alt === undefined) {
+            // You bet we throw an error on missing alt (alt="" works okay)
+            throw new Error(`Missing \`alt\` on myImage from: ${src}`);
+        }
+        var source = `./src${src}`;
+        // returns Promise
+        let stats = await Image(source, {
+            formats: [outputFormat],
+            // This uses the original image width
+            widths: width,
+            urlPath: "/assets/images/gallery/min/",
+            outputDir: "_site/assets/images/gallery/min/",
+        });
+
+        let prop = stats[outputFormat].pop();
+        return `<img width="${prop.width}" height="${prop.height}" alt="${alt}" src="${prop.url}" class="${className}" />`
     });
     eleventyConfig.addTransform("embedjson", function (content, outputPath) {
         if (outputPath.endsWith(".html")) {
