@@ -20,13 +20,13 @@ collections: # A list of collections the CMS should be able to edit
               - {label: "src", name: "src", widget: "image"}
               - {label: "alt", name: "alt", widget: "string"}
               - {label: "type", name: "type", widget: "select", options: ["Lifestyle", "Studio", "Outdoor", "Graduation", "Children", "Maternity"], default: "false"}
-          - label: "Footer latest photos"
-            name: "footer-gallery"
-            file: "src/_data/footer.json"
+      - label: "Footer latest photos"
+        name: "footer-gallery"
+        file: "src/_data/footer.json"
+        fields:
+          - label: "Image"
+            name: "image"
+            widget: "list"
             fields:
-              - label: "Image"
-                name: "image"
-                widget: "list"
-                fields:
-                  - {label: "src", name: "src", widget: "image"}
-                  - {label: "alt", name: "alt", widget: "string"}
+              - {label: "src", name: "src", widget: "image"}
+              - {label: "alt", name: "alt", widget: "string"}
