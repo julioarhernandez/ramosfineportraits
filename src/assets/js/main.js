@@ -781,8 +781,34 @@ var pixproof = {
             }
         }(), B()
     })(window.jQuery || window.Zepto);
-    "use strict";
     $(document).ready(function () {
+        var prepare_download_button = function () {
+            if (pixproof.pixproof_settings.zip_archive_generation !== "automatic") return;
+            var download_button = $(".js-download");
+            download_button.attr("disabled", "disabled");
+            $(".proof-photo").each(function (i, el) {
+                if ($(this).hasClass("selected")) {
+                    download_button.removeAttr("disabled")
+                }
+            })
+        };
+        var bound_reference_links = function () {
+            if (typeof bound_reference_links.bound === "undefined") {
+                bound_reference_links.bound = true;
+                $(document).on("click", "span.pixproof_photo_ref", function () {
+                    var target = $($(this).data("href"));
+                    target = target.length ? target : $("[name=" + $(this).data("href").slice(1) + "]");
+                    if (target.length) {
+                        $("body").animate({scrollTop: target.offset().top - 200}, 500, function () {
+                            $(target).addClass("scrooled_from_comments");
+                            setTimeout(function () {
+                                $(target).removeClass("scrooled_from_comments")
+                            }, 800)
+                        })
+                    }
+                })
+            }
+        }
         $(document).on("click", ".select-action", function (ev) {
             ev.preventDefault();
             ev.stopPropagation();
@@ -837,36 +863,10 @@ var pixproof = {
         });
         bound_reference_links()
     });
-    var prepare_download_button = function () {
-        if (pixproof.pixproof_settings.zip_archive_generation !== "automatic") return;
-        var download_button = $(".js-download");
-        download_button.attr("disabled", "disabled");
-        $(".proof-photo").each(function (i, el) {
-            if ($(this).hasClass("selected")) {
-                download_button.removeAttr("disabled")
-            }
-        })
-    };
-    var bound_reference_links = function () {
-        if (typeof bound_reference_links.bound === "undefined") {
-            bound_reference_links.bound = true;
-            $(document).on("click", "span.pixproof_photo_ref", function () {
-                var target = $($(this).data("href"));
-                target = target.length ? target : $("[name=" + $(this).data("href").slice(1) + "]");
-                if (target.length) {
-                    $("body").animate({scrollTop: target.offset().top - 200}, 500, function () {
-                        $(target).addClass("scrooled_from_comments");
-                        setTimeout(function () {
-                            $(target).removeClass("scrooled_from_comments")
-                        }, 800)
-                    })
-                }
-            })
-        }
-    }
+
+
 })(jQuery);
 !function () {
-    "use strict";
 
     function e(e) {
         function t(t, n) {
@@ -1603,7 +1603,6 @@ jQuery(document).ready(function ($) {
     })
 });
 (function () {
-    "use strict";
 
     function a() {
     }
@@ -1713,7 +1712,6 @@ jQuery(document).ready(function ($) {
     var f = {bind: d, unbind: e};
     "function" == typeof define && define.amd ? define("eventie/eventie", f) : a.eventie = f
 }(this), function (a, b) {
-    "use strict";
     "function" == typeof define && define.amd ? define(["eventEmitter/EventEmitter", "eventie/eventie"], function (c, d) {
         return b(a, c, d)
     }) : "object" == typeof module && module.exports ? module.exports = b(a, require("wolfy87-eventemitter"), require("eventie")) : a.imagesLoaded = b(a, a.EventEmitter, a.eventie)
@@ -1847,7 +1845,6 @@ jQuery(document).ready(function ($) {
         return e(t, i)
     }) : "object" == typeof module && module.exports ? module.exports = e(t, require("jquery")) : t.jQueryBridget = e(t, t.jQuery)
 }(window, function (t, e) {
-    "use strict";
 
     function i(i, s, a) {
         function u(t, e, o) {
@@ -1927,12 +1924,10 @@ jQuery(document).ready(function ($) {
         delete this._events, delete this._onceEvents
     }, t
 }), function (t, e) {
-    "use strict";
     "function" == typeof define && define.amd ? define("get-size/get-size", [], function () {
         return e()
     }) : "object" == typeof module && module.exports ? module.exports = e() : t.getSize = e()
 }(window, function () {
-    "use strict";
 
     function t(t) {
         var e = parseFloat(t), i = t.indexOf("%") == -1 && !isNaN(e);
@@ -2001,10 +1996,8 @@ jQuery(document).ready(function ($) {
         h = u.length, d = !1;
     return s
 }), function (t, e) {
-    "use strict";
     "function" == typeof define && define.amd ? define("desandro-matches-selector/matches-selector", e) : "object" == typeof module && module.exports ? module.exports = e() : t.matchesSelector = e()
 }(window, function () {
-    "use strict";
     var t = function () {
         var t = window.Element.prototype;
         if (t.matches) return "matches";
@@ -2091,7 +2084,6 @@ jQuery(document).ready(function ($) {
 }), function (t, e) {
     "function" == typeof define && define.amd ? define("outlayer/item", ["ev-emitter/ev-emitter", "get-size/get-size"], e) : "object" == typeof module && module.exports ? module.exports = e(require("ev-emitter"), require("get-size")) : (t.Outlayer = {}, t.Outlayer.Item = e(t.EvEmitter, t.getSize))
 }(window, function (t, e) {
-    "use strict";
 
     function i(t) {
         for (var e in t) return !1;
@@ -2256,12 +2248,10 @@ jQuery(document).ready(function ($) {
         this.css({position: "", left: "", right: "", top: "", bottom: "", transition: "", transform: ""})
     }, o
 }), function (t, e) {
-    "use strict";
     "function" == typeof define && define.amd ? define("outlayer/outlayer", ["ev-emitter/ev-emitter", "get-size/get-size", "fizzy-ui-utils/utils", "./item"], function (i, o, n, s) {
         return e(t, i, o, n, s)
     }) : "object" == typeof module && module.exports ? module.exports = e(t, require("ev-emitter"), require("get-size"), require("fizzy-ui-utils"), require("./item")) : t.Outlayer = e(t, t.EvEmitter, t.getSize, t.fizzyUIUtils, t.Outlayer.Item)
 }(window, function (t, e, i, o, n) {
-    "use strict";
 
     function s(t, e) {
         var i = o.getQueryElement(t);
@@ -2517,7 +2507,6 @@ jQuery(document).ready(function ($) {
 }), function (t, e) {
     "function" == typeof define && define.amd ? define("isotope-layout/js/item", ["outlayer/outlayer"], e) : "object" == typeof module && module.exports ? module.exports = e(require("outlayer")) : (t.Isotope = t.Isotope || {}, t.Isotope.Item = e(t.Outlayer))
 }(window, function (t) {
-    "use strict";
 
     function e() {
         t.Item.apply(this, arguments)
@@ -2543,7 +2532,6 @@ jQuery(document).ready(function ($) {
 }), function (t, e) {
     "function" == typeof define && define.amd ? define("isotope-layout/js/layout-mode", ["get-size/get-size", "outlayer/outlayer"], e) : "object" == typeof module && module.exports ? module.exports = e(require("get-size"), require("outlayer")) : (t.Isotope = t.Isotope || {}, t.Isotope.LayoutMode = e(t.getSize, t.Outlayer))
 }(window, function (t, e) {
-    "use strict";
 
     function i(t) {
         this.isotope = t, t && (this.options = t.options[this.namespace], this.element = t.element, this.items = t.filteredItems, this.size = t.size)
@@ -2652,7 +2640,6 @@ jQuery(document).ready(function ($) {
 }), function (t, e) {
     "function" == typeof define && define.amd ? define("isotope-layout/js/layout-modes/masonry", ["../layout-mode", "masonry-layout/masonry"], e) : "object" == typeof module && module.exports ? module.exports = e(require("../layout-mode"), require("masonry-layout")) : e(t.Isotope.LayoutMode, t.Masonry)
 }(window, function (t, e) {
-    "use strict";
     var i = t.create("masonry"), o = i.prototype, n = {_getElementOffset: !0, layout: !0, _getMeasurement: !0};
     for (var s in e.prototype) n[s] || (o[s] = e.prototype[s]);
     var r = o.measureColumns;
@@ -2666,7 +2653,6 @@ jQuery(document).ready(function ($) {
 }), function (t, e) {
     "function" == typeof define && define.amd ? define("isotope-layout/js/layout-modes/fit-rows", ["../layout-mode"], e) : "object" == typeof exports ? module.exports = e(require("../layout-mode")) : e(t.Isotope.LayoutMode)
 }(window, function (t) {
-    "use strict";
     var e = t.create("fitRows"), i = e.prototype;
     return i._resetLayout = function () {
         this.x = 0, this.y = 0, this.maxY = 0, this._getMeasurement("gutter", "outerWidth")
@@ -2682,7 +2668,6 @@ jQuery(document).ready(function ($) {
 }), function (t, e) {
     "function" == typeof define && define.amd ? define("isotope-layout/js/layout-modes/vertical", ["../layout-mode"], e) : "object" == typeof module && module.exports ? module.exports = e(require("../layout-mode")) : e(t.Isotope.LayoutMode)
 }(window, function (t) {
-    "use strict";
     var e = t.create("vertical", {horizontalAlignment: 0}), i = e.prototype;
     return i._resetLayout = function () {
         this.y = 0
@@ -2902,7 +2887,6 @@ jQuery(document).ready(function ($) {
 !function (e, t) {
     "function" == typeof define && define.amd ? define(t) : "object" == typeof exports ? module.exports = t() : e.PhotoSwipe = t()
 }(this, function () {
-    "use strict";
     return function (e, t, n, i) {
         var o = {
             features: null, bind: function (e, t, n, i) {
@@ -3702,7 +3686,6 @@ jQuery(document).ready(function ($) {
 !function (e, t) {
     "function" == typeof define && define.amd ? define(t) : "object" == typeof exports ? module.exports = t() : e.PhotoSwipeUI_Default = t()
 }(this, function () {
-    "use strict";
     return function (e, t) {
         var n, o, l, r, i, s, a, u, c, p, d, m, f, h, w, g, v, b, _, C = this, T = !1, I = !0, E = !0, F = {
             barsSize: {top: 44, bottom: "auto"},
@@ -3951,7 +3934,6 @@ jQuery(document).ready(function ($) {
         }
     }
 });
-"use strict";
 jQuery(window).on("load", function () {
     jQuery(window).trigger("resize").trigger("scroll");
     var $preloader = jQuery(".preloader"), $spinner = $preloader.find(".spinner");
@@ -4686,6 +4668,23 @@ jQuery(document).ready(function () {
             })
         }
     });
+    jQuery(".testimonial-carousel .carousel").each(function () {
+        var head_slider = jQuery(this);
+        if (head_slider.find(".item").length > 1) {
+            head_slider.addClass("owl-carousel").owlCarousel({
+                loop: true,
+                items: 1,
+                nav: false,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 14000,
+                autoplaySpeed: 1500,
+                smartSpeed: 1500,
+                autoWidth: false,
+                navText: false
+            })
+        }
+    });
     if (jQuery(".popup-gallery").length > 0) {
         jQuery("body").append('<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true"> <div class="pswp__bg"></div><div class="pswp__scroll-wrap"> <div class="pswp__container"> <div class="pswp__item"></div><div class="pswp__item"></div><div class="pswp__item"></div></div><div class="pswp__ui pswp__ui--hidden"> <div class="pswp__top-bar"> <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button> <div class="pswp__preloader"> <div class="pswp__preloader__icn"> <div class="pswp__preloader__cut"> <div class="pswp__preloader__donut"></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"> <div class="pswp__share-tooltip"></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"> </button> <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"> </button> <div class="pswp__caption"> <div class="pswp__caption__center"></div></div></div></div></div>');
         var $pswp = jQuery(".pswp")[0];
@@ -4857,7 +4856,6 @@ jQuery(document).ready(function (jQuery) {
     })
 });
 !function (a, b) {
-    "use strict";
 
     function c() {
         if (!e) {
@@ -6253,7 +6251,6 @@ jQuery(document).ready(function (jQuery) {
     $.fn.owlCarousel.Constructor.Plugins.autoplay = Autoplay
 })(window.Zepto || window.jQuery, window, document);
 (function ($, window, document, undefined) {
-    "use strict";
     var Navigation = function (carousel) {
         this._core = carousel;
         this._initialized = false;
@@ -6443,7 +6440,6 @@ jQuery(document).ready(function (jQuery) {
     $.fn.owlCarousel.Constructor.Plugins.Navigation = Navigation
 })(window.Zepto || window.jQuery, window, document);
 (function ($, window, document, undefined) {
-    "use strict";
     var Hash = function (carousel) {
         this._core = carousel;
         this._hashes = {};
@@ -6557,7 +6553,6 @@ jQuery(document).ready(function (jQuery) {
     }
 })(window.Zepto || window.jQuery, window, document);
 !function () {
-    "use strict";
     var e = 0, r = {};
 
     function i(t) {
@@ -6616,7 +6611,6 @@ jQuery(document).ready(function (jQuery) {
         }
     }, window.VcWaypoint = i
 }(), function () {
-    "use strict";
 
     function e(t) {
         window.setTimeout(t, 1e3 / 60)
@@ -6744,7 +6738,6 @@ jQuery(document).ready(function (jQuery) {
         (window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || e).call(window, t)
     }, y.Context = n
 }(), function () {
-    "use strict";
 
     function s(t, e) {
         return t.triggerPoint - e.triggerPoint
@@ -6795,7 +6788,6 @@ jQuery(document).ready(function (jQuery) {
         return e[t.axis][t.name] || new o(t)
     }, i.Group = o
 }(), function () {
-    "use strict";
     var i = window.jQuery, t = window.VcWaypoint;
 
     function o(t) {
@@ -6811,7 +6803,6 @@ jQuery(document).ready(function (jQuery) {
         o[e] = i[e]
     }), t.adapters.push({name: "jquery", Adapter: o}), t.Adapter = o
 }(), function () {
-    "use strict";
     var n = window.VcWaypoint;
 
     function t(o) {
