@@ -14056,6 +14056,14 @@ body ul.wpb_thumbnails-fluid li .entry-content :last-child {
     text-align: left
 }
 
+@media screen and (max-width: 768px ){
+    .vc_icon_element.vc_icon_element-outer.vc_icon_element-align-center-small {
+        text-align: center
+    }
+}
+
+
+
 .vc_icon_element.vc_icon_element-outer.vc_icon_element-align-center {
     text-align: center
 }
@@ -15050,6 +15058,12 @@ body ul.wpb_thumbnails-fluid li .entry-content :last-child {
 
 .vc_gitem-align-center {
     text-align: center
+}
+
+@media screen and (max-width: 768px){
+    .vc_gitem-align-center-small {
+        text-align: center
+    }
 }
 
 .vc_gitem-align-right {
@@ -34350,6 +34364,14 @@ textarea.style3 {
     bottom: 70px
 }
 
+@media screen and (max-width: 640px) {
+    .banner-area.external-indent .banner-social-buttons {
+        left: 0px;
+        background: transparent !important;
+    }
+}
+
+
 .site-dark .banner-area.external-indent .banner-social-buttons {
     background: #000
 }
@@ -40577,9 +40599,9 @@ textarea.style3 {
         display: none
     }
 
-    .banner-social-buttons {
-        display: none
-    }
+    /*.banner-social-buttons {*/
+    /*    display: none*/
+    /*}*/
 
     .banner-area.external-indent, .external-indent .banner, .external-indent .banner-categories .item {
         margin: 0;
