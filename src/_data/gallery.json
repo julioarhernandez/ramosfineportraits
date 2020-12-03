@@ -1,24 +1,464 @@
 {
   "image": [
     {
-      "src": "/assets/images/gallery/4.jpg",
-      "alt": "Lifestyle photos",
-      "type": "Studio"
+      "type": "Studio",
+      "src": "/assets/wpcontent/uploads/2017/08/17.jpg",
+      "alt": "Portrait Photography"
     },
     {
-      "src": "/assets/images/gallery/5.jpg",
-      "alt": "Maternity photos",
-      "type": "Graduation"
+      "type": "Studio",
+      "src": "/assets/wpcontent/uploads/2017/08/44.jpg",
+      "alt": "Portrait Photography"
     },
     {
-      "src": "/assets/images/gallery/6.jpg",
-      "alt": "Maternity photos",
-      "type": "Outdoor"
+      "type": "Studio",
+      "src": "/assets/wpcontent/uploads/2017/08/18.jpg",
+      "alt": "Portrait Photography"
+    },
+    {
+      "type": "Studio",
+      "src": "/assets/wpcontent/uploads/2017/08/19.jpg",
+      "alt": "Portrait Photography"
+    },
+    {
+      "type": "Studio",
+      "src": "/assets/wpcontent/uploads/2017/08/20.jpg",
+      "alt": "Portrait Photography"
+    },
+    {
+      "type": "Studio",
+      "src": "/assets/wpcontent/uploads/2017/08/21.jpg",
+      "alt": "Portrait Photography"
+    },
+    {
+      "type": "Studio",
+      "src": "/assets/wpcontent/uploads/2017/08/22.jpg",
+      "alt": "Portrait Photography"
+    },
+    {
+      "type": "Studio",
+      "src": "/assets/wpcontent/uploads/2017/08/24.jpg",
+      "alt": "Portrait Photography"
+    },
+    {
+      "type": "Studio",
+      "src": "/assets/wpcontent/uploads/2017/08/25.jpg",
+      "alt": "Portrait Photography"
+    },
+    {
+      "type": "Studio",
+      "src": "/assets/wpcontent/uploads/2017/08/26.jpg",
+      "alt": "Portrait Photography"
+    },
+    {
+      "type": "Studio",
+      "src": "/assets/wpcontent/uploads/2017/08/27.jpg",
+      "alt": "Portrait Photography"
+    },
+    {
+      "type": "Studio",
+      "src": "/assets/wpcontent/uploads/2017/08/28.jpg",
+      "alt": "Portrait Photography"
+    },
+    {
+      "type": "Studio",
+      "src": "/assets/wpcontent/uploads/2017/08/29.jpg",
+      "alt": "Portrait Photography"
+    },
+    {
+      "type": "Studio",
+      "src": "/assets/wpcontent/uploads/2017/08/31.jpg",
+      "alt": "Portrait Photography"
+    },
+    {
+      "type": "Studio",
+      "src": "/assets/wpcontent/uploads/2017/08/30.jpg",
+      "alt": "Portrait Photography"
+    },
+    {
+      "type": "Studio",
+      "src": "/assets/wpcontent/uploads/2017/08/32.jpg",
+      "alt": "Portrait Photography"
+    },
+    {
+      "type": "Studio",
+      "src": "/assets/wpcontent/uploads/2017/08/33.jpg",
+      "alt": "Portrait Photography"
+    },
+    {
+      "type": "Studio",
+      "src": "/assets/wpcontent/uploads/2017/08/34.jpg",
+      "alt": "Portrait Photography"
+    },
+    {
+      "type": "Studio",
+      "src": "/assets/wpcontent/uploads/2017/08/35.jpg",
+      "alt": "Portrait Photography"
+    },
+    {
+      "type": "Studio",
+      "src": "/assets/wpcontent/uploads/2017/08/36.jpg",
+      "alt": "Portrait Photography"
+    },
+    {
+      "type": "Studio",
+      "src": "/assets/wpcontent/uploads/2017/08/38.jpg",
+      "alt": "Portrait Photography"
+    },
+    {
+      "type": "Studio",
+      "src": "/assets/wpcontent/uploads/2017/08/40.jpg",
+      "alt": "Portrait Photography"
+    },
+    {
+      "type": "Studio",
+      "src": "/assets/wpcontent/uploads/2017/08/41.jpg",
+      "alt": "Portrait Photography"
+    },
+    {
+      "type": "Studio",
+      "src": "/assets/wpcontent/uploads/2017/08/4.jpg",
+      "alt": "Portrait Photography"
+    },
+    {
+      "type": "Studio",
+      "src": "/assets/wpcontent/uploads/2017/08/g-1.jpg",
+      "alt": "Portrait Photography"
+    },
+    {
+      "type": "Lifestyle",
+      "src": "/assets/wpcontent/uploads/2017/08/23.jpg",
+      "alt": "Lifestyle Photography"
+    },
+    {
+      "type": "Lifestyle",
+      "src": "/assets/wpcontent/uploads/2017/08/37.jpg",
+      "alt": "Lifestyle Photography"
+    },
+    {
+      "type": "Lifestyle",
+      "src": "/assets/wpcontent/uploads/2017/08/43.jpg",
+      "alt": "Lifestyle Photography"
+    },
+    {
+      "type": "Lifestyle",
+      "src": "/assets/wpcontent/uploads/2017/08/42.jpg",
+      "alt": "Lifestyle Photography"
+    },
+    {
+      "type": "Children",
+      "src": "/assets/wpcontent/uploads/2017/08/juli.jpg",
+      "alt": "Children Photography"
+    },
+    {
+      "type": "Children",
+      "src": "/assets/wpcontent/uploads/2017/08/b1.jpg",
+      "alt": "Children Photography"
+    },
+    {
+      "type": "Children",
+      "src": "/assets/wpcontent/uploads/2017/08/angelica1.jpg",
+      "alt": "Children Photography"
+    },
+    {
+      "type": "Children",
+      "src": "/assets/wpcontent/uploads/2017/08/angelica2.jpg",
+      "alt": "Children Photography"
+    },
+    {
+      "type": "Children",
+      "src": "/assets/wpcontent/uploads/2017/08/angelica3.jpg",
+      "alt": "Children Photography"
+    },
+    {
+      "type": "Children",
+      "src": "/assets/wpcontent/uploads/2017/08/angelica4.jpg",
+      "alt": "Children Photography"
+    },
+    {
+      "type": "Children",
+      "src": "/assets/wpcontent/uploads/2017/08/angelica5.jpg",
+      "alt": "Children Photography"
+    },
+    {
+      "type": "Children",
+      "src": "/assets/wpcontent/uploads/2017/08/angelica6.jpg",
+      "alt": "Children Photography"
+    },
+    {
+      "type": "Children",
+      "src": "/assets/wpcontent/uploads/2017/08/angelica7.jpg",
+      "alt": "Children Photography"
+    },
+    {
+      "type": "Children",
+      "src": "/assets/wpcontent/uploads/2017/08/angelica8.jpg",
+      "alt": "Children Photography"
+    },
+    {
+      "type": "Children",
+      "src": "/assets/wpcontent/uploads/2017/08/angelica9.jpg",
+      "alt": "Children Photography"
+    },
+    {
+      "type": "Children",
+      "src": "/assets/wpcontent/uploads/2017/08/angelica10.jpg",
+      "alt": "Children Photography"
+    },
+    {
+      "type": "Children",
+      "src": "/assets/wpcontent/uploads/2017/08/angelica11.jpg",
+      "alt": "Children Photography"
+    },
+    {
+      "type": "Children",
+      "src": "/assets/wpcontent/uploads/2017/08/b2.jpg",
+      "alt": "Children Photography"
+    },
+    {
+      "type": "Children",
+      "src": "/assets/wpcontent/uploads/2017/08/b3.jpg",
+      "alt": "Children Photography"
+    },
+    {
+      "type": "Children",
+      "src": "/assets/wpcontent/uploads/2017/08/b4.jpg",
+      "alt": "Children Photography"
+    },
+    {
+      "type": "Children",
+      "src": "/assets/wpcontent/uploads/2017/08/b5.jpg",
+      "alt": "Children Photography"
+    },
+    {
+      "type": "Children",
+      "src": "/assets/wpcontent/uploads/2017/08/y-1.jpg",
+      "alt": "Children Photography"
+    },
+    {
+      "type": "Children",
+      "src": "/assets/wpcontent/uploads/2017/08/y-2.jpg",
+      "alt": "Children Photography"
+    },
+    {
+      "type": "Children",
+      "src": "/assets/wpcontent/uploads/2017/08/y-3.jpg",
+      "alt": "Children Photography"
+    },
+    {
+      "type": "Children",
+      "src": "/assets/wpcontent/uploads/2017/08/y-4.jpg",
+      "alt": "Children Photography"
+    },
+    {
+      "type": "Children",
+      "src": "/assets/wpcontent/uploads/2017/08/y-5.jpg",
+      "alt": "Children Photography"
     },
     {
       "type": "Graduation",
-      "src": "/assets/images/gallery/7.jpg",
-      "alt": "Some photos"
+      "src": "/assets/wpcontent/uploads/2017/08/melisa1.jpg",
+      "alt": "Graduation Photography"
+    },
+    {
+      "type": "Graduation",
+      "src": "/assets/wpcontent/uploads/2017/08/m1.jpg",
+      "alt": "Graduation Photography"
+    },
+    {
+      "type": "Graduation",
+      "src": "/assets/wpcontent/uploads/2017/08/m2.jpg",
+      "alt": "Graduation Photography"
+    },
+    {
+      "type": "Graduation",
+      "src": "/assets/wpcontent/uploads/2017/08/m3.jpg",
+      "alt": "Graduation Photography"
+    },
+    {
+      "type": "Graduation",
+      "src": "/assets/wpcontent/uploads/2017/08/m4.jpg",
+      "alt": "Graduation Photography"
+    },
+    {
+      "type": "Graduation",
+      "src": "/assets/wpcontent/uploads/2017/08/m5.jpg",
+      "alt": "Graduation Photography"
+    },
+    {
+      "type": "Graduation",
+      "src": "/assets/wpcontent/uploads/2017/08/m6.jpg",
+      "alt": "Graduation Photography"
+    },
+    {
+      "type": "Graduation",
+      "src": "/assets/wpcontent/uploads/2017/08/m7.jpg",
+      "alt": "Graduation Photography"
+    },
+    {
+      "type": "Graduation",
+      "src": "/assets/wpcontent/uploads/2017/08/m8.jpg",
+      "alt": "Graduation Photography"
+    },
+    {
+      "type": "Graduation",
+      "src": "/assets/wpcontent/uploads/2017/08/m9.jpg",
+      "alt": "Graduation Photography"
+    },
+    {
+      "type": "Graduation",
+      "src": "/assets/wpcontent/uploads/2017/08/m10.jpg",
+      "alt": "Graduation Photography"
+    },
+    {
+      "type": "Graduation",
+      "src": "/assets/wpcontent/uploads/2017/08/5.jpg",
+      "alt": "Graduation Photography"
+    },
+    {
+      "type": "Graduation",
+      "src": "/assets/wpcontent/uploads/2017/08/6.jpg",
+      "alt": "Graduation Photography"
+    },
+    {
+      "type": "Graduation",
+      "src": "/assets/wpcontent/uploads/2017/08/7.jpg",
+      "alt": "Graduation Photography"
+    },
+    {
+      "type": "Graduation",
+      "src": "/assets/wpcontent/uploads/2017/08/8.jpg",
+      "alt": "Graduation Photography"
+    },
+    {
+      "type": "Graduation",
+      "src": "/assets/wpcontent/uploads/2017/08/10.jpg",
+      "alt": "Graduation Photography"
+    },
+    {
+      "type": "Graduation",
+      "src": "/assets/wpcontent/uploads/2017/08/11.jpg",
+      "alt": "Graduation Photography"
+    },
+    {
+      "type": "Graduation",
+      "src": "/assets/wpcontent/uploads/2017/08/12.jpg",
+      "alt": "Graduation Photography"
+    },
+    {
+      "type": "Graduation",
+      "src": "/assets/wpcontent/uploads/2017/08/13.jpg",
+      "alt": "Graduation Photography"
+    },
+    {
+      "type": "Outdoor",
+      "src": "/assets/wpcontent/uploads/2017/08/lila1.jpg",
+      "alt": "Outdoor Photography"
+    },
+    {
+      "type": "Outdoor",
+      "src": "/assets/wpcontent/uploads/2017/08/lila2.jpg",
+      "alt": "Outdoor Photography"
+    },
+    {
+      "type": "Outdoor",
+      "src": "/assets/wpcontent/uploads/2017/08/lila3.jpg",
+      "alt": "Outdoor Photography"
+    },
+    {
+      "type": "Outdoor",
+      "src": "/assets/wpcontent/uploads/2017/08/g-2.jpg",
+      "alt": "Outdoor Photography"
+    },
+    {
+      "type": "Outdoor",
+      "src": "/assets/wpcontent/uploads/2017/08/g-3.jpg",
+      "alt": "Outdoor Photography"
+    },
+    {
+      "type": "Outdoor",
+      "src": "/assets/wpcontent/uploads/2017/08/g-4.jpg",
+      "alt": "Outdoor Photography"
+    },
+    {
+      "type": "Maternity",
+      "src": "/assets/wpcontent/uploads/2017/08/w-1.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "type": "Maternity",
+      "src": "/assets/wpcontent/uploads/2017/08/w-2.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "type": "Maternity",
+      "src": "/assets/wpcontent/uploads/2017/08/w-3.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "type": "Maternity",
+      "src": "/assets/wpcontent/uploads/2017/08/w-4.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "type": "Maternity",
+      "src": "/assets/wpcontent/uploads/2017/08/w-5.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "type": "Maternity",
+      "src": "/assets/wpcontent/uploads/2017/08/jessica-1.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "type": "Maternity",
+      "src": "/assets/wpcontent/uploads/2017/08/jessica-2.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "type": "Maternity",
+      "src": "/assets/wpcontent/uploads/2017/08/jessica-3.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "type": "Maternity",
+      "src": "/assets/wpcontent/uploads/2017/08/jessica-4.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "type": "Maternity",
+      "src": "/assets/wpcontent/uploads/2017/08/jessica-5.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "type": "Maternity",
+      "src": "/assets/wpcontent/uploads/2017/08/jessica-6.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "type": "Maternity",
+      "src": "/assets/wpcontent/uploads/2017/08/jessica-7.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "type": "Maternity",
+      "src": "/assets/wpcontent/uploads/2017/08/jessica-8.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "type": "Maternity",
+      "src": "/assets/wpcontent/uploads/2017/08/jessica-9.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "type": "Maternity",
+      "src": "/assets/wpcontent/uploads/2017/08/jessica-10.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "type": "Maternity",
+      "src": "/assets/wpcontent/uploads/2017/08/jessica-011.jpg",
+      "alt": "Maternity Photography"
     }
   ]
 }
