@@ -10,6 +10,11 @@ on:
   pull_request:
     branches:
       - master
+    paths:
+      - '**.jpg'
+      - '**.jpeg'
+      - '**.png'
+      - '**.webp'
   push:
     branches:
       - master
