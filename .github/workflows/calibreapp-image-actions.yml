@@ -7,15 +7,9 @@
 # For other scenarios, a new PR will be opened if any images are compressed.
 name: Compress images
 on:
-  pull_request:
-    paths:
-      - '**.jpg'
-      - '**.jpeg'
-      - '**.png'
-      - '**.webp'
   push:
     branches:
-      - master
+      - price
     paths:
       - '**.jpg'
       - '**.jpeg'
