@@ -7,12 +7,6 @@
 # For other scenarios, a new PR will be opened if any images are compressed.
 name: Compress images
 on:
-  pull_request:
-    paths:
-      - '**.jpg'
-      - '**.jpeg'
-      - '**.png'
-      - '**.webp'
   push:
     branches:
       - price
@@ -51,3 +45,7 @@ jobs:
           branch-suffix: timestamp
           commit-message: Compress Images
           body: ${{ steps.calibre.outputs.markdown }}
+      - name: Auto Approve PR
+        uses: hmarr/auto-approve-action@v2.0.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
