@@ -32935,6 +32935,18 @@ pre {
     color: inherit;
     position: relative
 }
+.button-style3{
+    padding: 7px 10px !important;
+    display: block;
+    background: #c48f56;
+    border-radius: 3px;
+    color: white;
+}
+.button-style3:hover,
+.button-style3:active,
+.button-style3:focus{
+    color: white;
+}
 
 .pixproof-data .button-download:before {
     content: "\e920";
