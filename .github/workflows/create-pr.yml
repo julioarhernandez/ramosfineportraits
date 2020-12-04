@@ -1,7 +1,8 @@
 name: Create PR
-on: push
-  branches:
-    - price
+on:
+  push:
+    branches:
+      - price
 
 jobs:
   create-pr-on-push:
