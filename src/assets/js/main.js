@@ -4839,7 +4839,7 @@ jQuery(document).ready(function (jQuery) {
                 nav: true,
                 dots: false,
                 autoplay: true,
-                autoplayTimeout: 3e3,
+                autoplayTimeout: 20000,
                 autoplayHoverPause: true,
                 smartSpeed: 500,
                 navClass: ["owl-prev basic-ui-icon-left-arrow", "owl-next basic-ui-icon-right-arrow"],
