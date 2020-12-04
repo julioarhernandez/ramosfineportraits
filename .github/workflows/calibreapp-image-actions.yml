@@ -15,7 +15,7 @@ on:
       - '**.webp'
   push:
     branches:
-      - master
+      - price
     paths:
       - '**.jpg'
       - '**.jpeg'
