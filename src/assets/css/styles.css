@@ -32923,6 +32923,7 @@ pre {
 }
 
 .button-style1, .pixproof-data .button-download, .vc_general.vc_btn3 {
+    background-color: #c48f56;
     display: inline-block;
     text-decoration: none;
     font-size: 12px;
@@ -32930,7 +32931,6 @@ pre {
     border: 1px solid #c48f56;
     padding: 10px 20px;
     cursor: pointer;
-    background: 0 0;
     border-radius: 0;
     color: inherit;
     position: relative
@@ -36677,7 +36677,7 @@ textarea.style3 {
 
 .price-list .item .options {
     padding: 20px 15px 25px;
-    margin-top: 45px;
+    margin-top: 10px;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -36716,14 +36716,14 @@ textarea.style3 {
 }
 
 .price-list .item .options .button-style1.active {
-    color: #c48f56
+    color: #fff
 }
 
 .price-list .item .options .button-style1 span {
     display: inline-block;
     width: 12px;
     height: 2px;
-    background: #c48f56;
+    background: #fff;
     margin: 4px 0 4px 20px;
     position: relative;
     -webkit-transition: all .3s ease;
@@ -36739,7 +36739,7 @@ textarea.style3 {
     top: 50%;
     left: 50%;
     margin: -6px 0 0 -1px;
-    background: #c48f56;
+    background: #fff;
     width: 2px;
     height: 12px;
     -webkit-transition: all .3s ease;
@@ -36793,18 +36793,22 @@ textarea.style3 {
 
 .price-list .owl-prev {
     left: 30px;
-    background: #0e0500;
+    background: #c48f56;
     border-radius: 50%;
     padding: 3px;
-    box-shadow: 0 0 2px 5px #0e0500
+    box-shadow: 0 0 2px 5px #c48f56;
+    color: black;
+    font-weight: bold;
 }
 
 .price-list .owl-next {
     right: 30px;
-    background: #0e0500;
+    background: #c48f56;
     border-radius: 50%;
     padding: 3px;
-    box-shadow: 0 0 2px 5px #0e0500
+    box-shadow: 0 0 2px 5px #c48f56;
+    color: black;
+    font-weight: bold;
 }
 
 .blog-type-grid {
