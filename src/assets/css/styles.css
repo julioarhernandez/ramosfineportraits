@@ -36604,7 +36604,8 @@ textarea.style3 {
     -moz-transform: rotate(-89deg) translateX(-190px)
 }
 
-.skill-item h6, .skill-item-line h6 {
+.skill-item h6, .skill-item-line h6,
+.skill-item h3, .skill-item-line h3 {
     font-size: 1em;
     text-transform: uppercase;
     margin: 10px 0
