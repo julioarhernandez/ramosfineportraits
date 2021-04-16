@@ -1,0 +1,26 @@
+name: Percy
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Setup Ruby
+        uses: actions/setup-ruby@v1
+      - name: Install
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Default test
+        uses: percy/snapshot-action@v0.1.2
+        with:
+          build-directory: "_site"
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
