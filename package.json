@@ -34,6 +34,7 @@
     "@11ty/eleventy": "^0.11.0",
     "@11ty/eleventy-img": "^0.2.5",
     "@quasibit/eleventy-plugin-sitemap": "^2.0.3",
+    "eleventy-plugin-seo": "^0.5.1",
     "html-minifier": "^4.0.0",
     "jquery": "^3.3.1"
   }

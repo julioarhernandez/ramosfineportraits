@@ -1,5 +1,6 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const embedJson = require('embed-json');
+const pluginSEO = require("eleventy-plugin-seo");
 const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 const htmlmin = require("html-minifier");
 const Image = require("@11ty/eleventy-img");
@@ -25,6 +26,7 @@ module.exports = function (eleventyConfig) {
         return `<img src="${prop.url}" width="${prop.width}" height="${prop.height}" alt="${alt}" class="${className}"/>`;
       });
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
+    eleventyConfig.addPlugin(pluginSEO, require("./src/_data/seo.json"));
     eleventyConfig.addPlugin(sitemap, {
         sitemap: {
             lastModifiedProperty: "modified",
