@@ -33541,11 +33541,11 @@ textarea.style3 {
 /* purgecss start ignore */
 @media screen and (max-width: 767.9px) {
     .side-header .logo img, .site-header .logo img {
-        max-height: 60px
+        max-height: 55px
     }
     .site-header .logo ~ .fr {
-        padding-left: 10px;
-        padding-right: 10px;
+        width: 30px;
+        position: relative;
     }
 }
 /* purgecss end ignore */
@@ -33867,12 +33867,14 @@ textarea.style3 {
 /* purgecss start ignore */
 .butter-button {
     float: left;
-    width: 15px;
-    height: 11px;
+    width: 20px;
+    height: 15px;
     position: relative;
-    margin: 30px 0 30px 30px;
-    cursor: pointer
+    margin: 20px 0;
+    cursor: pointer;
+    padding: 16px;
 }
+
 
 .butter-button.visible_menu {
     display: none
@@ -33880,13 +33882,10 @@ textarea.style3 {
 
 .butter-button div {
     height: 1px;
-    box-shadow: inset 0 0 0 3px;
-    margin: 5px 0;
-    -webkit-transition: all .3s ease;
-    -moz-transition: all .3s ease;
-    -o-transition: all .3s ease;
-    -ms-transition: all .3s ease;
-    transition: all .3s ease
+    box-shadow: inset 0 0 0 1px;
+    transition: all .3s ease;
+    width: 25px;
+    transform: translate3d(-13px, -2px, 0px);
 }
 
 .butter-button.active div {
@@ -33896,31 +33895,28 @@ textarea.style3 {
 .butter-button:after, .butter-button:before {
     content: '';
     position: absolute;
-    top: 0;
-    width: 100%;
+    top: 5px;
+    width: 25px;
     box-shadow: inset 0 0 0 3px;
     height: 1px;
-    -webkit-transition: all .3s ease;
-    -moz-transition: all .3s ease;
-    -o-transition: all .3s ease;
-    -ms-transition: all .3s ease;
-    transition: all .3s ease
+    transition: all .3s ease;
+    left: 3px;
 }
 
 .butter-button:after {
     top: auto;
-    bottom: 0
+    bottom: 8px;
 }
 
 .butter-button.active:before {
     transform: rotate(45deg);
     transform-origin: 50%;
-    top: 5px
+    top: 15px
 }
 
 .butter-button.active:after {
     transform: rotate(-45deg);
-    bottom: 5px
+    bottom: 15px;
 }
 /* purgecss end ignore */
 
