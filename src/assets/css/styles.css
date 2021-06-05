@@ -20895,6 +20895,7 @@ button, select {
     text-transform: none
 }
 
+/* purgecss ignore */
 button, html input[type=button], input[type=reset], input[type=submit] {
     -webkit-appearance: button;
     cursor: pointer
@@ -33534,10 +33535,20 @@ textarea.style3 {
     vertical-align: middle;
     text-decoration: none
 }
-
 .side-header .logo img, .site-header .logo img {
     max-height: 65px
 }
+/* purgecss start ignore */
+@media screen and (max-width: 767.9px) {
+    .side-header .logo img, .site-header .logo img {
+        max-height: 60px
+    }
+    .site-header .logo ~ .fr {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+/* purgecss end ignore */
 
 .header-left-dark-color.header_space_no .site-header .logo .dark, .header-left-white-color.header_space_no .site-header .logo .light, .side-header.dark .logo .light, .side-header.light .logo .dark, .site-header.dark .logo .light, .site-header.light .logo .dark {
     display: block
@@ -36266,9 +36277,9 @@ textarea.style3 {
     text-transform: uppercase;
     position: relative
 }
-
+/* purgecss ignore */
 .category-buttons.tac a, .filter-button-group.tac a, .filter-button-group.tac button {
-    margin: 0 10px 0
+    margin: 10px;
 }
 
 .category-buttons.tal a:not(:last-of-type), .filter-button-group.tal a:not(:last-of-type), .filter-button-group.tal button:not(:last-of-type) {

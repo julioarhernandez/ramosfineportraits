@@ -6150,7 +6150,7 @@ jQuery(document).ready(function () {
             }
         })
     });
-    if (window.matchMedia("(min-width: 1025px)").matches){
+    if (window.matchMedia("(min-width: 768px)").matches){
         jQuery(window).bind("load", function () {
             jQuery(".portfolio-items").each(function () {
                 var wrap = jQuery(this);
@@ -6170,6 +6170,19 @@ jQuery(document).ready(function () {
             jQuery(".js-pixproof-gallery").each(function () {
                 var $grid = jQuery(this).addClass("isotope").isotope({itemSelector: ".proof-photo", horizontalOrder: true})
             })
+        });
+    }
+    if (window.matchMedia("(max-width: 767.9px)").matches){
+        jQuery(window).bind("load", function () {
+            jQuery(".portfolio-items").each(function () {
+                var wrap = jQuery(this);
+                jQuery(this).prev(".filter-button-group").on("click", "button", function () {
+                    jQuery(this).addClass("active").siblings().removeClass("active");
+                    var filterValue = jQuery(this).attr("data-filter");
+                    wrap.isotope({filter: filterValue});
+                    jQuery(window).trigger("resize").trigger("scroll")
+                })
+            });
         });
     }
     jQuery(window).bind("load", function () {
