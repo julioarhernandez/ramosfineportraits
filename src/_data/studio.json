@@ -1,0 +1,74 @@
+{
+  "title": "Studio Photo Gallery",
+  "moreLink": "/pages/gallery/studio/",
+  "images": [
+    {
+      "src": "/assets/images/studio/studio-1.jpg",
+      "alt": "Studio Photography"
+    },
+    {
+      "src": "/assets/images/studio/studio-2.jpg",
+      "alt": "Studio Photography"
+    },
+    {
+      "src": "/assets/images/studio/studio-3.jpg",
+      "alt": "Studio Photography"
+    },
+    {
+      "src": "/assets/images/studio/studio-4.jpg",
+      "alt": "Studio Photography"
+    },
+    {
+      "src": "/assets/images/studio/studio-5.jpg",
+      "alt": "Studio Photography"
+    },
+    {
+      "src": "/assets/images/studio/studio-6.jpg",
+      "alt": "Studio Photography"
+    },
+    {
+      "src": "/assets/images/studio/studio-7.jpg",
+      "alt": "Studio Photography"
+    },
+    {
+      "src": "/assets/images/studio/studio-8.jpg",
+      "alt": "Studio Photography"
+    },
+    {
+      "src": "/assets/images/studio/studio-9.jpg",
+      "alt": "Studio Photography"
+    }
+  ],
+  "packages": [
+    {
+      "name": "basic package",
+      "backgroundImage": "/assets/images/gallery/maternity-photo-1.jpg",
+      "price": "$250",
+      "includes": [
+        "Up to 1 hour session time",
+        "Pre-session consultation",
+        "Up to 2 outfit changes  ",
+        "20 digital images with print release",
+        "2 digital images with artistic edition",
+        "Additional digital images available for purchase",
+        "Print products are not included but are available for purchase",
+        "No additional cost for a small to medium family group session or simply share a session with a family member or your best friend."
+      ]
+    },
+    {
+      "name": "economic package",
+      "backgroundImage": "/assets/images/gallery/maternity-photo-2.jpg",
+      "price": "$350",
+      "includes": [
+        "Up to 2 hour session time",
+        "Pre-session consultation",
+        "Up to 4 outfit changes  ",
+        "40 digital images with print release",
+        "2 digital images with artistic edition",
+        "Additional digital images available for purchase",
+        "Print products are not included but are available for purchase",
+        "No additional cost for a small to medium family group session or simply share a session with a family member or your best friend."
+      ]
+    }
+  ]
+}

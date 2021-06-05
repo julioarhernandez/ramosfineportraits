@@ -1,0 +1,32 @@
+<div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_row-no-padding">
+    <div>
+        <div class="vc_column-inner">
+            <div class="wpb_wrapper">
+                <div class="price-list row price-list-59bbbd75471e6 type-big">
+                    {% for item in data %}
+                        <div class="item price-list-item-59bbba984027a white"
+                             style="background-image: url({{ item.backgroundImage }})">
+                            <h3 class="h">{{ item.name }}</h3>
+                            <div class="price">{{ item.price }}</div>
+                            <div class="options">
+                                <div class="wrap">
+                                    <div class="heading-decor">
+                                        <div class="h5">Includes:</div>
+                                    </div>
+                                    {% for list in item.includes %}
+                                        <div class="o-row">{{ list }}</div>
+                                    {% endfor %}
+                                    <div class="o-row">For additional information, and flexible packages please <strong>Contact Me</strong></div>
+                                </div>
+                                <a href="#" class="button-style1">Includes
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="vc_row-full-width vc_clearfix"></div>

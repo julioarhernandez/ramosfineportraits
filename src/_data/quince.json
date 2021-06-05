@@ -1,0 +1,139 @@
+{
+  "title": "Quinceanera Photo Gallery",
+  "moreLink": "/pages/gallery/quinceanera/",
+  "images": [
+    {
+      "src": "/assets/images/quinceanera/quinceanera-1.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-2.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-3.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-4.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-5.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-6.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-7.jpg",
+      "alt": "Quinceanera Photography"
+    },{
+      "src": "/assets/images/quinceanera/quinceanera-8.jpg",
+      "alt": "Quinceanera Photography"
+    },{
+      "src": "/assets/images/quinceanera/quinceanera-9.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-10.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-11.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-12.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-13.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-14.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-15.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-16.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-17.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-18.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-19.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-20.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-21.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-22.jpg",
+      "alt": "Quinceanera Photography"
+    }
+  ],
+  "packages": [
+    {
+      "name": "basic package",
+      "backgroundImage": "/assets/images/gallery/maternity-photo-1.jpg",
+      "price": "$250",
+      "includes": [
+        "Up to 1 hour session time",
+        "Pre-session consultation",
+        "Up to 2 outfit changes  ",
+        "20 digital images with print release",
+        "2 digital images with artistic edition",
+        "Additional digital images available for purchase",
+        "Print products are not included but are available for purchase",
+        "No additional cost for a small to medium family group session or simply share a session with a family member or your best friend."
+      ]
+    },
+    {
+      "name": "economic package",
+      "backgroundImage": "/assets/images/gallery/maternity-photo-2.jpg",
+      "price": "$350",
+      "includes": [
+        "Up to 2 hour session time",
+        "Pre-session consultation",
+        "Up to 4 outfit changes  ",
+        "40 digital images with print release",
+        "2 digital images with artistic edition",
+        "Additional digital images available for purchase",
+        "Print products are not included but are available for purchase",
+        "No additional cost for a small to medium family group session or simply share a session with a family member or your best friend."
+      ]
+    },
+    {
+      "name": "luxury package",
+      "backgroundImage": "/assets/images/gallery/maternity-photo-2.jpg",
+      "price": "$550",
+      "includes": [
+        "Up to 2 hour session time",
+        "Pre-session consultation",
+        "Up to 4 outfit changes  ",
+        "40 digital images with print release",
+        "2 digital images with artistic edition",
+        "Additional digital images available for purchase",
+        "Print products are not included but are available for purchase",
+        "No additional cost for a small to medium family group session or simply share a session with a family member or your best friend."
+      ]
+    }
+  ]
+}
