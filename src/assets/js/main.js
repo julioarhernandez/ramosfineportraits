@@ -341,7 +341,8 @@ document.documentElement.className += " js_active ", document.documentElement.cl
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(po, s)
     }()
-}), "function" != typeof window.vc_waypoints && (window.vc_waypoints = function () {
+}),
+"function" != typeof window.vc_waypoints && (window.vc_waypoints = function () {
     void 0 !== jQuery.fn.vcwaypoint && jQuery(".wpb_animate_when_almost_visible:not(.wpb_start_animation)").each(function () {
         var $el = jQuery(this);
         $el.vcwaypoint(function () {
@@ -2897,7 +2898,6 @@ jQuery(window).on("load", function () {
 function leadZero(n) {
     return (n < 10 ? "0" : "") + n
 }
-
 // OWL carousel
 (function ($, window, document, undefined) {
     function Owl(element, options) {
@@ -5060,7 +5060,7 @@ jQuery(document).ready(function (jQuery) {
                 }
             })
         }
-    })
+    });
 });
 jQuery(document).ready(function (jQuery) {
     jQuery(".price-list-59bbbd75471e6").each(function () {
@@ -5086,7 +5086,21 @@ jQuery(document).ready(function (jQuery) {
                 }
             })
         }
-    })
+        // lazy load background image for packages slider
+        if (jQuery.fn.vcwaypoint) {
+            head_slider.vcwaypoint(function () {
+                head_slider.find(".owl-item > .item").each(function(){
+                    let current_item = jQuery(this);
+                    const current_style = jQuery(current_item).attr('data-style');
+                    jQuery(current_item).attr('style', current_style).removeAttr("data-style");
+                    head_slider.imagesLoaded( function() {
+                        console.log('loaded');
+                        jQuery(window).trigger("resize");
+                    });
+                });
+            }, {offset: "85%"});
+        };
+    });
 });
 !function (a, b) {
 
