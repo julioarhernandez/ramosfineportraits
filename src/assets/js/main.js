@@ -296,7 +296,7 @@ WebFontConfig["google"] = {families: ["Montserrat:100,200,300,400,500,600,700,80
 });
 
 function vc_js() {
-    vc_toggleBehaviour(), vc_tabsBehaviour(), vc_accordionBehaviour(), vc_teaserGrid(), vc_carouselBehaviour(), vc_slidersBehaviour(), vc_prettyPhoto(), vc_googleplus(), vc_pinterest(), vc_progress_bar(), vc_plugin_flexslider(), vc_google_fonts(), vc_gridBehaviour(), vc_rowBehaviour(), vc_prepareHoverBox(), vc_googleMapsPointer(), vc_ttaActivation(), jQuery(document).trigger("vc_js"), window.setTimeout(vc_waypoints, 500)
+   vc_teaserGrid(), vc_carouselBehaviour(), vc_slidersBehaviour(), vc_prettyPhoto(), vc_pinterest(), vc_plugin_flexslider(), vc_google_fonts(), vc_gridBehaviour(), vc_rowBehaviour(), vc_googleMapsPointer(), vc_ttaActivation(), jQuery(document).trigger("vc_js"), window.setTimeout(vc_waypoints, 500)
 }
 
 function getSizeName() {
@@ -392,28 +392,28 @@ function vc_googleMapsPointer() {
     }), $(".wpb_gmaps_widget iframe").css("pointer-events", "none")
 }
 
-function vc_setHoverBoxPerspective(hoverBox) {
-    hoverBox.each(function () {
-        var $this = jQuery(this), width = $this.width(), perspective = 4 * width + "px";
-        $this.css("perspective", perspective)
-    })
-}
+// function vc_setHoverBoxPerspective(hoverBox) {
+//     hoverBox.each(function () {
+//         var $this = jQuery(this), width = $this.width(), perspective = 4 * width + "px";
+//         $this.css("perspective", perspective)
+//     })
+// }
 
-function vc_setHoverBoxHeight(hoverBox) {
-    hoverBox.each(function () {
-        var $this = jQuery(this), hoverBoxInner = $this.find(".vc-hoverbox-inner");
-        hoverBoxInner.css("min-height", 0);
-        var frontHeight = $this.find(".vc-hoverbox-front-inner").outerHeight(),
-            backHeight = $this.find(".vc-hoverbox-back-inner").outerHeight(),
-            hoverBoxHeight = frontHeight > backHeight ? frontHeight : backHeight;
-        hoverBoxHeight < 250 && (hoverBoxHeight = 250), hoverBoxInner.css("min-height", hoverBoxHeight + "px")
-    })
-}
+// function vc_setHoverBoxHeight(hoverBox) {
+//     hoverBox.each(function () {
+//         var $this = jQuery(this), hoverBoxInner = $this.find(".vc-hoverbox-inner");
+//         hoverBoxInner.css("min-height", 0);
+//         var frontHeight = $this.find(".vc-hoverbox-front-inner").outerHeight(),
+//             backHeight = $this.find(".vc-hoverbox-back-inner").outerHeight(),
+//             hoverBoxHeight = frontHeight > backHeight ? frontHeight : backHeight;
+//         hoverBoxHeight < 250 && (hoverBoxHeight = 250), hoverBoxInner.css("min-height", hoverBoxHeight + "px")
+//     })
+// }
 
-function vc_prepareHoverBox() {
-    var hoverBox = jQuery(".vc-hoverbox");
-    vc_setHoverBoxHeight(hoverBox), vc_setHoverBoxPerspective(hoverBox)
-}
+// function vc_prepareHoverBox() {
+//     var hoverBox = jQuery(".vc-hoverbox");
+//     vc_setHoverBoxHeight(hoverBox), vc_setHoverBoxPerspective(hoverBox)
+// }
 
 document.documentElement.className += " js_active ", document.documentElement.className += "ontouchstart" in document.documentElement ? " vc_mobile " : " vc_desktop ", function () {
     for (var prefix = ["-webkit-", "-moz-", "-ms-", "-o-", ""], i = 0; i < prefix.length; i++) prefix[i] + "transform" in document.documentElement.style && (document.documentElement.className += " vc_transform ")
@@ -429,13 +429,6 @@ document.documentElement.className += " js_active ", document.documentElement.cl
             smoothHeight: !0
         })
     })
-}), "function" != typeof window.vc_googleplus && (window.vc_googleplus = function () {
-    0 < jQuery(".wpb_googleplus").length && function () {
-        var po = document.createElement("script");
-        po.type = "text/javascript", po.async = !0, po.src = "//apis.google.com/js/plusone.js";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(po, s)
-    }()
 }), "function" != typeof window.vc_pinterest && (window.vc_pinterest = function () {
     0 < jQuery(".wpb_pinterest").length && function () {
         var po = document.createElement("script");
@@ -443,15 +436,6 @@ document.documentElement.className += " js_active ", document.documentElement.cl
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(po, s)
     }()
-}), "function" != typeof window.vc_progress_bar && (window.vc_progress_bar = function () {
-    void 0 !== jQuery.fn.waypoint && jQuery(".vc_progress_bar").waypoint(function () {
-        jQuery(this).find(".vc_single_bar").each(function (index) {
-            var $this = jQuery(this), bar = $this.find(".vc_bar"), val = bar.data("percentage-value");
-            setTimeout(function () {
-                bar.css({width: val + "%"})
-            }, 200 * index)
-        })
-    }, {offset: "85%"})
 }), "function" != typeof window.vc_waypoints && (window.vc_waypoints = function () {
     void 0 !== jQuery.fn.vcwaypoint && jQuery(".wpb_animate_when_almost_visible:not(.wpb_start_animation)").each(function () {
         var $el = jQuery(this);
@@ -459,76 +443,6 @@ document.documentElement.className += " js_active ", document.documentElement.cl
             $el.addClass("wpb_start_animation animated")
         }, {offset: "85%"})
     })
-}), "function" != typeof window.vc_toggleBehaviour && (window.vc_toggleBehaviour = function ($el) {
-    function event(e) {
-        e && e.preventDefault && e.preventDefault();
-        var title = jQuery(this), element = title.closest(".vc_toggle"), content = element.find(".vc_toggle_content");
-        element.hasClass("vc_toggle_active") ? content.slideUp({
-            duration: 300, complete: function () {
-                element.removeClass("vc_toggle_active")
-            }
-        }) : content.slideDown({
-            duration: 300, complete: function () {
-                element.addClass("vc_toggle_active")
-            }
-        })
-    }
-
-    $el ? $el.hasClass("vc_toggle_title") ? $el.unbind("click").on("click", event) : $el.find(".vc_toggle_title").unbind("click").on("click", event) : jQuery(".vc_toggle_title").unbind("click").on("click", event)
-}), "function" != typeof window.vc_tabsBehaviour && (window.vc_tabsBehaviour = function ($tab) {
-    if (jQuery.ui) {
-        var $call = $tab || jQuery(".wpb_tabs, .wpb_tour"),
-            ver = jQuery.ui && jQuery.ui.version ? jQuery.ui.version.split(".") : "1.10",
-            old_version = 1 === parseInt(ver[0]) && 9 > parseInt(ver[1]);
-        $call.each(function (index) {
-            var $tabs, interval = jQuery(this).attr("data-interval"), tabs_array = [];
-            if ($tabs = jQuery(this).find(".wpb_tour_tabs_wrapper").tabs({
-                show: function (event, ui) {
-                    wpb_prepare_tab_content(event, ui)
-                }, beforeActivate: function (event, ui) {
-                    1 !== ui.newPanel.index() && ui.newPanel.find(".vc_pie_chart:not(.vc_ready)")
-                }, activate: function (event, ui) {
-                    wpb_prepare_tab_content(event, ui)
-                }
-            }), interval && 0 < interval) try {
-                $tabs.tabs("rotate", 1e3 * interval)
-            } catch (e) {
-                window.console && window.console.log && console.log(e)
-            }
-            jQuery(this).find(".wpb_tab").each(function () {
-                tabs_array.push(this.id)
-            }), jQuery(this).find(".wpb_tabs_nav li").on("click", function (e) {
-                return e.preventDefault(), old_version ? $tabs.tabs("select", jQuery("a", this).attr("href")) : $tabs.tabs("option", "active", jQuery(this).index()), !1
-            }), jQuery(this).find(".wpb_prev_slide a, .wpb_next_slide a").on("click", function (e) {
-                if (e.preventDefault(), old_version) {
-                    var index = $tabs.tabs("option", "selected");
-                    jQuery(this).parent().hasClass("wpb_next_slide") ? index++ : index--, 0 > index ? index = $tabs.tabs("length") - 1 : index >= $tabs.tabs("length") && (index = 0), $tabs.tabs("select", index)
-                } else {
-                    var index = $tabs.tabs("option", "active"), length = $tabs.find(".wpb_tab").length;
-                    index = jQuery(this).parent().hasClass("wpb_next_slide") ? index + 1 >= length ? 0 : index + 1 : 0 > index - 1 ? length - 1 : index - 1, $tabs.tabs("option", "active", index)
-                }
-            })
-        })
-    }
-}), "function" != typeof window.vc_accordionBehaviour && (window.vc_accordionBehaviour = function () {
-    // jQuery(".wpb_accordion").each(function (index) {
-    //     var $tabs, $this = jQuery(this),
-    //         active_tab = ($this.attr("data-interval"), !isNaN(jQuery(this).data("active-tab")) && 0 < parseInt($this.data("active-tab")) && parseInt($this.data("active-tab")) - 1),
-    //         collapsible = !1 === active_tab || "yes" === $this.data("collapsible");
-    //     $tabs = $this.find(".wpb_accordion_wrapper").accordion({
-    //         header: "> div > h3",
-    //         autoHeight: !1,
-    //         heightStyle: "content",
-    //         active: active_tab,
-    //         collapsible: collapsible,
-    //         navigation: !0,
-    //         activate: vc_accordionActivate,
-    //         change: function (event, ui) {
-    //             void 0 !== jQuery.fn.isotope && ui.newContent.find(".isotope").isotope("layout"), vc_carouselBehaviour(ui.newPanel)
-    //         }
-    //     }), !0 === $this.data("vcDisableKeydown") && ($tabs.data("uiAccordion")._keydown = function () {
-    //     })
-    // })
 }), "function" != typeof window.vc_teaserGrid && (window.vc_teaserGrid = function () {
     var layout_modes = {fitrows: "fitRows", masonry: "masonry"};
     jQuery(".wpb_grid .teaser_grid_container:not(.wpb_carousel), .wpb_filtered_grid .teaser_grid_container:not(.wpb_carousel)").each(function () {
@@ -699,7 +613,7 @@ var screen_size = getSizeName();
     panel.parents(".isotope").length && panel.parents(".isotope").each(function () {
         jQuery(this).isotope("layout")
     })
-}), window.vc_googleMapsPointer, jQuery(document).ready(vc_prepareHoverBox), jQuery(window).resize(vc_prepareHoverBox), jQuery(document).ready(function ($) {
+}), window.vc_googleMapsPointer, jQuery(document).ready(function ($) {
     window.vc_js()
 });
 (function () {
