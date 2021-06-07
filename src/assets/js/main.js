@@ -311,77 +311,77 @@ function vc_ttaActivation() {
     })
 }
 
-function vc_accordionActivate(event, ui) {
-    if (ui.newPanel.length && ui.newHeader.length) {
-        var $pie_charts = ui.newPanel.find(".vc_pie_chart:not(.vc_ready)"),
-            $round_charts = ui.newPanel.find(".vc_round-chart"), $line_charts = ui.newPanel.find(".vc_line-chart"),
-            $carousel = ui.newPanel.find('[data-ride="vc_carousel"]');
-        void 0 !== jQuery.fn.isotope && ui.newPanel.find(".isotope, .wpb_image_grid_ul").isotope("layout"), ui.newPanel.find(".vc_masonry_media_grid, .vc_masonry_grid").length && ui.newPanel.find(".vc_masonry_media_grid, .vc_masonry_grid").each(function () {
-            var grid = jQuery(this).data("vcGrid");
-            grid && grid.gridBuilder && grid.gridBuilder.setMasonry && grid.gridBuilder.setMasonry()
-        }), vc_carouselBehaviour(ui.newPanel), vc_plugin_flexslider(ui.newPanel), $pie_charts.length && jQuery.fn.vcChat && $pie_charts.vcChat(), $round_charts.length && jQuery.fn.vcRoundChart && $round_charts.vcRoundChart({reload: !1}), $line_charts.length && jQuery.fn.vcLineChart && $line_charts.vcLineChart({reload: !1}), $carousel.length && jQuery.fn.carousel && $carousel.carousel("resizeAction"), ui.newPanel.parents(".isotope").length && ui.newPanel.parents(".isotope").each(function () {
-            jQuery(this).isotope("layout")
-        })
-    }
-}
+// function vc_accordionActivate(event, ui) {
+//     if (ui.newPanel.length && ui.newHeader.length) {
+//         var $pie_charts = ui.newPanel.find(".vc_pie_chart:not(.vc_ready)"),
+//             $round_charts = ui.newPanel.find(".vc_round-chart"), $line_charts = ui.newPanel.find(".vc_line-chart"),
+//             $carousel = ui.newPanel.find('[data-ride="vc_carousel"]');
+//         void 0 !== jQuery.fn.isotope && ui.newPanel.find(".isotope, .wpb_image_grid_ul").isotope("layout"), ui.newPanel.find(".vc_masonry_media_grid, .vc_masonry_grid").length && ui.newPanel.find(".vc_masonry_media_grid, .vc_masonry_grid").each(function () {
+//             var grid = jQuery(this).data("vcGrid");
+//             grid && grid.gridBuilder && grid.gridBuilder.setMasonry && grid.gridBuilder.setMasonry()
+//         }), vc_carouselBehaviour(ui.newPanel), vc_plugin_flexslider(ui.newPanel), $pie_charts.length && jQuery.fn.vcChat && $pie_charts.vcChat(), $round_charts.length && jQuery.fn.vcRoundChart && $round_charts.vcRoundChart({reload: !1}), $line_charts.length && jQuery.fn.vcLineChart && $line_charts.vcLineChart({reload: !1}), $carousel.length && jQuery.fn.carousel && $carousel.carousel("resizeAction"), ui.newPanel.parents(".isotope").length && ui.newPanel.parents(".isotope").each(function () {
+//             jQuery(this).isotope("layout")
+//         })
+//     }
+// }
 
-function vc_initVideoBackgrounds() {
-    jQuery("[data-vc-video-bg]").each(function () {
-        var youtubeUrl, youtubeId, $element = jQuery(this);
-        $element.data("vcVideoBg") ? (youtubeUrl = $element.data("vcVideoBg"), youtubeId = vcExtractYoutubeId(youtubeUrl), youtubeId && ($element.find(".vc_video-bg").remove(), insertYoutubeVideoAsBackground($element, youtubeId)), jQuery(window).on("grid:items:added", function (event, $grid) {
-            $element.has($grid).length && vcResizeVideoBackground($element)
-        })) : $element.find(".vc_video-bg").remove()
-    })
-}
+// function vc_initVideoBackgrounds() {
+//     jQuery("[data-vc-video-bg]").each(function () {
+//         var youtubeUrl, youtubeId, $element = jQuery(this);
+//         $element.data("vcVideoBg") ? (youtubeUrl = $element.data("vcVideoBg"), youtubeId = vcExtractYoutubeId(youtubeUrl), youtubeId && ($element.find(".vc_video-bg").remove(), insertYoutubeVideoAsBackground($element, youtubeId)), jQuery(window).on("grid:items:added", function (event, $grid) {
+//             $element.has($grid).length && vcResizeVideoBackground($element)
+//         })) : $element.find(".vc_video-bg").remove()
+//     })
+// }
 
-function insertYoutubeVideoAsBackground($element, youtubeId, counter) {
-    if ("undefined" == typeof YT || void 0 === YT.Player) return 100 < (counter = void 0 === counter ? 0 : counter) ? void console.warn("Too many attempts to load YouTube api") : void setTimeout(function () {
-        insertYoutubeVideoAsBackground($element, youtubeId, counter++)
-    }, 100);
-    var $container = $element.prepend('<div class="vc_video-bg vc_hidden-xs"><div class="inner"></div></div>').find(".inner");
-    new YT.Player($container[0], {
-        width: "100%",
-        height: "100%",
-        videoId: youtubeId,
-        playerVars: {
-            playlist: youtubeId,
-            iv_load_policy: 3,
-            enablejsapi: 1,
-            disablekb: 1,
-            autoplay: 1,
-            controls: 0,
-            showinfo: 0,
-            rel: 0,
-            loop: 1,
-            wmode: "transparent"
-        },
-        events: {
-            onReady: function (event) {
-                event.target.mute().setLoop(!0)
-            }
-        }
-    }), vcResizeVideoBackground($element), jQuery(window).bind("resize", function () {
-        vcResizeVideoBackground($element)
-    })
-}
+// function insertYoutubeVideoAsBackground($element, youtubeId, counter) {
+//     if ("undefined" == typeof YT || void 0 === YT.Player) return 100 < (counter = void 0 === counter ? 0 : counter) ? void console.warn("Too many attempts to load YouTube api") : void setTimeout(function () {
+//         insertYoutubeVideoAsBackground($element, youtubeId, counter++)
+//     }, 100);
+//     var $container = $element.prepend('<div class="vc_video-bg vc_hidden-xs"><div class="inner"></div></div>').find(".inner");
+//     new YT.Player($container[0], {
+//         width: "100%",
+//         height: "100%",
+//         videoId: youtubeId,
+//         playerVars: {
+//             playlist: youtubeId,
+//             iv_load_policy: 3,
+//             enablejsapi: 1,
+//             disablekb: 1,
+//             autoplay: 1,
+//             controls: 0,
+//             showinfo: 0,
+//             rel: 0,
+//             loop: 1,
+//             wmode: "transparent"
+//         },
+//         events: {
+//             onReady: function (event) {
+//                 event.target.mute().setLoop(!0)
+//             }
+//         }
+//     }), vcResizeVideoBackground($element), jQuery(window).bind("resize", function () {
+//         vcResizeVideoBackground($element)
+//     })
+// }
 
-function vcResizeVideoBackground($element) {
-    var iframeW, iframeH, marginLeft, marginTop, containerW = $element.innerWidth(),
-        containerH = $element.innerHeight();
-    containerW / containerH < 16 / 9 ? (iframeW = containerH * (16 / 9), iframeH = containerH, marginLeft = -Math.round((iframeW - containerW) / 2) + "px", marginTop = -Math.round((iframeH - containerH) / 2) + "px", iframeW += "px", iframeH += "px") : (iframeW = containerW, iframeH = containerW * (9 / 16), marginTop = -Math.round((iframeH - containerH) / 2) + "px", marginLeft = -Math.round((iframeW - containerW) / 2) + "px", iframeW += "px", iframeH += "px"), $element.find(".vc_video-bg iframe").css({
-        maxWidth: "1000%",
-        marginLeft: marginLeft,
-        marginTop: marginTop,
-        width: iframeW,
-        height: iframeH
-    })
-}
+// function vcResizeVideoBackground($element) {
+//     var iframeW, iframeH, marginLeft, marginTop, containerW = $element.innerWidth(),
+//         containerH = $element.innerHeight();
+//     containerW / containerH < 16 / 9 ? (iframeW = containerH * (16 / 9), iframeH = containerH, marginLeft = -Math.round((iframeW - containerW) / 2) + "px", marginTop = -Math.round((iframeH - containerH) / 2) + "px", iframeW += "px", iframeH += "px") : (iframeW = containerW, iframeH = containerW * (9 / 16), marginTop = -Math.round((iframeH - containerH) / 2) + "px", marginLeft = -Math.round((iframeW - containerW) / 2) + "px", iframeW += "px", iframeH += "px"), $element.find(".vc_video-bg iframe").css({
+//         maxWidth: "1000%",
+//         marginLeft: marginLeft,
+//         marginTop: marginTop,
+//         width: iframeW,
+//         height: iframeH
+//     })
+// }
 
-function vcExtractYoutubeId(url) {
-    if (void 0 === url) return !1;
-    var id = url.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
-    return null !== id && id[1]
-}
+// function vcExtractYoutubeId(url) {
+//     if (void 0 === url) return !1;
+//     var id = url.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
+//     return null !== id && id[1]
+// }
 
 function vc_googleMapsPointer() {
     var $ = window.jQuery, $wpbGmapsWidget = $(".wpb_gmaps_widget");
@@ -511,24 +511,24 @@ document.documentElement.className += " js_active ", document.documentElement.cl
         })
     }
 }), "function" != typeof window.vc_accordionBehaviour && (window.vc_accordionBehaviour = function () {
-    jQuery(".wpb_accordion").each(function (index) {
-        var $tabs, $this = jQuery(this),
-            active_tab = ($this.attr("data-interval"), !isNaN(jQuery(this).data("active-tab")) && 0 < parseInt($this.data("active-tab")) && parseInt($this.data("active-tab")) - 1),
-            collapsible = !1 === active_tab || "yes" === $this.data("collapsible");
-        $tabs = $this.find(".wpb_accordion_wrapper").accordion({
-            header: "> div > h3",
-            autoHeight: !1,
-            heightStyle: "content",
-            active: active_tab,
-            collapsible: collapsible,
-            navigation: !0,
-            activate: vc_accordionActivate,
-            change: function (event, ui) {
-                void 0 !== jQuery.fn.isotope && ui.newContent.find(".isotope").isotope("layout"), vc_carouselBehaviour(ui.newPanel)
-            }
-        }), !0 === $this.data("vcDisableKeydown") && ($tabs.data("uiAccordion")._keydown = function () {
-        })
-    })
+    // jQuery(".wpb_accordion").each(function (index) {
+    //     var $tabs, $this = jQuery(this),
+    //         active_tab = ($this.attr("data-interval"), !isNaN(jQuery(this).data("active-tab")) && 0 < parseInt($this.data("active-tab")) && parseInt($this.data("active-tab")) - 1),
+    //         collapsible = !1 === active_tab || "yes" === $this.data("collapsible");
+    //     $tabs = $this.find(".wpb_accordion_wrapper").accordion({
+    //         header: "> div > h3",
+    //         autoHeight: !1,
+    //         heightStyle: "content",
+    //         active: active_tab,
+    //         collapsible: collapsible,
+    //         navigation: !0,
+    //         activate: vc_accordionActivate,
+    //         change: function (event, ui) {
+    //             void 0 !== jQuery.fn.isotope && ui.newContent.find(".isotope").isotope("layout"), vc_carouselBehaviour(ui.newPanel)
+    //         }
+    //     }), !0 === $this.data("vcDisableKeydown") && ($tabs.data("uiAccordion")._keydown = function () {
+    //     })
+    // })
 }), "function" != typeof window.vc_teaserGrid && (window.vc_teaserGrid = function () {
     var layout_modes = {fitrows: "fitRows", masonry: "masonry"};
     jQuery(".wpb_grid .teaser_grid_container:not(.wpb_carousel), .wpb_filtered_grid .teaser_grid_container:not(.wpb_carousel)").each(function () {
@@ -660,7 +660,7 @@ document.documentElement.className += " js_active ", document.documentElement.cl
         (window.navigator.userAgent.indexOf("MSIE ") > 0 || navigator.userAgent.match(/Trident.*rv\:11\./)) && $(".vc_row-o-full-height").each(function () {
             "flex" === $(this).css("display") && $(this).wrap('<div class="vc_ie-flexbox-fixer"></div>')
         })
-    }(), vc_initVideoBackgrounds(), function () {
+    }(), function () {
         var vcSkrollrOptions, callSkrollInit = !1;
         window.vcParallaxSkroll && window.vcParallaxSkroll.destroy(), $(".vc_parallax-inner").remove(), $("[data-5p-top-bottom]").removeAttr("data-5p-top-bottom data-30p-top-bottom"), $("[data-vc-parallax]").each(function () {
             var skrollrSpeed, skrollrSize, skrollrStart, skrollrEnd, $parallaxElement, parallaxImage, youtubeId;
