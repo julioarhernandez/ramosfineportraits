@@ -296,7 +296,7 @@ WebFontConfig["google"] = {families: ["Montserrat:100,200,300,400,500,600,700,80
 });
 
 function vc_js() {
-   vc_teaserGrid(), vc_carouselBehaviour(), vc_slidersBehaviour(), vc_prettyPhoto(), vc_pinterest(), vc_plugin_flexslider(), vc_google_fonts(), vc_gridBehaviour(), vc_rowBehaviour(), vc_googleMapsPointer(), vc_ttaActivation(), jQuery(document).trigger("vc_js"), window.setTimeout(vc_waypoints, 500)
+   vc_teaserGrid(), vc_carouselBehaviour(), vc_slidersBehaviour(), vc_pinterest(), vc_plugin_flexslider(), vc_google_fonts(), vc_gridBehaviour(), vc_rowBehaviour(), vc_googleMapsPointer(), vc_ttaActivation(), jQuery(document).trigger("vc_js"), window.setTimeout(vc_waypoints, 500)
 }
 
 function getSizeName() {
@@ -311,78 +311,6 @@ function vc_ttaActivation() {
     })
 }
 
-// function vc_accordionActivate(event, ui) {
-//     if (ui.newPanel.length && ui.newHeader.length) {
-//         var $pie_charts = ui.newPanel.find(".vc_pie_chart:not(.vc_ready)"),
-//             $round_charts = ui.newPanel.find(".vc_round-chart"), $line_charts = ui.newPanel.find(".vc_line-chart"),
-//             $carousel = ui.newPanel.find('[data-ride="vc_carousel"]');
-//         void 0 !== jQuery.fn.isotope && ui.newPanel.find(".isotope, .wpb_image_grid_ul").isotope("layout"), ui.newPanel.find(".vc_masonry_media_grid, .vc_masonry_grid").length && ui.newPanel.find(".vc_masonry_media_grid, .vc_masonry_grid").each(function () {
-//             var grid = jQuery(this).data("vcGrid");
-//             grid && grid.gridBuilder && grid.gridBuilder.setMasonry && grid.gridBuilder.setMasonry()
-//         }), vc_carouselBehaviour(ui.newPanel), vc_plugin_flexslider(ui.newPanel), $pie_charts.length && jQuery.fn.vcChat && $pie_charts.vcChat(), $round_charts.length && jQuery.fn.vcRoundChart && $round_charts.vcRoundChart({reload: !1}), $line_charts.length && jQuery.fn.vcLineChart && $line_charts.vcLineChart({reload: !1}), $carousel.length && jQuery.fn.carousel && $carousel.carousel("resizeAction"), ui.newPanel.parents(".isotope").length && ui.newPanel.parents(".isotope").each(function () {
-//             jQuery(this).isotope("layout")
-//         })
-//     }
-// }
-
-// function vc_initVideoBackgrounds() {
-//     jQuery("[data-vc-video-bg]").each(function () {
-//         var youtubeUrl, youtubeId, $element = jQuery(this);
-//         $element.data("vcVideoBg") ? (youtubeUrl = $element.data("vcVideoBg"), youtubeId = vcExtractYoutubeId(youtubeUrl), youtubeId && ($element.find(".vc_video-bg").remove(), insertYoutubeVideoAsBackground($element, youtubeId)), jQuery(window).on("grid:items:added", function (event, $grid) {
-//             $element.has($grid).length && vcResizeVideoBackground($element)
-//         })) : $element.find(".vc_video-bg").remove()
-//     })
-// }
-
-// function insertYoutubeVideoAsBackground($element, youtubeId, counter) {
-//     if ("undefined" == typeof YT || void 0 === YT.Player) return 100 < (counter = void 0 === counter ? 0 : counter) ? void console.warn("Too many attempts to load YouTube api") : void setTimeout(function () {
-//         insertYoutubeVideoAsBackground($element, youtubeId, counter++)
-//     }, 100);
-//     var $container = $element.prepend('<div class="vc_video-bg vc_hidden-xs"><div class="inner"></div></div>').find(".inner");
-//     new YT.Player($container[0], {
-//         width: "100%",
-//         height: "100%",
-//         videoId: youtubeId,
-//         playerVars: {
-//             playlist: youtubeId,
-//             iv_load_policy: 3,
-//             enablejsapi: 1,
-//             disablekb: 1,
-//             autoplay: 1,
-//             controls: 0,
-//             showinfo: 0,
-//             rel: 0,
-//             loop: 1,
-//             wmode: "transparent"
-//         },
-//         events: {
-//             onReady: function (event) {
-//                 event.target.mute().setLoop(!0)
-//             }
-//         }
-//     }), vcResizeVideoBackground($element), jQuery(window).bind("resize", function () {
-//         vcResizeVideoBackground($element)
-//     })
-// }
-
-// function vcResizeVideoBackground($element) {
-//     var iframeW, iframeH, marginLeft, marginTop, containerW = $element.innerWidth(),
-//         containerH = $element.innerHeight();
-//     containerW / containerH < 16 / 9 ? (iframeW = containerH * (16 / 9), iframeH = containerH, marginLeft = -Math.round((iframeW - containerW) / 2) + "px", marginTop = -Math.round((iframeH - containerH) / 2) + "px", iframeW += "px", iframeH += "px") : (iframeW = containerW, iframeH = containerW * (9 / 16), marginTop = -Math.round((iframeH - containerH) / 2) + "px", marginLeft = -Math.round((iframeW - containerW) / 2) + "px", iframeW += "px", iframeH += "px"), $element.find(".vc_video-bg iframe").css({
-//         maxWidth: "1000%",
-//         marginLeft: marginLeft,
-//         marginTop: marginTop,
-//         width: iframeW,
-//         height: iframeH
-//     })
-// }
-
-// function vcExtractYoutubeId(url) {
-//     if (void 0 === url) return !1;
-//     var id = url.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
-//     return null !== id && id[1]
-// }
-
 function vc_googleMapsPointer() {
     var $ = window.jQuery, $wpbGmapsWidget = $(".wpb_gmaps_widget");
     $wpbGmapsWidget.on("click", function () {
@@ -391,29 +319,6 @@ function vc_googleMapsPointer() {
         $("iframe", this).css("pointer-events", "none")
     }), $(".wpb_gmaps_widget iframe").css("pointer-events", "none")
 }
-
-// function vc_setHoverBoxPerspective(hoverBox) {
-//     hoverBox.each(function () {
-//         var $this = jQuery(this), width = $this.width(), perspective = 4 * width + "px";
-//         $this.css("perspective", perspective)
-//     })
-// }
-
-// function vc_setHoverBoxHeight(hoverBox) {
-//     hoverBox.each(function () {
-//         var $this = jQuery(this), hoverBoxInner = $this.find(".vc-hoverbox-inner");
-//         hoverBoxInner.css("min-height", 0);
-//         var frontHeight = $this.find(".vc-hoverbox-front-inner").outerHeight(),
-//             backHeight = $this.find(".vc-hoverbox-back-inner").outerHeight(),
-//             hoverBoxHeight = frontHeight > backHeight ? frontHeight : backHeight;
-//         hoverBoxHeight < 250 && (hoverBoxHeight = 250), hoverBoxInner.css("min-height", hoverBoxHeight + "px")
-//     })
-// }
-
-// function vc_prepareHoverBox() {
-//     var hoverBox = jQuery(".vc-hoverbox");
-//     vc_setHoverBoxHeight(hoverBox), vc_setHoverBoxPerspective(hoverBox)
-// }
 
 document.documentElement.className += " js_active ", document.documentElement.className += "ontouchstart" in document.documentElement ? " vc_mobile " : " vc_desktop ", function () {
     for (var prefix = ["-webkit-", "-moz-", "-ms-", "-o-", ""], i = 0; i < prefix.length; i++) prefix[i] + "transform" in document.documentElement.style && (document.documentElement.className += " vc_transform ")
@@ -499,27 +404,6 @@ document.documentElement.className += " js_active ", document.documentElement.cl
             $imagesGrid.isotope({itemSelector: ".isotope-item", layoutMode: "fitRows"})
         }) : this_element.find(".wpb_image_grid_ul").isotope({itemSelector: ".isotope-item", layoutMode: "fitRows"}))
     })
-}), "function" != typeof window.vc_prettyPhoto && (window.vc_prettyPhoto = function () {
-    try {
-        jQuery && jQuery.fn && jQuery.fn.prettyPhoto && jQuery('a.prettyphoto, .gallery-icon a[href*=".jpg"]').prettyPhoto({
-            animationSpeed: "normal",
-            hook: "data-rel",
-            padding: 15,
-            opacity: .7,
-            showTitle: !0,
-            allowresize: !0,
-            counter_separator_label: "/",
-            hideflash: !1,
-            deeplinking: !1,
-            modal: !1,
-            callback: function () {
-                location.href.indexOf("#!prettyPhoto") > -1 && (location.hash = "")
-            },
-            social_tools: ""
-        })
-    } catch (err) {
-        window.console && window.console.log && console.log(err)
-    }
 }), "function" != typeof window.vc_google_fonts && (window.vc_google_fonts = function () {
     return !1
 }), window.vcParallaxSkroll = !1, "function" != typeof window.vc_rowBehaviour && (window.vc_rowBehaviour = function () {
