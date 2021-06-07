@@ -1,5 +1,5 @@
 if (typeof WebFontConfig === "undefined") {
-    WebFontConfig = new Object
+    WebFontConfig = {}
 }
 WebFontConfig["google"] = {families: ["Montserrat:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic&display=swap"]};
 (function () {
@@ -3932,173 +3932,7 @@ function leadZero(n) {
     };
     $.fn.owlCarousel.Constructor.Plugins.AutoHeight = AutoHeight
 })(window.Zepto || window.jQuery, window, document);
-(function ($, window, document, undefined) {
-    var Video = function (carousel) {
-        this._core = carousel;
-        this._videos = {};
-        this._playing = null;
-        this._handlers = {
-            "initialized.owl.carousel": $.proxy(function (e) {
-                if (e.namespace) {
-                    this._core.register({type: "state", name: "playing", tags: ["interacting"]})
-                }
-            }, this), "resize.owl.carousel": $.proxy(function (e) {
-                if (e.namespace && this._core.settings.video && this.isInFullScreen()) {
-                    e.preventDefault()
-                }
-            }, this), "refreshed.owl.carousel": $.proxy(function (e) {
-                if (e.namespace && this._core.is("resizing")) {
-                    this._core.$stage.find(".cloned .owl-video-frame").remove()
-                }
-            }, this), "changed.owl.carousel": $.proxy(function (e) {
-                if (e.namespace && e.property.name === "position" && this._playing) {
-                    this.stop()
-                }
-            }, this), "prepared.owl.carousel": $.proxy(function (e) {
-                if (!e.namespace) {
-                    return
-                }
-                var $element = $(e.content).find(".owl-video");
-                if ($element.length) {
-                    $element.css("display", "none");
-                    this.fetch($element, $(e.content))
-                }
-            }, this)
-        };
-        this._core.options = $.extend({}, Video.Defaults, this._core.options);
-        this._core.$element.on(this._handlers);
-        this._core.$element.on("click.owl.video", ".owl-video-play-icon", $.proxy(function (e) {
-            this.play(e)
-        }, this))
-    };
-    Video.Defaults = {video: false, videoHeight: false, videoWidth: false};
-    Video.prototype.fetch = function (target, item) {
-        var type = function () {
-                if (target.attr("data-vimeo-id")) {
-                    return "vimeo"
-                } else if (target.attr("data-vzaar-id")) {
-                    return "vzaar"
-                } else {
-                    return "youtube"
-                }
-            }(), id = target.attr("data-vimeo-id") || target.attr("data-youtube-id") || target.attr("data-vzaar-id"),
-            width = target.attr("data-width") || this._core.settings.videoWidth,
-            height = target.attr("data-height") || this._core.settings.videoHeight, url = target.attr("href");
-        if (url) {
-            id = url.match(/(http:|https:|)\/\/(player.|www.|app.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com)|vzaar\.com)\/(video\/|videos\/|embed\/|channels\/.+\/|groups\/.+\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(\&\S+)?/);
-            if (id[3].indexOf("youtu") > -1) {
-                type = "youtube"
-            } else if (id[3].indexOf("vimeo") > -1) {
-                type = "vimeo"
-            } else if (id[3].indexOf("vzaar") > -1) {
-                type = "vzaar"
-            } else {
-                throw new Error("Video URL not supported.")
-            }
-            id = id[6]
-        } else {
-            throw new Error("Missing video URL.")
-        }
-        this._videos[url] = {type: type, id: id, width: width, height: height};
-        item.attr("data-video", url);
-        this.thumbnail(target, this._videos[url])
-    };
-    Video.prototype.thumbnail = function (target, video) {
-        var tnLink, icon, path,
-            dimensions = video.width && video.height ? 'style="width:' + video.width + "px;height:" + video.height + 'px;"' : "",
-            customTn = target.find("img"), srcType = "src", lazyClass = "", settings = this._core.settings,
-            create = function (path) {
-                icon = '<div class="owl-video-play-icon"></div>';
-                if (settings.lazyLoad) {
-                    tnLink = '<div class="owl-video-tn ' + lazyClass + '" ' + srcType + '="' + path + '"></div>'
-                } else {
-                    tnLink = '<div class="owl-video-tn" style="opacity:1;background-image:url(' + path + ')"></div>'
-                }
-                target.after(tnLink);
-                target.after(icon)
-            };
-        target.wrap('<div class="owl-video-wrapper"' + dimensions + "></div>");
-        if (this._core.settings.lazyLoad) {
-            srcType = "data-src";
-            lazyClass = "owl-lazy"
-        }
-        if (customTn.length) {
-            create(customTn.attr(srcType));
-            customTn.remove();
-            return false
-        }
-        if (video.type === "youtube") {
-            path = "//img.youtube.com/vi/" + video.id + "/hqdefault.jpg";
-            create(path)
-        } else if (video.type === "vimeo") {
-            $.ajax({
-                type: "GET",
-                url: "//vimeo.com/api/v2/video/" + video.id + ".json",
-                jsonp: "callback",
-                dataType: "jsonp",
-                success: function (data) {
-                    path = data[0].thumbnail_large;
-                    create(path)
-                }
-            })
-        } else if (video.type === "vzaar") {
-            $.ajax({
-                type: "GET",
-                url: "//vzaar.com/api/videos/" + video.id + ".json",
-                jsonp: "callback",
-                dataType: "jsonp",
-                success: function (data) {
-                    path = data.framegrab_url;
-                    create(path)
-                }
-            })
-        }
-    };
-    Video.prototype.stop = function () {
-        this._core.trigger("stop", null, "video");
-        this._playing.find(".owl-video-frame").remove();
-        this._playing.removeClass("owl-video-playing");
-        this._playing = null;
-        this._core.leave("playing");
-        this._core.trigger("stopped", null, "video")
-    };
-    Video.prototype.play = function (event) {
-        var target = $(event.target), item = target.closest("." + this._core.settings.itemClass),
-            video = this._videos[item.attr("data-video")], width = video.width || "100%",
-            height = video.height || this._core.$stage.height(), html;
-        if (this._playing) {
-            return
-        }
-        this._core.enter("playing");
-        this._core.trigger("play", null, "video");
-        item = this._core.items(this._core.relative(item.index()));
-        this._core.reset(item.index());
-        if (video.type === "youtube") {
-            html = '<iframe width="' + width + '" height="' + height + '" src="//www.youtube.com/embed/' + video.id + "?autoplay=1&rel=0&v=" + video.id + '" frameborder="0" allowfullscreen></iframe>'
-        } else if (video.type === "vimeo") {
-            html = '<iframe src="//player.vimeo.com/video/' + video.id + '?autoplay=1" width="' + width + '" height="' + height + '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
-        } else if (video.type === "vzaar") {
-            html = '<iframe frameborder="0"' + 'height="' + height + '"' + 'width="' + width + '" allowfullscreen mozallowfullscreen webkitAllowFullScreen ' + 'src="//view.vzaar.com/' + video.id + '/player?autoplay=true"></iframe>'
-        }
-        $('<div class="owl-video-frame">' + html + "</div>").insertAfter(item.find(".owl-video"));
-        this._playing = item.addClass("owl-video-playing")
-    };
-    Video.prototype.isInFullScreen = function () {
-        var element = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement;
-        return element && $(element).parent().hasClass("owl-video-frame")
-    };
-    Video.prototype.destroy = function () {
-        var handler, property;
-        this._core.$element.off("click.owl.video");
-        for (handler in this._handlers) {
-            this._core.$element.off(handler, this._handlers[handler])
-        }
-        for (property in Object.getOwnPropertyNames(this)) {
-            typeof this[property] != "function" && (this[property] = null)
-        }
-    };
-    $.fn.owlCarousel.Constructor.Plugins.Video = Video
-})(window.Zepto || window.jQuery, window, document);
+
 (function ($, window, document, undefined) {
     var Animate = function (scope) {
         this.core = scope;
@@ -4507,142 +4341,10 @@ function leadZero(n) {
 })(window.Zepto || window.jQuery, window, document);
 
 jQuery(document).ready(function () {
-    jQuery(".tabs").each(function () {
-        var item = jQuery(this).find(".tabs-body > .item"), tabs_head = jQuery(this).find(".tabs-head");
-        item.each(function () {
-            var name = jQuery(this).data("name");
-            tabs_head.append('<div class="item">' + name + "</div>")
-        });
-        tabs_head.find(".item:first-of-type").addClass("active-tab");
-        jQuery(this).find(".tabs-body > .item:first-of-type").css("display", "block")
-    });
-    jQuery(".vertical-parallax-slider").each(function () {
-        jQuery("body").addClass("body-one-screen");
-        var this_el = jQuery(this), el = this_el.find(".item"), delay = 800,
-            dots = this_el.parent().find(".pagination-dots"), nav = this_el.parent().find(".nav-arrows"),
-            status = false;
-        el.each(function () {
-            jQuery(this).css("z-index", parseInt(el.length - jQuery(this).index()));
-            dots.append("<span></span>")
-        });
-
-        function vertical_parallax(coef, index) {
-            index = index === undefined ? false : index;
-            if (coef != false) {
-                var index = this_el.find(".item.active").index() - coef
-            }
-            el.eq(index).removeClass("prev next").addClass("active").siblings().removeClass("active");
-            el.eq(index).prevAll().removeClass("next").addClass("prev");
-            el.eq(index).nextAll().removeClass("prev").addClass("next");
-            dots.find("span").eq(index).addClass("active").siblings().removeClass("active")
-        }
-
-        vertical_parallax(false, 0);
-        this_el.on("mousewheel wheel", function (e) {
-            if (jQuery(window).width() > 992) {
-                e.preventDefault();
-                var cur = this_el.find(".item.active").index();
-                if (status != true) {
-                    status = true;
-                    if (e.originalEvent.deltaY > 0 && cur != parseInt(el.length - 1)) {
-                        vertical_parallax("-1");
-                        setTimeout(function () {
-                            status = false
-                        }, delay)
-                    } else if (e.originalEvent.deltaY < 0 && cur != 0) {
-                        vertical_parallax("1");
-                        setTimeout(function () {
-                            status = false
-                        }, delay)
-                    } else {
-                        status = false
-                    }
-                }
-            }
-        });
-        dots.on("click", "span:not(.active)", function () {
-            jQuery(this).addClass("active").siblings().removeClass("active");
-            vertical_parallax(false, jQuery(this).index())
-        });
-        nav.on("click", ".prev", function () {
-            var cur = this_el.find(".item.active").index();
-            if (cur != parseInt(el.length - 1)) {
-                vertical_parallax("-1")
-            }
-        }).on("click", ".next", function () {
-            var cur = this_el.find(".item.active").index();
-            if (cur != 0) {
-                vertical_parallax("1")
-            }
-        })
-    });
-
-    function equalHeight(group) {
-        if (jQuery(window).width() > "768") {
-            var tallest = 0;
-            jQuery(group).each(function () {
-                var thisHeight = jQuery(this).css("height", "").height();
-                if (thisHeight > tallest) {
-                    tallest = thisHeight
-                }
-            });
-            jQuery(group).height(tallest)
-        } else {
-            jQuery(group).height("auto")
-        }
-    }
 
     if (jQuery(".navigation > ul > li").length > 6) {
         jQuery(".navigation").addClass("min")
     }
-    jQuery(".project-slider").each(function () {
-        var head_slider = jQuery(this);
-        if (head_slider.find(".item").length == 1) {
-            head_slider.parent().removeClass("with-carousel-nav")
-        }
-        if (jQuery(this).find(".item").length > 1) {
-            head_slider.addClass("owl-carousel").owlCarousel({
-                items: 1,
-                nav: true,
-                dots: false,
-                autoplay: false,
-                navClass: ["owl-prev basic-ui-icon-left-arrow", "owl-next basic-ui-icon-right-arrow"],
-                navText: false,
-                autoHeight: true,
-                responsive: {0: {nav: false}, 480: {}, 768: {nav: true}}
-            });
-            var child_carousel = head_slider.next(".project-slider-carousel");
-            var i = 0;
-            var flag = false;
-            var c_items = "4";
-            if (head_slider.find(".owl-item:not(.cloned)").find(".item").length < 4) {
-                c_items = head_slider.find(".owl-item:not(.cloned)").find(".item").length
-            }
-            var child_carousel_c = child_carousel.addClass("owl-carousel").owlCarousel({
-                items: 1,
-                nav: true,
-                dots: false,
-                autoplay: false,
-                navClass: ["owl-prev basic-ui-icon-left-arrow", "owl-next basic-ui-icon-right-arrow"],
-                navText: false,
-                margin: 15,
-                responsive: {0: {nav: false}, 480: {}, 768: {nav: true, items: c_items}}
-            }).on("click initialized.owl.carousel", ".item", function (e) {
-                e.preventDefault();
-                head_slider.trigger("to.owl.carousel", [jQuery(e.target).parents(".owl-item").index(), 300, true]);
-                jQuery(e.target).parents(".owl-item").addClass("active-item").siblings().removeClass("active-item")
-            }).data("owl.carousel");
-            var child_carousel_item = child_carousel.find(".owl-item.active");
-            head_slider.on("change.owl.carousel", function (e) {
-                if (e.namespace && e.property.name === "position" && !flag) {
-                    flag = true;
-                    child_carousel_c.to(e.relatedTarget.relative(e.property.value), 300, true);
-                    head_slider.parent().find(".banner-carousel .owl-item.active").first().addClass("active-item").siblings().removeClass("active-item");
-                    flag = false
-                }
-            }).data("owl.carousel")
-        }
-    });
     jQuery(document).ready(function () {
         jQuery(".image-comparison-slider").each(function () {
             var cur = jQuery(this);
@@ -4698,44 +4400,6 @@ jQuery(document).ready(function () {
     jQuery(".right-click-disable-message:not(.lic)").on("click", function () {
         jQuery(this).removeClass("active");
         return false
-    });
-    jQuery(".category-slider-area").each(function () {
-        var el_area = jQuery(this), items = el_area.find(".item"),
-            images_area = el_area.find(".category-slider-images");
-        items.each(function () {
-            jQuery(this).attr("data-eq", jQuery(this).index());
-            images_area.append('<div class="img-item" style="background-image: url(' + jQuery(this).data("image") + ')"><div class="num">' + leadZero(jQuery(this).index() + 1) + "</div></div>")
-        });
-        el_area.find(".category-slider").on("initialized.owl.carousel translated.owl.carousel", function (e) {
-            var eq = jQuery(this).find(".center .item").data("eq");
-            images_area.find(".img-item").eq(eq).addClass("active").siblings().removeClass("active")
-        });
-        el_area.find(".category-slider").owlCarousel({
-            loop: true,
-            items: 1,
-            center: true,
-            autoWidth: true,
-            nav: false,
-            dots: false,
-            autoplay: false,
-            autoplayHoverPause: true,
-            navText: false,
-            slideBy: 1
-        });
-        el_area.on("mousewheel wheel", function (e) {
-            var d = e.originalEvent.deltaY;
-            if (e.originalEvent.deltaY) {
-                d = e.originalEvent.deltaY
-            } else {
-                d = e.deltaY
-            }
-            if (d > 0) {
-                el_area.find(".category-slider").trigger("next.owl")
-            } else {
-                el_area.find(".category-slider").trigger("prev.owl")
-            }
-            e.preventDefault()
-        })
     });
     jQuery(".accordion-items .item .top").on("click", function () {
         if (jQuery(this).parent().hasClass("active")) {
@@ -5021,21 +4685,12 @@ jQuery(document).ready(function () {
         });
         jQuery(".blog-type-grid").each(function () {
         });
-        jQuery(".woocommerce .products").each(function () {
-            equalHeight(jQuery(this).find("article div.product"))
-        });
         jQuery(".project-horizontal-slider img, .project-horizontal, .project-horizontal-img").css("height", jQuery(window).outerHeight() - jQuery(".header-space:not(.hide)").height() - jQuery(".site-footer").outerHeight() - jQuery("#wpadminbar").outerHeight());
         jQuery(".project-horizontal .cell").css("height", jQuery(".project-horizontal").outerHeight());
         jQuery(".split-screen").each(function () {
             var this_el = jQuery(this);
             this_el.css("height", jQuery(window).height() - jQuery("#wpadminbar").outerHeight());
             this_el.find(".img-item").css("height", this_el.height());
-            this_el.find(".cell").css("height", this_el.height())
-        });
-        jQuery(".category-slider-area").each(function () {
-            var this_el = jQuery(this);
-            this_el.css("height", jQuery(window).height() - jQuery("#wpadminbar").outerHeight());
-            this_el.find(".category-slider-images").css("height", this_el.height());
             this_el.find(".cell").css("height", this_el.height())
         });
         jQuery(".vertical-parallax-slider").each(function () {
@@ -5059,24 +4714,6 @@ jQuery(document).ready(function () {
                 jQuery(this).find(".jp-playlist").css("height", cover_height - top_height)
             }
         })
-    });
-    jQuery(".project-horizontal-slider").each(function () {
-        var head_slider = jQuery(this);
-        if (head_slider.find(".item").length > 1) {
-            head_slider.imagesLoaded(function () {
-                head_slider.addClass("owl-carousel").owlCarousel({
-                    items: 1,
-                    nav: true,
-                    dots: false,
-                    autoplay: false,
-                    autoWidth: true,
-                    navClass: ["owl-prev basic-ui-icon-left-arrow", "owl-next basic-ui-icon-right-arrow"],
-                    navText: false,
-                    margin: 30,
-                    responsive: {0: {nav: false}, 480: {}, 768: {nav: true}}
-                })
-            })
-        }
     });
     jQuery("#scroll-top").on("click", function () {
         jQuery("body, html").animate({scrollTop: "0"}, 1100);
@@ -5530,15 +5167,15 @@ jQuery(document).ready(function (jQuery) {
     }
 
     if (tests.csstransitions()) {
-        $.support.transition = new String(prefixed("transition"));
+        $.support.transition = String(prefixed("transition"));
         $.support.transition.end = events.transition.end[$.support.transition]
     }
     if (tests.cssanimations()) {
-        $.support.animation = new String(prefixed("animation"));
+        $.support.animation = String(prefixed("animation"));
         $.support.animation.end = events.animation.end[$.support.animation]
     }
     if (tests.csstransforms()) {
-        $.support.transform = new String(prefixed("transform"));
+        $.support.transform = String(prefixed("transform"));
         $.support.transform3d = tests.csstransforms3d()
     }
 })(window.Zepto || window.jQuery, window, document);
