@@ -5094,7 +5094,6 @@ jQuery(document).ready(function (jQuery) {
                     const current_style = jQuery(current_item).attr('data-style');
                     jQuery(current_item).attr('style', current_style).removeAttr("data-style");
                     head_slider.imagesLoaded( function() {
-                        console.log('loaded');
                         jQuery(window).trigger("resize");
                     });
                 });
