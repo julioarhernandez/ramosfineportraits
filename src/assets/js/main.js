@@ -5086,19 +5086,22 @@ jQuery(document).ready(function (jQuery) {
                 }
             })
         }
-        // lazy load background image for packages slider
-        if (jQuery.fn.vcwaypoint) {
-            head_slider.vcwaypoint(function () {
-                head_slider.find(".owl-item > .item").each(function(){
-                    let current_item = jQuery(this);
-                    const current_style = jQuery(current_item).attr('data-style');
-                    jQuery(current_item).attr('style', current_style).removeAttr("data-style");
-                    head_slider.imagesLoaded( function() {
-                        jQuery(window).trigger("resize");
+        window.setTimeout(function(){
+            // lazy load background image for packages slider
+            if (jQuery.fn.vcwaypoint) {
+                head_slider.vcwaypoint(function () {
+                    head_slider.find(".owl-item > .item").each(function () {
+                        let current_item = jQuery(this);
+                        const current_style = jQuery(current_item).attr('data-style');
+                        jQuery(current_item).attr('style', current_style).removeAttr("data-style");
+                        head_slider.imagesLoaded(function () {
+                            jQuery(window).trigger("resize");
+                        });
                     });
-                });
-            }, {offset: "85%"});
-        };
+                }, {offset: "85%"});
+            };
+        }, 500);
+
     });
 });
 !function (a, b) {
