@@ -1,0 +1,90 @@
+{
+  "title": "Studio Photo Gallery",
+  "moreLink": "/pages/gallery/studio/",
+  "images": [
+    {
+      "src": "/assets/images/studio/studio-1.jpg",
+      "alt": "Studio Photography"
+    },
+    {
+      "src": "/assets/images/studio/studio-2.jpg",
+      "alt": "Studio Photography"
+    },
+    {
+      "src": "/assets/images/studio/studio-3.jpg",
+      "alt": "Studio Photography"
+    },
+    {
+      "src": "/assets/images/studio/studio-4.jpg",
+      "alt": "Studio Photography"
+    },
+    {
+      "src": "/assets/images/studio/studio-5.jpg",
+      "alt": "Studio Photography"
+    },
+    {
+      "src": "/assets/images/studio/studio-6.jpg",
+      "alt": "Studio Photography"
+    },
+    {
+      "src": "/assets/images/studio/studio-7.jpg",
+      "alt": "Studio Photography"
+    },
+    {
+      "src": "/assets/images/studio/studio-8.jpg",
+      "alt": "Studio Photography"
+    },
+    {
+      "src": "/assets/images/studio/studio-9.jpg",
+      "alt": "Studio Photography"
+    }
+  ],
+  "packages": [
+    {
+      "name": "Gold Package",
+      "backgroundImage": "/assets/images/gallery/fine-art-photography-quince.jpg",
+      "price": "$250",
+      "includes": [
+        "Up to 1 hour session time",
+        "10 High quality digital images",
+        "1 outfit changes",
+        "Private online viewing gallery",
+        "Additional digital images available for purchase",
+        "Print products are not included but are available for purchase",
+        "Outdoor photography session available with extra charge of $100"
+      ]
+    },
+    {
+      "name": "Platinum Package",
+      "backgroundImage": "/assets/images/gallery/professional-kid-studio-photography.jpg",
+      "price": "$350",
+      "includes": [
+        "Up to 1 hour session time",
+        "20 High quality digital images",
+        "2 outfit changes",
+        "2 airbrushed photos",
+        "One 20x30 paper print",
+        "Private online viewing gallery",
+        "Additional digital images available for purchase",
+        "Print products are not included but are available for purchase",
+        "Outdoor photography session available with extra charge of $100"
+      ]
+    },
+    {
+      "name": "Diamond Package",
+      "backgroundImage": "/assets/images/gallery/professional-studio-photography.jpg",
+      "price": "$500",
+      "includes": [
+        "Up to 1 and a half hour session time",
+        "All photo session digital images",
+        "Up to 3 outfit changes",
+        "5 airbrushed photos",
+        "One 20x30 canvas print",
+        "Private online viewing gallery",
+        "Additional digital images available for purchase",
+        "Print products are not included but are available for purchase",
+        "Outdoor photography session available with extra charge of $100"
+      ]
+    }
+  ]
+}

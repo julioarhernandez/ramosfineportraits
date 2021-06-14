@@ -1,0 +1,156 @@
+{
+  "title": "Maternity Photo Gallery",
+  "moreLink": "/pages/gallery/maternity/",
+  "images": [
+    {
+      "src": "/assets/images/maternity/maternity-photography-1.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "src": "/assets/images/maternity/maternity-photography-2.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "src": "/assets/images/maternity/maternity-photography-3.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "src": "/assets/images/maternity/maternity-photography-4.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "src": "/assets/images/maternity/maternity-photography-5.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "src": "/assets/images/maternity/maternity-photography-6.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "src": "/assets/images/maternity/maternity-photography-7.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "src": "/assets/images/maternity/maternity-photography-8.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "src": "/assets/images/maternity/maternity-photography-9.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "src": "/assets/images/maternity/maternity-photography-10.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "src": "/assets/images/maternity/maternity-photography-11.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "src": "/assets/images/maternity/maternity-photography-12.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "src": "/assets/images/maternity/maternity-photography-13.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "src": "/assets/images/maternity/maternity-photography-14.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "src": "/assets/images/maternity/maternity-photography-15.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "src": "/assets/images/maternity/maternity-photography-16.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "src": "/assets/images/maternity/maternity-photography-17.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "src": "/assets/images/maternity/maternity-photography-18.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "src": "/assets/images/maternity/maternity-photography-19.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "src": "/assets/images/maternity/maternity-photography-20.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "src": "/assets/images/maternity/maternity-photography-21.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "src": "/assets/images/maternity/maternity-photography-22.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "src": "/assets/images/maternity/maternity-photography-23.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "src": "/assets/images/maternity/maternity-photography-24.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "src": "/assets/images/maternity/maternity-photography-25.jpg",
+      "alt": "Maternity Photography"
+    },
+    {
+      "src": "/assets/images/maternity/maternity-photography-26.jpg",
+      "alt": "Maternity Photography"
+    }
+
+  ],
+  "packages": [
+    {
+      "name": "Gold package",
+      "backgroundImage": "/assets/images/gallery/maternity-photography-1.jpg",
+      "price": "$350",
+      "includes": [
+        "Up to 1 hour photo session\n",
+        "20 high quality digital images",
+        "Use of our maternity dresses, accessories and props",
+        "Photoshoot session at studio or Location",
+        "Artistic edition available for purchase",
+        "Additional digital and printed images available for purchase"
+      ]
+    },
+    {
+      "name": "Platinum package",
+      "backgroundImage": "/assets/images/gallery/maternity-photography-2.jpg",
+      "price": "$450",
+      "includes": [
+        "Up to 2-hour photo session",
+        "40 high quality digital images",
+        "2 digital photos with artistic edition",
+        "1 20x30 Enlargement",
+        "Use of our maternity dresses, accessories and props",
+        "Photoshoot session at studio or Location",
+        "Artistic edition available for purchase",
+        "Additional digital and printed images available for purchase"
+      ]
+    },
+    {
+      "name": "Diamond package",
+      "backgroundImage": "/assets/images/gallery/maternity-photography-3.jpg",
+      "price": "$550",
+      "includes": [
+        "Up to 3-hour photo session",
+        "All high quality digital images",
+        "5 digital photos with artistic edition",
+        "1 20x30 Enlargement",
+        "Use of our maternity dresses, accessories and props",
+        "Photoshoot session at studio or Location",
+        "Artistic edition available for purchase",
+        "Additional digital and printed images available for purchase"
+      ]
+    }
+  ]
+}

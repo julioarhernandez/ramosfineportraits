@@ -1,0 +1,136 @@
+{
+  "title": "Quinceanera Photo Gallery",
+  "moreLink": "/pages/gallery/quinceanera/",
+  "images": [
+    {
+      "src": "/assets/images/quinceanera/quinceanera-1.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-2.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-3.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-4.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-5.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-6.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-7.jpg",
+      "alt": "Quinceanera Photography"
+    },{
+      "src": "/assets/images/quinceanera/quinceanera-8.jpg",
+      "alt": "Quinceanera Photography"
+    },{
+      "src": "/assets/images/quinceanera/quinceanera-9.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-10.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-11.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-12.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-13.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-14.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-15.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-16.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-17.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-18.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-19.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-20.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-21.jpg",
+      "alt": "Quinceanera Photography"
+    },
+    {
+      "src": "/assets/images/quinceanera/quinceanera-22.jpg",
+      "alt": "Quinceanera Photography"
+    }
+  ],
+  "packages": [
+    {
+      "name": "Gold package",
+      "backgroundImage": "/assets/images/gallery/quinceanera-photography-packages.jpg",
+      "price": "$1,299",
+      "includes": [
+        "1 Album 16 pg (10x10) - 32 Photos",
+        "1  20x30 Enlargement",
+        "40 digital Pictures accessible from Internet and Pen drive",
+        "20 digital images with print release",
+        "1 Quinceañera Gowns, Crown and Accessories",
+        "Photoshoot session in one day at one Location",
+        "Additional digital images available for purchase"
+      ]
+    },
+    {
+      "name": "Platinum package",
+      "backgroundImage": "/assets/images/gallery/quinceanera-photography-packages-2.jpg",
+      "price": "$2,399",
+      "includes": [
+        "1 Album 20 pg (12x12) - 40 Photos",
+        "1  20x30 Enlargement",
+        "60 digital Pictures accessible from Internet and Pen drive",
+        "40 digital images with print release",
+        "1 Quinceañera Gowns, Crown and Accessories",
+        "Photoshoot session in one day at two locations",
+        "Additional digital images available for purchase"
+      ]
+    },
+    {
+      "name": "Diamond package",
+      "backgroundImage": "/assets/images/gallery/quinceanera-photography-packages-3.jpg",
+      "price": "$5,500",
+      "includes": [
+        "1 Album 30 pg (12x16) - 60 Photos",
+        "1  20x30 Acrylic Enlargement\n",
+        "All digital Pictures accessible from Internet and Pen Drive",
+        "1 Quinceañera Gowns, 2 Dress, Crown and Accessories",
+        "Studio, Beach and  Other Location 2 days Photoshoot session",
+        "Make up and hairstyle",
+        "Additional digital images available for purchase"
+      ]
+    }
+  ]
+}

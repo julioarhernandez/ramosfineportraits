@@ -1,5 +1,5 @@
 if (typeof WebFontConfig === "undefined") {
-    WebFontConfig = new Object
+    WebFontConfig = {}
 }
 WebFontConfig["google"] = {families: ["Montserrat:100,200,300,400,500,600,700,800,900,100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic&display=swap"]};
 (function () {
@@ -224,856 +224,6 @@ WebFontConfig["google"] = {families: ["Montserrat:100,200,300,400,500,600,700,80
     CustomEvent.prototype = window.Event.prototype;
     window.CustomEvent = CustomEvent
 })();
-var pixproof = {
-    ajaxurl: "https://promo-theme.com/novo/dark/wp-admin/admin-ajax.php",
-    pixproof_settings: {zip_archive_generation: "manual"},
-    l10n: {select: "Select", deselect: "Deselect", ofCounter: "of", next: "Next", previous: "Previous"}
-};
-(function ($) {
-    (function (a) {
-        var b = "Close", c = "BeforeClose", d = "AfterClose", e = "BeforeAppend", f = "MarkupParse", g = "Open",
-            h = "Change", i = "mfp", j = "." + i, k = "mfp-ready", l = "mfp-removing", m = "mfp-prevent-close", n,
-            o = function () {
-            }, p = !!window.jQuery, q, r = a(window), s, t, u, v, w, x = function (a, b) {
-                n.ev.on(i + a + j, b)
-            }, y = function (b, c, d, e) {
-                var f = document.createElement("div");
-                return f.className = "mfp-" + b, d && (f.innerHTML = d), e ? c && c.appendChild(f) : (f = a(f), c && f.appendTo(c)), f
-            }, z = function (b, c) {
-                n.ev.triggerHandler(i + b, c), n.st.callbacks && (b = b.charAt(0).toLowerCase() + b.slice(1), n.st.callbacks[b] && n.st.callbacks[b].apply(n, a.isArray(c) ? c : [c]))
-            }, A = function (b) {
-                if (b !== w || !n.currTemplate.closeBtn) n.currTemplate.closeBtn = a(n.st.closeMarkup.replace("%title%", n.st.tClose)), w = b;
-                return n.currTemplate.closeBtn
-            }, B = function () {
-                a.magnificPopup.instance || (n = new o, n.init(), a.magnificPopup.instance = n)
-            }, C = function () {
-                var a = document.createElement("p").style, b = ["ms", "O", "Moz", "Webkit"];
-                if (a.transition !== undefined) return !0;
-                while (b.length) if (b.pop() + "Transition" in a) return !0;
-                return !1
-            };
-        o.prototype = {
-            constructor: o, init: function () {
-                var b = navigator.appVersion;
-                n.isIE7 = b.indexOf("MSIE 7.") !== -1, n.isIE8 = b.indexOf("MSIE 8.") !== -1, n.isLowIE = n.isIE7 || n.isIE8, n.isAndroid = /android/gi.test(b), n.isIOS = /iphone|ipad|ipod/gi.test(b), n.supportsTransition = C(), n.probablyMobile = n.isAndroid || n.isIOS || /(Opera Mini)|Kindle|webOS|BlackBerry|(Opera Mobi)|(Windows Phone)|IEMobile/i.test(navigator.userAgent), t = a(document), n.popupsCache = {}
-            }, open: function (b) {
-                s || (s = a(document.body));
-                var c;
-                if (b.isObj === !1) {
-                    n.items = b.items.toArray(), n.index = 0;
-                    var d = b.items, e;
-                    for (c = 0; c < d.length; c++) {
-                        e = d[c], e.parsed && (e = e.el[0]);
-                        if (e === b.el[0]) {
-                            n.index = c;
-                            break
-                        }
-                    }
-                } else n.items = a.isArray(b.items) ? b.items : [b.items], n.index = b.index || 0;
-                if (n.isOpen) {
-                    n.updateItemHTML();
-                    return
-                }
-                n.types = [], v = "", b.mainEl && b.mainEl.length ? n.ev = b.mainEl.eq(0) : n.ev = t, b.key ? (n.popupsCache[b.key] || (n.popupsCache[b.key] = {}), n.currTemplate = n.popupsCache[b.key]) : n.currTemplate = {}, n.st = a.extend(!0, {}, a.magnificPopup.defaults, b), n.fixedContentPos = n.st.fixedContentPos === "auto" ? !n.probablyMobile : n.st.fixedContentPos, n.st.modal && (n.st.closeOnContentClick = !1, n.st.closeOnBgClick = !1, n.st.showCloseBtn = !1, n.st.enableEscapeKey = !1), n.bgOverlay || (n.bgOverlay = y("bg").on("click" + j, function () {
-                    n.close()
-                }), n.wrap = y("wrap").attr("tabindex", -1).on("click" + j, function (a) {
-                    n._checkIfClose(a.target) && n.close()
-                }), n.container = y("container", n.wrap)), n.contentContainer = y("content"), n.st.preloader && (n.preloader = y("preloader", n.container, n.st.tLoading));
-                var h = a.magnificPopup.modules;
-                for (c = 0; c < h.length; c++) {
-                    var i = h[c];
-                    i = i.charAt(0).toUpperCase() + i.slice(1), n["init" + i].call(n)
-                }
-                z("BeforeOpen"), n.st.showCloseBtn && (n.st.closeBtnInside ? (x(f, function (a, b, c, d) {
-                    c.close_replaceWith = A(d.type)
-                }), v += " mfp-close-btn-in") : n.wrap.append(A())), n.st.alignTop && (v += " mfp-align-top"), n.fixedContentPos ? n.wrap.css({
-                    overflow: n.st.overflowY,
-                    overflowX: "hidden",
-                    overflowY: n.st.overflowY
-                }) : n.wrap.css({
-                    top: r.scrollTop(),
-                    position: "absolute"
-                }), (n.st.fixedBgPos === !1 || n.st.fixedBgPos === "auto" && !n.fixedContentPos) && n.bgOverlay.css({
-                    height: t.height(),
-                    position: "absolute"
-                }), n.st.enableEscapeKey && t.on("keyup" + j, function (a) {
-                    a.keyCode === 27 && n.close()
-                }), r.on("resize" + j, function () {
-                    n.updateSize()
-                }), n.st.closeOnContentClick || (v += " mfp-auto-cursor"), v && n.wrap.addClass(v);
-                var l = n.wH = r.height(), m = {};
-                if (n.fixedContentPos && n._hasScrollBar(l)) {
-                    var o = n._getScrollbarSize();
-                    o && (m.marginRight = o)
-                }
-                n.fixedContentPos && (n.isIE7 ? a("body, html").css("overflow", "hidden") : m.overflow = "hidden");
-                var p = n.st.mainClass;
-                return n.isIE7 && (p += " mfp-ie7"), p && n._addClassToMFP(p), n.updateItemHTML(), z("BuildControls"), a("html").css(m), n.bgOverlay.add(n.wrap).prependTo(n.st.prependTo || s), n._lastFocusedEl = document.activeElement, setTimeout(function () {
-                    n.content ? (n._addClassToMFP(k), n._setFocus()) : n.bgOverlay.addClass(k), t.on("focusin" + j, n._onFocusIn)
-                }, 16), n.isOpen = !0, n.updateSize(l), z(g), b
-            }, close: function () {
-                if (!n.isOpen) return;
-                z(c), n.isOpen = !1, n.st.removalDelay && !n.isLowIE && n.supportsTransition ? (n._addClassToMFP(l), setTimeout(function () {
-                    n._close()
-                }, n.st.removalDelay)) : n._close()
-            }, _close: function () {
-                z(b);
-                var c = l + " " + k + " ";
-                n.bgOverlay.detach(), n.wrap.detach(), n.container.empty(), n.st.mainClass && (c += n.st.mainClass + " "), n._removeClassFromMFP(c);
-                if (n.fixedContentPos) {
-                    var e = {marginRight: ""};
-                    n.isIE7 ? a("body, html").css("overflow", "") : e.overflow = "", a("html").css(e)
-                }
-                t.off("keyup" + j + " focusin" + j), n.ev.off(j), n.wrap.attr("class", "mfp-wrap").removeAttr("style"), n.bgOverlay.attr("class", "mfp-bg"), n.container.attr("class", "mfp-container"), n.st.showCloseBtn && (!n.st.closeBtnInside || n.currTemplate[n.currItem.type] === !0) && n.currTemplate.closeBtn && n.currTemplate.closeBtn.detach(), n._lastFocusedEl && a(n._lastFocusedEl).focus(), n.currItem = null, n.content = null, n.currTemplate = null, n.prevHeight = 0, z(d)
-            }, updateSize: function (a) {
-                if (n.isIOS) {
-                    var b = document.documentElement.clientWidth / window.innerWidth, c = window.innerHeight * b;
-                    n.wrap.css("height", c), n.wH = c
-                } else n.wH = a || r.height();
-                n.fixedContentPos || n.wrap.css("height", n.wH), z("Resize")
-            }, updateItemHTML: function () {
-                var b = n.items[n.index];
-                n.contentContainer.detach(), n.content && n.content.detach(), b.parsed || (b = n.parseEl(n.index));
-                var c = b.type;
-                z("BeforeChange", [n.currItem ? n.currItem.type : "", c]), n.currItem = b;
-                if (!n.currTemplate[c]) {
-                    var d = n.st[c] ? n.st[c].markup : !1;
-                    z("FirstMarkupParse", d), d ? n.currTemplate[c] = a(d) : n.currTemplate[c] = !0
-                }
-                u && u !== b.type && n.container.removeClass("mfp-" + u + "-holder");
-                var e = n["get" + c.charAt(0).toUpperCase() + c.slice(1)](b, n.currTemplate[c]);
-                n.appendContent(e, c), b.preloaded = !0, z(h, b), u = b.type, n.container.prepend(n.contentContainer), z("AfterChange")
-            }, appendContent: function (a, b) {
-                n.content = a, a ? n.st.showCloseBtn && n.st.closeBtnInside && n.currTemplate[b] === !0 ? n.content.find(".mfp-close").length || n.content.append(A()) : n.content = a : n.content = "", z(e), n.container.addClass("mfp-" + b + "-holder"), n.contentContainer.append(n.content)
-            }, parseEl: function (b) {
-                var c = n.items[b], d;
-                c.tagName ? c = {el: a(c)} : (d = c.type, c = {data: c, src: c.src});
-                if (c.el) {
-                    var e = n.types;
-                    for (var f = 0; f < e.length; f++) if (c.el.hasClass("mfp-" + e[f])) {
-                        d = e[f];
-                        break
-                    }
-                    c.src = c.el.attr("data-mfp-src"), c.src || (c.src = c.el.attr("href"))
-                }
-                return c.type = d || n.st.type || "inline", c.index = b, c.parsed = !0, n.items[b] = c, z("ElementParse", c), n.items[b]
-            }, addGroup: function (a, b) {
-                var c = function (c) {
-                    c.mfpEl = this, n._openClick(c, a, b)
-                };
-                b || (b = {});
-                var d = "click.magnificPopup";
-                b.mainEl = a, b.items ? (b.isObj = !0, a.off(d).on(d, c)) : (b.isObj = !1, b.delegate ? a.off(d).on(d, b.delegate, c) : (b.items = a, a.off(d).on(d, c)))
-            }, _openClick: function (b, c, d) {
-                var e = d.midClick !== undefined ? d.midClick : a.magnificPopup.defaults.midClick;
-                if (!e && (b.which === 2 || b.ctrlKey || b.metaKey)) return;
-                var f = d.disableOn !== undefined ? d.disableOn : a.magnificPopup.defaults.disableOn;
-                if (f) if (a.isFunction(f)) {
-                    if (!f.call(n)) return !0
-                } else if (r.width() < f) return !0;
-                b.type && (b.preventDefault(), n.isOpen && b.stopPropagation()), d.el = a(b.mfpEl), d.delegate && (d.items = c.find(d.delegate)), n.open(d)
-            }, updateStatus: function (a, b) {
-                if (n.preloader) {
-                    q !== a && n.container.removeClass("mfp-s-" + q), !b && a === "loading" && (b = n.st.tLoading);
-                    var c = {status: a, text: b};
-                    z("UpdateStatus", c), a = c.status, b = c.text, n.preloader.html(b), n.preloader.find("a").on("click", function (a) {
-                        a.stopImmediatePropagation()
-                    }), n.container.addClass("mfp-s-" + a), q = a
-                }
-            }, _checkIfClose: function (b) {
-                if (a(b).hasClass(m)) return;
-                var c = n.st.closeOnContentClick, d = n.st.closeOnBgClick;
-                if (c && d) return !0;
-                if (!n.content || a(b).hasClass("mfp-close") || n.preloader && b === n.preloader[0]) return !0;
-                if (b !== n.content[0] && !a.contains(n.content[0], b)) {
-                    if (d && a.contains(document, b)) return !0
-                } else if (c) return !0;
-                return !1
-            }, _addClassToMFP: function (a) {
-                n.bgOverlay.addClass(a), n.wrap.addClass(a)
-            }, _removeClassFromMFP: function (a) {
-                this.bgOverlay.removeClass(a), n.wrap.removeClass(a)
-            }, _hasScrollBar: function (a) {
-                return (n.isIE7 ? t.height() : document.body.scrollHeight) > (a || r.height())
-            }, _setFocus: function () {
-                (n.st.focus ? n.content.find(n.st.focus).eq(0) : n.wrap).focus()
-            }, _onFocusIn: function (b) {
-                if (b.target !== n.wrap[0] && !a.contains(n.wrap[0], b.target)) return n._setFocus(), !1
-            }, _parseMarkup: function (b, c, d) {
-                var e;
-                d.data && (c = a.extend(d.data, c)), z(f, [b, c, d]), a.each(c, function (a, c) {
-                    if (c === undefined || c === !1) return !0;
-                    e = a.split("_");
-                    if (e.length > 1) {
-                        var d = b.find(j + "-" + e[0]);
-                        if (d.length > 0) {
-                            var f = e[1];
-                            f === "replaceWith" ? d[0] !== c[0] && d.replaceWith(c) : f === "img" ? d.is("img") ? d.attr("src", c) : d.replaceWith('<img src="' + c + '" class="' + d.attr("class") + '" />') : d.attr(e[1], c)
-                        }
-                    } else b.find(j + "-" + a).html(c)
-                })
-            }, _getScrollbarSize: function () {
-                if (n.scrollbarSize === undefined) {
-                    var a = document.createElement("div");
-                    a.id = "mfp-sbm", a.style.cssText = "width: 99px; height: 99px; overflow: scroll; position: absolute; top: -9999px;", document.body.appendChild(a), n.scrollbarSize = a.offsetWidth - a.clientWidth, document.body.removeChild(a)
-                }
-                return n.scrollbarSize
-            }
-        }, a.magnificPopup = {
-            instance: null,
-            proto: o.prototype,
-            modules: [],
-            open: function (b, c) {
-                return B(), b ? b = a.extend(!0, {}, b) : b = {}, b.isObj = !0, b.index = c || 0, this.instance.open(b)
-            },
-            close: function () {
-                return a.magnificPopup.instance && a.magnificPopup.instance.close()
-            },
-            registerModule: function (b, c) {
-                c.options && (a.magnificPopup.defaults[b] = c.options), a.extend(this.proto, c.proto), this.modules.push(b)
-            },
-            defaults: {
-                disableOn: 0,
-                key: null,
-                midClick: !1,
-                mainClass: "",
-                preloader: !0,
-                focus: "",
-                closeOnContentClick: !1,
-                closeOnBgClick: !0,
-                closeBtnInside: !0,
-                showCloseBtn: !0,
-                enableEscapeKey: !0,
-                modal: !1,
-                alignTop: !1,
-                removalDelay: 0,
-                prependTo: null,
-                fixedContentPos: "auto",
-                fixedBgPos: "auto",
-                overflowY: "auto",
-                closeMarkup: '<button title="%title%" type="button" class="mfp-close">&times;</button>',
-                tClose: "Close (Esc)",
-                tLoading: "Loading..."
-            }
-        }, a.fn.magnificPopup = function (b) {
-            B();
-            var c = a(this);
-            if (typeof b == "string") if (b === "open") {
-                var d, e = p ? c.data("magnificPopup") : c[0].magnificPopup, f = parseInt(arguments[1], 10) || 0;
-                e.items ? d = e.items[f] : (d = c, e.delegate && (d = d.find(e.delegate)), d = d.eq(f)), n._openClick({mfpEl: d}, c, e)
-            } else n.isOpen && n[b].apply(n, Array.prototype.slice.call(arguments, 1)); else b = a.extend(!0, {}, b), p ? c.data("magnificPopup", b) : c[0].magnificPopup = b, n.addGroup(c, b);
-            return c
-        };
-        var D = "ajax", E, F = function () {
-            E && s.removeClass(E)
-        }, G = function () {
-            F(), n.req && n.req.abort()
-        };
-        a.magnificPopup.registerModule(D, {
-            options: {
-                settings: null,
-                cursor: "mfp-ajax-cur",
-                tError: '<a href="%url%">The content</a> could not be loaded.'
-            }, proto: {
-                initAjax: function () {
-                    n.types.push(D), E = n.st.ajax.cursor, x(b + "." + D, G), x("BeforeChange." + D, G)
-                }, getAjax: function (b) {
-                    E && s.addClass(E), n.updateStatus("loading");
-                    var c = a.extend({
-                        url: b.src, success: function (c, d, e) {
-                            var f = {data: c, xhr: e};
-                            z("ParseAjax", f), n.appendContent(a(f.data), D), b.finished = !0, F(), n._setFocus(), setTimeout(function () {
-                                n.wrap.addClass(k)
-                            }, 16), n.updateStatus("ready"), z("AjaxContentAdded")
-                        }, error: function () {
-                            F(), b.finished = b.loadError = !0, n.updateStatus("error", n.st.ajax.tError.replace("%url%", b.src))
-                        }
-                    }, n.st.ajax.settings);
-                    return n.req = a.ajax(c), ""
-                }
-            }
-        });
-        var H, I = function (b) {
-            if (b.data && b.data.title !== undefined) return b.data.title;
-            var c = n.st.image.titleSrc;
-            if (c) {
-                if (a.isFunction(c)) return c.call(n, b);
-                if (b.el) return b.el.attr(c) || ""
-            }
-            return ""
-        };
-        a.magnificPopup.registerModule("image", {
-            options: {
-                markup: '<div class="mfp-figure"><div class="mfp-close"></div><figure><div class="mfp-img"></div><figcaption><div class="mfp-bottom-bar"><div class="mfp-title"></div><div class="mfp-counter"></div></div></figcaption></figure></div>',
-                cursor: "mfp-zoom-out-cur",
-                titleSrc: "title",
-                verticalFit: !0,
-                tError: '<a href="%url%">The image</a> could not be loaded.'
-            }, proto: {
-                initImage: function () {
-                    var a = n.st.image, c = ".image";
-                    n.types.push("image"), x(g + c, function () {
-                        n.currItem.type === "image" && a.cursor && s.addClass(a.cursor)
-                    }), x(b + c, function () {
-                        a.cursor && s.removeClass(a.cursor), r.off("resize" + j)
-                    }), x("Resize" + c, n.resizeImage), n.isLowIE && x("AfterChange", n.resizeImage)
-                }, resizeImage: function () {
-                    var a = n.currItem;
-                    if (!a || !a.img) return;
-                    if (n.st.image.verticalFit) {
-                        var b = 0;
-                        n.isLowIE && (b = parseInt(a.img.css("padding-top"), 10) + parseInt(a.img.css("padding-bottom"), 10)), a.img.css("max-height", n.wH - b)
-                    }
-                }, _onImageHasSize: function (a) {
-                    a.img && (a.hasSize = !0, H && clearInterval(H), a.isCheckingImgSize = !1, z("ImageHasSize", a), a.imgHidden && (n.content && n.content.removeClass("mfp-loading"), a.imgHidden = !1))
-                }, findImageSize: function (a) {
-                    var b = 0, c = a.img[0], d = function (e) {
-                        H && clearInterval(H), H = setInterval(function () {
-                            if (c.naturalWidth > 0) {
-                                n._onImageHasSize(a);
-                                return
-                            }
-                            b > 200 && clearInterval(H), b++, b === 3 ? d(10) : b === 40 ? d(50) : b === 100 && d(500)
-                        }, e)
-                    };
-                    d(1)
-                }, getImage: function (b, c) {
-                    var d = 0, e = function () {
-                        b && (b.img[0].complete ? (b.img.off(".mfploader"), b === n.currItem && (n._onImageHasSize(b), n.updateStatus("ready")), b.hasSize = !0, b.loaded = !0, z("ImageLoadComplete")) : (d++, d < 200 ? setTimeout(e, 100) : f()))
-                    }, f = function () {
-                        b && (b.img.off(".mfploader"), b === n.currItem && (n._onImageHasSize(b), n.updateStatus("error", g.tError.replace("%url%", b.src))), b.hasSize = !0, b.loaded = !0, b.loadError = !0)
-                    }, g = n.st.image, h = c.find(".mfp-img");
-                    if (h.length) {
-                        var i = document.createElement("img");
-                        i.className = "mfp-img", b.img = a(i).on("load.mfploader", e).on("error.mfploader", f), i.src = b.src, h.is("img") && (b.img = b.img.clone()), i = b.img[0], i.naturalWidth > 0 ? b.hasSize = !0 : i.width || (b.hasSize = !1)
-                    }
-                    return n._parseMarkup(c, {
-                        title: I(b),
-                        img_replaceWith: b.img
-                    }, b), n.resizeImage(), b.hasSize ? (H && clearInterval(H), b.loadError ? (c.addClass("mfp-loading"), n.updateStatus("error", g.tError.replace("%url%", b.src))) : (c.removeClass("mfp-loading"), n.updateStatus("ready")), c) : (n.updateStatus("loading"), b.loading = !0, b.hasSize || (b.imgHidden = !0, c.addClass("mfp-loading"), n.findImageSize(b)), c)
-                }
-            }
-        });
-        var J, K = function () {
-            return J === undefined && (J = document.createElement("p").style.MozTransform !== undefined), J
-        };
-        a.magnificPopup.registerModule("zoom", {
-            options: {
-                enabled: !1, easing: "ease-in-out", duration: 300, opener: function (a) {
-                    return a.is("img") ? a : a.find("img")
-                }
-            }, proto: {
-                initZoom: function () {
-                    var a = n.st.zoom, d = ".zoom", e;
-                    if (!a.enabled || !n.supportsTransition) return;
-                    var f = a.duration, g = function (b) {
-                        var c = b.clone().removeAttr("style").removeAttr("class").addClass("mfp-animated-image"),
-                            d = "all " + a.duration / 1e3 + "s " + a.easing, e = {
-                                position: "fixed",
-                                zIndex: 9999,
-                                left: 0,
-                                top: 0,
-                                "-webkit-backface-visibility": "hidden"
-                            }, f = "transition";
-                        return e["-webkit-" + f] = e["-moz-" + f] = e["-o-" + f] = e[f] = d, c.css(e), c
-                    }, h = function () {
-                        n.content.css("visibility", "visible")
-                    }, i, j;
-                    x("BuildControls" + d, function () {
-                        if (n._allowZoom()) {
-                            clearTimeout(i), n.content.css("visibility", "hidden"), e = n._getItemToZoom();
-                            if (!e) {
-                                h();
-                                return
-                            }
-                            j = g(e), j.css(n._getOffset()), n.wrap.append(j), i = setTimeout(function () {
-                                j.css(n._getOffset(!0)), i = setTimeout(function () {
-                                    h(), setTimeout(function () {
-                                        j.remove(), e = j = null, z("ZoomAnimationEnded")
-                                    }, 16)
-                                }, f)
-                            }, 16)
-                        }
-                    }), x(c + d, function () {
-                        if (n._allowZoom()) {
-                            clearTimeout(i), n.st.removalDelay = f;
-                            if (!e) {
-                                e = n._getItemToZoom();
-                                if (!e) return;
-                                j = g(e)
-                            }
-                            j.css(n._getOffset(!0)), n.wrap.append(j), n.content.css("visibility", "hidden"), setTimeout(function () {
-                                j.css(n._getOffset())
-                            }, 16)
-                        }
-                    }), x(b + d, function () {
-                        n._allowZoom() && (h(), j && j.remove(), e = null)
-                    })
-                }, _allowZoom: function () {
-                    return n.currItem.type === "image"
-                }, _getItemToZoom: function () {
-                    return n.currItem.hasSize ? n.currItem.img : !1
-                }, _getOffset: function (b) {
-                    var c;
-                    b ? c = n.currItem.img : c = n.st.zoom.opener(n.currItem.el || n.currItem);
-                    var d = c.offset(), e = parseInt(c.css("padding-top"), 10),
-                        f = parseInt(c.css("padding-bottom"), 10);
-                    d.top -= a(window).scrollTop() - e;
-                    var g = {width: c.width(), height: (p ? c.innerHeight() : c[0].offsetHeight) - f - e};
-                    return K() ? g["-moz-transform"] = g.transform = "translate(" + d.left + "px," + d.top + "px)" : (g.left = d.left, g.top = d.top), g
-                }
-            }
-        });
-        var L = "iframe", M = "//about:blank", N = function (a) {
-            if (n.currTemplate[L]) {
-                var b = n.currTemplate[L].find("iframe");
-                b.length && (a || (b[0].src = M), n.isIE8 && b.css("display", a ? "block" : "none"))
-            }
-        };
-        a.magnificPopup.registerModule(L, {
-            options: {
-                markup: '<div class="mfp-iframe-scaler"><div class="mfp-close"></div><iframe class="mfp-iframe" src="//about:blank" frameborder="0" allowfullscreen></iframe></div>',
-                srcAction: "iframe_src",
-                patterns: {
-                    youtube: {index: "youtube.com", id: "v=", src: "//www.youtube.com/embed/%id%?autoplay=1"},
-                    vimeo: {index: "vimeo.com/", id: "/", src: "//player.vimeo.com/video/%id%?autoplay=1"},
-                    gmaps: {index: "//maps.google.", src: "%id%&output=embed"}
-                }
-            }, proto: {
-                initIframe: function () {
-                    n.types.push(L), x("BeforeChange", function (a, b, c) {
-                        b !== c && (b === L ? N() : c === L && N(!0))
-                    }), x(b + "." + L, function () {
-                        N()
-                    })
-                }, getIframe: function (b, c) {
-                    var d = b.src, e = n.st.iframe;
-                    a.each(e.patterns, function () {
-                        if (d.indexOf(this.index) > -1) return this.id && (typeof this.id == "string" ? d = d.substr(d.lastIndexOf(this.id) + this.id.length, d.length) : d = this.id.call(this, d)), d = this.src.replace("%id%", d), !1
-                    });
-                    var f = {};
-                    return e.srcAction && (f[e.srcAction] = d), n._parseMarkup(c, f, b), n.updateStatus("ready"), c
-                }
-            }
-        });
-        var O = function (a) {
-            var b = n.items.length;
-            return a > b - 1 ? a - b : a < 0 ? b + a : a
-        }, P = function (a, b, c) {
-            return a.replace(/%curr%/gi, b + 1).replace(/%total%/gi, c)
-        };
-        a.magnificPopup.registerModule("gallery", {
-            options: {
-                enabled: !1,
-                arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>',
-                preload: [0, 2],
-                navigateByImgClick: !0,
-                arrows: !0,
-                tPrev: "Previous (Left arrow key)",
-                tNext: "Next (Right arrow key)",
-                tCounter: "%curr% of %total%"
-            }, proto: {
-                initGallery: function () {
-                    var c = n.st.gallery, d = ".mfp-gallery", e = Boolean(a.fn.mfpFastClick);
-                    n.direction = !0;
-                    if (!c || !c.enabled) return !1;
-                    v += " mfp-gallery", x(g + d, function () {
-                        c.navigateByImgClick && n.wrap.on("click" + d, ".mfp-img", function () {
-                            if (n.items.length > 1) return n.next(), !1
-                        }), t.on("keydown" + d, function (a) {
-                            a.keyCode === 37 ? n.prev() : a.keyCode === 39 && n.next()
-                        })
-                    }), x("UpdateStatus" + d, function (a, b) {
-                        b.text && (b.text = P(b.text, n.currItem.index, n.items.length))
-                    }), x(f + d, function (a, b, d, e) {
-                        var f = n.items.length;
-                        d.counter = f > 1 ? P(c.tCounter, e.index, f) : ""
-                    }), x("BuildControls" + d, function () {
-                        if (n.items.length > 1 && c.arrows && !n.arrowLeft) {
-                            var b = c.arrowMarkup,
-                                d = n.arrowLeft = a(b.replace(/%title%/gi, c.tPrev).replace(/%dir%/gi, "left")).addClass(m),
-                                f = n.arrowRight = a(b.replace(/%title%/gi, c.tNext).replace(/%dir%/gi, "right")).addClass(m),
-                                g = e ? "mfpFastClick" : "click";
-                            d[g](function () {
-                                n.prev()
-                            }), f[g](function () {
-                                n.next()
-                            }), n.isIE7 && (y("b", d[0], !1, !0), y("a", d[0], !1, !0), y("b", f[0], !1, !0), y("a", f[0], !1, !0)), n.container.append(d.add(f))
-                        }
-                    }), x(h + d, function () {
-                        n._preloadTimeout && clearTimeout(n._preloadTimeout), n._preloadTimeout = setTimeout(function () {
-                            n.preloadNearbyImages(), n._preloadTimeout = null
-                        }, 16)
-                    }), x(b + d, function () {
-                        t.off(d), n.wrap.off("click" + d), n.arrowLeft && e && n.arrowLeft.add(n.arrowRight).destroyMfpFastClick(), n.arrowRight = n.arrowLeft = null
-                    })
-                }, next: function () {
-                    n.direction = !0, n.index = O(n.index + 1), n.updateItemHTML()
-                }, prev: function () {
-                    n.direction = !1, n.index = O(n.index - 1), n.updateItemHTML()
-                }, goTo: function (a) {
-                    n.direction = a >= n.index, n.index = a, n.updateItemHTML()
-                }, preloadNearbyImages: function () {
-                    var a = n.st.gallery.preload, b = Math.min(a[0], n.items.length),
-                        c = Math.min(a[1], n.items.length), d;
-                    for (d = 1; d <= (n.direction ? c : b); d++) n._preloadItem(n.index + d);
-                    for (d = 1; d <= (n.direction ? b : c); d++) n._preloadItem(n.index - d)
-                }, _preloadItem: function (b) {
-                    b = O(b);
-                    if (n.items[b].preloaded) return;
-                    var c = n.items[b];
-                    c.parsed || (c = n.parseEl(b)), z("LazyLoad", c), c.type === "image" && (c.img = a('<img class="mfp-img" />').on("load.mfploader", function () {
-                        c.hasSize = !0
-                    }).on("error.mfploader", function () {
-                        c.hasSize = !0, c.loadError = !0, z("LazyLoadError", c)
-                    }).attr("src", c.src)), c.preloaded = !0
-                }
-            }
-        });
-        var Q = "retina";
-        a.magnificPopup.registerModule(Q, {
-            options: {
-                replaceSrc: function (a) {
-                    return a.src.replace(/\.\w+$/, function (a) {
-                        return "@2x" + a
-                    })
-                }, ratio: 1
-            }, proto: {
-                initRetina: function () {
-                    if (window.devicePixelRatio > 1) {
-                        var a = n.st.retina, b = a.ratio;
-                        b = isNaN(b) ? b() : b, b > 1 && (x("ImageHasSize." + Q, function (a, c) {
-                            c.img.css({"max-width": c.img[0].naturalWidth / b, width: "100%"})
-                        }), x("ElementParse." + Q, function (c, d) {
-                            d.src = a.replaceSrc(d, b)
-                        }))
-                    }
-                }
-            }
-        }), function () {
-            var b = 1e3, c = "ontouchstart" in window, d = function () {
-                r.off("touchmove" + f + " touchend" + f)
-            }, e = "mfpFastClick", f = "." + e;
-            a.fn.mfpFastClick = function (e) {
-                return a(this).each(function () {
-                    var g = a(this), h;
-                    if (c) {
-                        var i, j, k, l, m, n;
-                        g.on("touchstart" + f, function (a) {
-                            l = !1, n = 1, m = a.originalEvent ? a.originalEvent.touches[0] : a.touches[0], j = m.clientX, k = m.clientY, r.on("touchmove" + f, function (a) {
-                                m = a.originalEvent ? a.originalEvent.touches : a.touches, n = m.length, m = m[0];
-                                if (Math.abs(m.clientX - j) > 10 || Math.abs(m.clientY - k) > 10) l = !0, d()
-                            }).on("touchend" + f, function (a) {
-                                d();
-                                if (l || n > 1) return;
-                                h = !0, a.preventDefault(), clearTimeout(i), i = setTimeout(function () {
-                                    h = !1
-                                }, b), e()
-                            })
-                        })
-                    }
-                    g.on("click" + f, function () {
-                        h || e()
-                    })
-                })
-            }, a.fn.destroyMfpFastClick = function () {
-                a(this).off("touchstart" + f + " click" + f), c && r.off("touchmove" + f + " touchend" + f)
-            }
-        }(), B()
-    })(window.jQuery || window.Zepto);
-    $(document).ready(function () {
-        var prepare_download_button = function () {
-            if (pixproof.pixproof_settings.zip_archive_generation !== "automatic") return;
-            var download_button = $(".js-download");
-            download_button.attr("disabled", "disabled");
-            $(".proof-photo").each(function (i, el) {
-                if ($(this).hasClass("selected")) {
-                    download_button.removeAttr("disabled")
-                }
-            })
-        };
-        var bound_reference_links = function () {
-            if (typeof bound_reference_links.bound === "undefined") {
-                bound_reference_links.bound = true;
-                $(document).on("click", "span.pixproof_photo_ref", function () {
-                    var target = $($(this).data("href"));
-                    target = target.length ? target : $("[name=" + $(this).data("href").slice(1) + "]");
-                    if (target.length) {
-                        $("body").animate({scrollTop: target.offset().top - 200}, 500, function () {
-                            $(target).addClass("scrooled_from_comments");
-                            setTimeout(function () {
-                                $(target).removeClass("scrooled_from_comments")
-                            }, 800)
-                        })
-                    }
-                })
-            }
-        }
-        $(document).on("click", ".select-action", function (ev) {
-            ev.preventDefault();
-            ev.stopPropagation();
-            var photo = $("[id=" + $(this).data("photoid") + "]");
-            $(photo).toggleClass("selected");
-            $(photo).addClass("selecting");
-            var selected = $(photo).hasClass("selected"), attachment_id = $(photo).data("attachment_id");
-            if (selected) {
-                jQuery(this).find(".button-text").html(pixproof.l10n.deselect);
-                photo.find(".select-action  .button-text").html(pixproof.l10n.deselect)
-            } else {
-                jQuery(this).find(".button-text").html(pixproof.l10n.select);
-                photo.find(".select-action .button-text").html(pixproof.l10n.select)
-            }
-            $.ajax({
-                type: "post",
-                url: pixproof.ajaxurl,
-                data: {action: "pixproof_image_click", attachment_id: attachment_id, selected: selected},
-                beforeSend: function () {
-                },
-                complete: function () {
-                    setTimeout(function () {
-                        $(photo).removeClass("selecting")
-                    }, 600)
-                },
-                success: function (response) {
-                }
-            });
-            prepare_download_button()
-        });
-        prepare_download_button();
-        $(".js-pixproof-gallery").each(function () {
-            $(this).magnificPopup({
-                delegate: "a.zoom-action",
-                type: "image",
-                removalDelay: 500,
-                mainClass: "mfp-fade",
-                image: {
-                    titleSrc: function (item) {
-                        var text = $("#" + item.el.data("photoid")).hasClass("selected") == true ? pixproof.l10n.deselect : pixproof.l10n.select;
-                        return '<a class="meta__action  meta__action--popup  select-action"  id="popup-selector" href="#" data-photoid="' + item.el.data("photoid") + '"><span class="button-text">' + text + "</span></a>"
-                    }
-                },
-                gallery: {
-                    enabled: true,
-                    navigateByImgClick: true,
-                    tPrev: pixproof.l10n.previous,
-                    tNext: pixproof.l10n.next,
-                    tCounter: '<span class="mfp-counter">%curr% ' + pixproof.l10n.ofCounter + "%total%</span>"
-                }
-            })
-        });
-        bound_reference_links()
-    });
-
-
-})(jQuery);
-!function () {
-
-    function e(e) {
-        function t(t, n) {
-            var s, h, k = t == window, y = n && n.message !== undefined ? n.message : undefined;
-            if (!(n = e.extend({}, e.blockUI.defaults, n || {})).ignoreIfBlocked || !e(t).data("blockUI.isBlocked")) {
-                if (n.overlayCSS = e.extend({}, e.blockUI.defaults.overlayCSS, n.overlayCSS || {}), s = e.extend({}, e.blockUI.defaults.css, n.css || {}), n.onOverlayClick && (n.overlayCSS.cursor = "pointer"), h = e.extend({}, e.blockUI.defaults.themedCSS, n.themedCSS || {}), y = y === undefined ? n.message : y, k && p && o(window, {fadeOut: 0}), y && "string" != typeof y && (y.parentNode || y.jquery)) {
-                    var m = y.jquery ? y[0] : y, g = {};
-                    e(t).data("blockUI.history", g), g.el = m, g.parent = m.parentNode, g.display = m.style.display, g.position = m.style.position, g.parent && g.parent.removeChild(m)
-                }
-                e(t).data("blockUI.onUnblock", n.onUnblock);
-                var v, I, w, U, x = n.baseZ;
-                v = e(r || n.forceIframe ? '<iframe class="blockUI" style="z-index:' + x++ + ';display:none;border:none;margin:0;padding:0;position:absolute;width:100%;height:100%;top:0;left:0" src="' + n.iframeSrc + '"></iframe>' : '<div class="blockUI" style="display:none"></div>'), I = e(n.theme ? '<div class="blockUI blockOverlay ui-widget-overlay" style="z-index:' + x++ + ';display:none"></div>' : '<div class="blockUI blockOverlay" style="z-index:' + x++ + ';display:none;border:none;margin:0;padding:0;width:100%;height:100%;top:0;left:0"></div>'), n.theme && k ? (U = '<div class="blockUI ' + n.blockMsgClass + ' blockPage ui-dialog ui-widget ui-corner-all" style="z-index:' + (x + 10) + ';display:none;position:fixed">', n.title && (U += '<div class="ui-widget-header ui-dialog-titlebar ui-corner-all blockTitle">' + (n.title || "&nbsp;") + "</div>"), U += '<div class="ui-widget-content ui-dialog-content"></div>', U += "</div>") : n.theme ? (U = '<div class="blockUI ' + n.blockMsgClass + ' blockElement ui-dialog ui-widget ui-corner-all" style="z-index:' + (x + 10) + ';display:none;position:absolute">', n.title && (U += '<div class="ui-widget-header ui-dialog-titlebar ui-corner-all blockTitle">' + (n.title || "&nbsp;") + "</div>"), U += '<div class="ui-widget-content ui-dialog-content"></div>', U += "</div>") : U = k ? '<div class="blockUI ' + n.blockMsgClass + ' blockPage" style="z-index:' + (x + 10) + ';display:none;position:fixed"></div>' : '<div class="blockUI ' + n.blockMsgClass + ' blockElement" style="z-index:' + (x + 10) + ';display:none;position:absolute"></div>', w = e(U), y && (n.theme ? (w.css(h), w.addClass("ui-widget-content")) : w.css(s)), n.theme || I.css(n.overlayCSS), I.css("position", k ? "fixed" : "absolute"), (r || n.forceIframe) && v.css("opacity", 0);
-                var C = [v, I, w], S = e(k ? "body" : t);
-                e.each(C, function () {
-                    this.appendTo(S)
-                }), n.theme && n.draggable && e.fn.draggable && w.draggable({
-                    handle: ".ui-dialog-titlebar",
-                    cancel: "li"
-                });
-                var O = f && (!e.support.boxModel || e("object,embed", k ? null : t).length > 0);
-                if (u || O) {
-                    if (k && n.allowBodyStretch && e.support.boxModel && e("html,body").css("height", "100%"), (u || !e.support.boxModel) && !k) var E = a(t, "borderTopWidth"),
-                        T = a(t, "borderLeftWidth"), M = E ? "(0 - " + E + ")" : 0, B = T ? "(0 - " + T + ")" : 0;
-                    e.each(C, function (e, t) {
-                        var o = t[0].style;
-                        if (o.position = "absolute", e < 2) k ? o.setExpression("height", "Math.max(document.body.scrollHeight, document.body.offsetHeight) - (jQuery.support.boxModel?0:" + n.quirksmodeOffsetHack + ') + "px"') : o.setExpression("height", 'this.parentNode.offsetHeight + "px"'), k ? o.setExpression("width", 'jQuery.support.boxModel && document.documentElement.clientWidth || document.body.clientWidth + "px"') : o.setExpression("width", 'this.parentNode.offsetWidth + "px"'), B && o.setExpression("left", B), M && o.setExpression("top", M); else if (n.centerY) k && o.setExpression("top", '(document.documentElement.clientHeight || document.body.clientHeight) / 2 - (this.offsetHeight / 2) + (blah = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop) + "px"'), o.marginTop = 0; else if (!n.centerY && k) {
-                            var i = "((document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop) + " + (n.css && n.css.top ? parseInt(n.css.top, 10) : 0) + ') + "px"';
-                            o.setExpression("top", i)
-                        }
-                    })
-                }
-                if (y && (n.theme ? w.find(".ui-widget-content").append(y) : w.append(y), (y.jquery || y.nodeType) && e(y).show()), (r || n.forceIframe) && n.showOverlay && v.show(), n.fadeIn) {
-                    var j = n.onBlock ? n.onBlock : c, H = n.showOverlay && !y ? j : c, z = y ? j : c;
-                    n.showOverlay && I._fadeIn(n.fadeIn, H), y && w._fadeIn(n.fadeIn, z)
-                } else n.showOverlay && I.show(), y && w.show(), n.onBlock && n.onBlock.bind(w)();
-                if (i(1, t, n), k ? (p = w[0], b = e(n.focusableElements, p), n.focusInput && setTimeout(l, 20)) : d(w[0], n.centerX, n.centerY), n.timeout) {
-                    var W = setTimeout(function () {
-                        k ? e.unblockUI(n) : e(t).unblock(n)
-                    }, n.timeout);
-                    e(t).data("blockUI.timeout", W)
-                }
-            }
-        }
-
-        function o(t, o) {
-            var s, l = t == window, d = e(t), a = d.data("blockUI.history"), c = d.data("blockUI.timeout");
-            c && (clearTimeout(c), d.removeData("blockUI.timeout")), o = e.extend({}, e.blockUI.defaults, o || {}), i(0, t, o), null === o.onUnblock && (o.onUnblock = d.data("blockUI.onUnblock"), d.removeData("blockUI.onUnblock"));
-            var r;
-            r = l ? e(document.body).children().filter(".blockUI").add("body > .blockUI") : d.find(">.blockUI"), o.cursorReset && (r.length > 1 && (r[1].style.cursor = o.cursorReset), r.length > 2 && (r[2].style.cursor = o.cursorReset)), l && (p = b = null), o.fadeOut ? (s = r.length, r.stop().fadeOut(o.fadeOut, function () {
-                0 == --s && n(r, a, o, t)
-            })) : n(r, a, o, t)
-        }
-
-        function n(t, o, n, i) {
-            var s = e(i);
-            if (!s.data("blockUI.isBlocked")) {
-                t.each(function (e, t) {
-                    this.parentNode && this.parentNode.removeChild(this)
-                }), o && o.el && (o.el.style.display = o.display, o.el.style.position = o.position, o.el.style.cursor = "default", o.parent && o.parent.appendChild(o.el), s.removeData("blockUI.history")), s.data("blockUI.static") && s.css("position", "static"), "function" == typeof n.onUnblock && n.onUnblock(i, n);
-                var l = e(document.body), d = l.width(), a = l[0].style.width;
-                l.width(d - 1).width(d), l[0].style.width = a
-            }
-        }
-
-        function i(t, o, n) {
-            var i = o == window, l = e(o);
-            if ((t || (!i || p) && (i || l.data("blockUI.isBlocked"))) && (l.data("blockUI.isBlocked", t), i && n.bindEvents && (!t || n.showOverlay))) {
-                var d = "mousedown mouseup keydown keypress keyup touchstart touchend touchmove";
-                t ? e(document).bind(d, n, s) : e(document).unbind(d, s)
-            }
-        }
-
-        function s(t) {
-            if ("keydown" === t.type && t.keyCode && 9 == t.keyCode && p && t.data.constrainTabKey) {
-                var o = b, n = !t.shiftKey && t.target === o[o.length - 1], i = t.shiftKey && t.target === o[0];
-                if (n || i) return setTimeout(function () {
-                    l(i)
-                }, 10), !1
-            }
-            var s = t.data, d = e(t.target);
-            return d.hasClass("blockOverlay") && s.onOverlayClick && s.onOverlayClick(t), d.parents("div." + s.blockMsgClass).length > 0 || 0 === d.parents().children().filter("div.blockUI").length
-        }
-
-        function l(e) {
-            if (b) {
-                var t = b[!0 === e ? b.length - 1 : 0];
-                t && t.focus()
-            }
-        }
-
-        function d(e, t, o) {
-            var n = e.parentNode, i = e.style, s = (n.offsetWidth - e.offsetWidth) / 2 - a(n, "borderLeftWidth"),
-                l = (n.offsetHeight - e.offsetHeight) / 2 - a(n, "borderTopWidth");
-            t && (i.left = s > 0 ? s + "px" : "0"), o && (i.top = l > 0 ? l + "px" : "0")
-        }
-
-        function a(t, o) {
-            return parseInt(e.css(t, o), 10) || 0
-        }
-
-        e.fn._fadeIn = e.fn.fadeIn;
-        var c = e.noop || function () {
-            }, r = /MSIE/.test(navigator.userAgent),
-            u = /MSIE 6.0/.test(navigator.userAgent) && !/MSIE 8.0/.test(navigator.userAgent),
-            f = (document.documentMode, e.isFunction(document.createElement("div").style.setExpression));
-        e.blockUI = function (e) {
-            t(window, e)
-        }, e.unblockUI = function (e) {
-            o(window, e)
-        }, e.growlUI = function (t, o, n, i) {
-            var s = e('<div class="growlUI"></div>');
-            t && s.append("<h1>" + t + "</h1>"), o && s.append("<h2>" + o + "</h2>"), n === undefined && (n = 3e3);
-            var l = function (t) {
-                t = t || {}, e.blockUI({
-                    message: s,
-                    fadeIn: "undefined" != typeof t.fadeIn ? t.fadeIn : 700,
-                    fadeOut: "undefined" != typeof t.fadeOut ? t.fadeOut : 1e3,
-                    timeout: "undefined" != typeof t.timeout ? t.timeout : n,
-                    centerY: !1,
-                    showOverlay: !1,
-                    onUnblock: i,
-                    css: e.blockUI.defaults.growlCSS
-                })
-            };
-            l();
-            s.css("opacity");
-            s.mouseover(function () {
-                l({fadeIn: 0, timeout: 3e4});
-                var t = e(".blockMsg");
-                t.stop(), t.fadeTo(300, 1)
-            }).mouseout(function () {
-                e(".blockMsg").fadeOut(1e3)
-            })
-        }, e.fn.block = function (o) {
-            if (this[0] === window) return e.blockUI(o), this;
-            var n = e.extend({}, e.blockUI.defaults, o || {});
-            return this.each(function () {
-                var t = e(this);
-                n.ignoreIfBlocked && t.data("blockUI.isBlocked") || t.unblock({fadeOut: 0})
-            }), this.each(function () {
-                "static" == e.css(this, "position") && (this.style.position = "relative", e(this).data("blockUI.static", !0)), this.style.zoom = 1, t(this, o)
-            })
-        }, e.fn.unblock = function (t) {
-            return this[0] === window ? (e.unblockUI(t), this) : this.each(function () {
-                o(this, t)
-            })
-        }, e.blockUI.version = 2.7, e.blockUI.defaults = {
-            message: "<h1>Please wait...</h1>",
-            title: null,
-            draggable: !0,
-            theme: !1,
-            css: {
-                padding: 0,
-                margin: 0,
-                width: "30%",
-                top: "40%",
-                left: "35%",
-                textAlign: "center",
-                color: "#000",
-                border: "3px solid #aaa",
-                backgroundColor: "#fff",
-                cursor: "wait"
-            },
-            themedCSS: {width: "30%", top: "40%", left: "35%"},
-            overlayCSS: {backgroundColor: "#000", opacity: .6, cursor: "wait"},
-            cursorReset: "default",
-            growlCSS: {
-                width: "350px",
-                top: "10px",
-                left: "",
-                right: "10px",
-                border: "none",
-                padding: "5px",
-                opacity: .6,
-                cursor: "default",
-                color: "#fff",
-                backgroundColor: "#000",
-                "-webkit-border-radius": "10px",
-                "-moz-border-radius": "10px",
-                "border-radius": "10px"
-            },
-            iframeSrc: /^https/i.test(window.location.href || "") ? "javascript:false" : "about:blank",
-            forceIframe: !1,
-            baseZ: 1e3,
-            centerX: !0,
-            centerY: !0,
-            allowBodyStretch: !0,
-            bindEvents: !0,
-            constrainTabKey: !0,
-            fadeIn: 200,
-            fadeOut: 400,
-            timeout: 0,
-            showOverlay: !0,
-            focusInput: !0,
-            focusableElements: ":input:enabled:visible",
-            onBlock: null,
-            onUnblock: null,
-            onOverlayClick: null,
-            quirksmodeOffsetHack: 4,
-            blockMsgClass: "blockMsg",
-            ignoreIfBlocked: !1
-        };
-        var p = null, b = []
-    }
-
-    "function" == typeof define && define.amd && define.amd.jQuery ? define(["jquery"], e) : e(jQuery)
-}();
 !function (e) {
     var n = !1;
     if ("function" == typeof define && define.amd && (define(e), n = !0), "object" == typeof exports && (module.exports = e(), n = !0), !n) {
@@ -1146,7 +296,7 @@ var pixproof = {
 });
 
 function vc_js() {
-    vc_toggleBehaviour(), vc_tabsBehaviour(), vc_accordionBehaviour(), vc_teaserGrid(), vc_carouselBehaviour(), vc_slidersBehaviour(), vc_prettyPhoto(), vc_googleplus(), vc_pinterest(), vc_progress_bar(), vc_plugin_flexslider(), vc_google_fonts(), vc_gridBehaviour(), vc_rowBehaviour(), vc_prepareHoverBox(), vc_googleMapsPointer(), vc_ttaActivation(), jQuery(document).trigger("vc_js"), window.setTimeout(vc_waypoints, 500)
+   vc_teaserGrid(), vc_carouselBehaviour(), vc_slidersBehaviour(), vc_pinterest(), vc_plugin_flexslider(), vc_google_fonts(), vc_gridBehaviour(), vc_rowBehaviour(), vc_googleMapsPointer(), vc_ttaActivation(), jQuery(document).trigger("vc_js"), window.setTimeout(vc_waypoints, 500)
 }
 
 function getSizeName() {
@@ -1161,78 +311,6 @@ function vc_ttaActivation() {
     })
 }
 
-function vc_accordionActivate(event, ui) {
-    if (ui.newPanel.length && ui.newHeader.length) {
-        var $pie_charts = ui.newPanel.find(".vc_pie_chart:not(.vc_ready)"),
-            $round_charts = ui.newPanel.find(".vc_round-chart"), $line_charts = ui.newPanel.find(".vc_line-chart"),
-            $carousel = ui.newPanel.find('[data-ride="vc_carousel"]');
-        void 0 !== jQuery.fn.isotope && ui.newPanel.find(".isotope, .wpb_image_grid_ul").isotope("layout"), ui.newPanel.find(".vc_masonry_media_grid, .vc_masonry_grid").length && ui.newPanel.find(".vc_masonry_media_grid, .vc_masonry_grid").each(function () {
-            var grid = jQuery(this).data("vcGrid");
-            grid && grid.gridBuilder && grid.gridBuilder.setMasonry && grid.gridBuilder.setMasonry()
-        }), vc_carouselBehaviour(ui.newPanel), vc_plugin_flexslider(ui.newPanel), $pie_charts.length && jQuery.fn.vcChat && $pie_charts.vcChat(), $round_charts.length && jQuery.fn.vcRoundChart && $round_charts.vcRoundChart({reload: !1}), $line_charts.length && jQuery.fn.vcLineChart && $line_charts.vcLineChart({reload: !1}), $carousel.length && jQuery.fn.carousel && $carousel.carousel("resizeAction"), ui.newPanel.parents(".isotope").length && ui.newPanel.parents(".isotope").each(function () {
-            jQuery(this).isotope("layout")
-        })
-    }
-}
-
-function vc_initVideoBackgrounds() {
-    jQuery("[data-vc-video-bg]").each(function () {
-        var youtubeUrl, youtubeId, $element = jQuery(this);
-        $element.data("vcVideoBg") ? (youtubeUrl = $element.data("vcVideoBg"), youtubeId = vcExtractYoutubeId(youtubeUrl), youtubeId && ($element.find(".vc_video-bg").remove(), insertYoutubeVideoAsBackground($element, youtubeId)), jQuery(window).on("grid:items:added", function (event, $grid) {
-            $element.has($grid).length && vcResizeVideoBackground($element)
-        })) : $element.find(".vc_video-bg").remove()
-    })
-}
-
-function insertYoutubeVideoAsBackground($element, youtubeId, counter) {
-    if ("undefined" == typeof YT || void 0 === YT.Player) return 100 < (counter = void 0 === counter ? 0 : counter) ? void console.warn("Too many attempts to load YouTube api") : void setTimeout(function () {
-        insertYoutubeVideoAsBackground($element, youtubeId, counter++)
-    }, 100);
-    var $container = $element.prepend('<div class="vc_video-bg vc_hidden-xs"><div class="inner"></div></div>').find(".inner");
-    new YT.Player($container[0], {
-        width: "100%",
-        height: "100%",
-        videoId: youtubeId,
-        playerVars: {
-            playlist: youtubeId,
-            iv_load_policy: 3,
-            enablejsapi: 1,
-            disablekb: 1,
-            autoplay: 1,
-            controls: 0,
-            showinfo: 0,
-            rel: 0,
-            loop: 1,
-            wmode: "transparent"
-        },
-        events: {
-            onReady: function (event) {
-                event.target.mute().setLoop(!0)
-            }
-        }
-    }), vcResizeVideoBackground($element), jQuery(window).bind("resize", function () {
-        vcResizeVideoBackground($element)
-    })
-}
-
-function vcResizeVideoBackground($element) {
-    var iframeW, iframeH, marginLeft, marginTop, containerW = $element.innerWidth(),
-        containerH = $element.innerHeight();
-    containerW / containerH < 16 / 9 ? (iframeW = containerH * (16 / 9), iframeH = containerH, marginLeft = -Math.round((iframeW - containerW) / 2) + "px", marginTop = -Math.round((iframeH - containerH) / 2) + "px", iframeW += "px", iframeH += "px") : (iframeW = containerW, iframeH = containerW * (9 / 16), marginTop = -Math.round((iframeH - containerH) / 2) + "px", marginLeft = -Math.round((iframeW - containerW) / 2) + "px", iframeW += "px", iframeH += "px"), $element.find(".vc_video-bg iframe").css({
-        maxWidth: "1000%",
-        marginLeft: marginLeft,
-        marginTop: marginTop,
-        width: iframeW,
-        height: iframeH
-    })
-}
-
-function vcExtractYoutubeId(url) {
-    if (void 0 === url) return !1;
-    var id = url.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
-    return null !== id && id[1]
-}
-
 function vc_googleMapsPointer() {
     var $ = window.jQuery, $wpbGmapsWidget = $(".wpb_gmaps_widget");
     $wpbGmapsWidget.on("click", function () {
@@ -1240,29 +318,6 @@ function vc_googleMapsPointer() {
     }), $wpbGmapsWidget.mouseleave(function () {
         $("iframe", this).css("pointer-events", "none")
     }), $(".wpb_gmaps_widget iframe").css("pointer-events", "none")
-}
-
-function vc_setHoverBoxPerspective(hoverBox) {
-    hoverBox.each(function () {
-        var $this = jQuery(this), width = $this.width(), perspective = 4 * width + "px";
-        $this.css("perspective", perspective)
-    })
-}
-
-function vc_setHoverBoxHeight(hoverBox) {
-    hoverBox.each(function () {
-        var $this = jQuery(this), hoverBoxInner = $this.find(".vc-hoverbox-inner");
-        hoverBoxInner.css("min-height", 0);
-        var frontHeight = $this.find(".vc-hoverbox-front-inner").outerHeight(),
-            backHeight = $this.find(".vc-hoverbox-back-inner").outerHeight(),
-            hoverBoxHeight = frontHeight > backHeight ? frontHeight : backHeight;
-        hoverBoxHeight < 250 && (hoverBoxHeight = 250), hoverBoxInner.css("min-height", hoverBoxHeight + "px")
-    })
-}
-
-function vc_prepareHoverBox() {
-    var hoverBox = jQuery(".vc-hoverbox");
-    vc_setHoverBoxHeight(hoverBox), vc_setHoverBoxPerspective(hoverBox)
 }
 
 document.documentElement.className += " js_active ", document.documentElement.className += "ontouchstart" in document.documentElement ? " vc_mobile " : " vc_desktop ", function () {
@@ -1279,13 +334,6 @@ document.documentElement.className += " js_active ", document.documentElement.cl
             smoothHeight: !0
         })
     })
-}), "function" != typeof window.vc_googleplus && (window.vc_googleplus = function () {
-    0 < jQuery(".wpb_googleplus").length && function () {
-        var po = document.createElement("script");
-        po.type = "text/javascript", po.async = !0, po.src = "//apis.google.com/js/plusone.js";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(po, s)
-    }()
 }), "function" != typeof window.vc_pinterest && (window.vc_pinterest = function () {
     0 < jQuery(".wpb_pinterest").length && function () {
         var po = document.createElement("script");
@@ -1293,91 +341,13 @@ document.documentElement.className += " js_active ", document.documentElement.cl
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(po, s)
     }()
-}), "function" != typeof window.vc_progress_bar && (window.vc_progress_bar = function () {
-    void 0 !== jQuery.fn.waypoint && jQuery(".vc_progress_bar").waypoint(function () {
-        jQuery(this).find(".vc_single_bar").each(function (index) {
-            var $this = jQuery(this), bar = $this.find(".vc_bar"), val = bar.data("percentage-value");
-            setTimeout(function () {
-                bar.css({width: val + "%"})
-            }, 200 * index)
-        })
-    }, {offset: "85%"})
-}), "function" != typeof window.vc_waypoints && (window.vc_waypoints = function () {
+}),
+"function" != typeof window.vc_waypoints && (window.vc_waypoints = function () {
     void 0 !== jQuery.fn.vcwaypoint && jQuery(".wpb_animate_when_almost_visible:not(.wpb_start_animation)").each(function () {
         var $el = jQuery(this);
         $el.vcwaypoint(function () {
             $el.addClass("wpb_start_animation animated")
         }, {offset: "85%"})
-    })
-}), "function" != typeof window.vc_toggleBehaviour && (window.vc_toggleBehaviour = function ($el) {
-    function event(e) {
-        e && e.preventDefault && e.preventDefault();
-        var title = jQuery(this), element = title.closest(".vc_toggle"), content = element.find(".vc_toggle_content");
-        element.hasClass("vc_toggle_active") ? content.slideUp({
-            duration: 300, complete: function () {
-                element.removeClass("vc_toggle_active")
-            }
-        }) : content.slideDown({
-            duration: 300, complete: function () {
-                element.addClass("vc_toggle_active")
-            }
-        })
-    }
-
-    $el ? $el.hasClass("vc_toggle_title") ? $el.unbind("click").on("click", event) : $el.find(".vc_toggle_title").unbind("click").on("click", event) : jQuery(".vc_toggle_title").unbind("click").on("click", event)
-}), "function" != typeof window.vc_tabsBehaviour && (window.vc_tabsBehaviour = function ($tab) {
-    if (jQuery.ui) {
-        var $call = $tab || jQuery(".wpb_tabs, .wpb_tour"),
-            ver = jQuery.ui && jQuery.ui.version ? jQuery.ui.version.split(".") : "1.10",
-            old_version = 1 === parseInt(ver[0]) && 9 > parseInt(ver[1]);
-        $call.each(function (index) {
-            var $tabs, interval = jQuery(this).attr("data-interval"), tabs_array = [];
-            if ($tabs = jQuery(this).find(".wpb_tour_tabs_wrapper").tabs({
-                show: function (event, ui) {
-                    wpb_prepare_tab_content(event, ui)
-                }, beforeActivate: function (event, ui) {
-                    1 !== ui.newPanel.index() && ui.newPanel.find(".vc_pie_chart:not(.vc_ready)")
-                }, activate: function (event, ui) {
-                    wpb_prepare_tab_content(event, ui)
-                }
-            }), interval && 0 < interval) try {
-                $tabs.tabs("rotate", 1e3 * interval)
-            } catch (e) {
-                window.console && window.console.log && console.log(e)
-            }
-            jQuery(this).find(".wpb_tab").each(function () {
-                tabs_array.push(this.id)
-            }), jQuery(this).find(".wpb_tabs_nav li").on("click", function (e) {
-                return e.preventDefault(), old_version ? $tabs.tabs("select", jQuery("a", this).attr("href")) : $tabs.tabs("option", "active", jQuery(this).index()), !1
-            }), jQuery(this).find(".wpb_prev_slide a, .wpb_next_slide a").on("click", function (e) {
-                if (e.preventDefault(), old_version) {
-                    var index = $tabs.tabs("option", "selected");
-                    jQuery(this).parent().hasClass("wpb_next_slide") ? index++ : index--, 0 > index ? index = $tabs.tabs("length") - 1 : index >= $tabs.tabs("length") && (index = 0), $tabs.tabs("select", index)
-                } else {
-                    var index = $tabs.tabs("option", "active"), length = $tabs.find(".wpb_tab").length;
-                    index = jQuery(this).parent().hasClass("wpb_next_slide") ? index + 1 >= length ? 0 : index + 1 : 0 > index - 1 ? length - 1 : index - 1, $tabs.tabs("option", "active", index)
-                }
-            })
-        })
-    }
-}), "function" != typeof window.vc_accordionBehaviour && (window.vc_accordionBehaviour = function () {
-    jQuery(".wpb_accordion").each(function (index) {
-        var $tabs, $this = jQuery(this),
-            active_tab = ($this.attr("data-interval"), !isNaN(jQuery(this).data("active-tab")) && 0 < parseInt($this.data("active-tab")) && parseInt($this.data("active-tab")) - 1),
-            collapsible = !1 === active_tab || "yes" === $this.data("collapsible");
-        $tabs = $this.find(".wpb_accordion_wrapper").accordion({
-            header: "> div > h3",
-            autoHeight: !1,
-            heightStyle: "content",
-            active: active_tab,
-            collapsible: collapsible,
-            navigation: !0,
-            activate: vc_accordionActivate,
-            change: function (event, ui) {
-                void 0 !== jQuery.fn.isotope && ui.newContent.find(".isotope").isotope("layout"), vc_carouselBehaviour(ui.newPanel)
-            }
-        }), !0 === $this.data("vcDisableKeydown") && ($tabs.data("uiAccordion")._keydown = function () {
-        })
     })
 }), "function" != typeof window.vc_teaserGrid && (window.vc_teaserGrid = function () {
     var layout_modes = {fitrows: "fitRows", masonry: "masonry"};
@@ -1435,27 +405,6 @@ document.documentElement.className += " js_active ", document.documentElement.cl
             $imagesGrid.isotope({itemSelector: ".isotope-item", layoutMode: "fitRows"})
         }) : this_element.find(".wpb_image_grid_ul").isotope({itemSelector: ".isotope-item", layoutMode: "fitRows"}))
     })
-}), "function" != typeof window.vc_prettyPhoto && (window.vc_prettyPhoto = function () {
-    try {
-        jQuery && jQuery.fn && jQuery.fn.prettyPhoto && jQuery('a.prettyphoto, .gallery-icon a[href*=".jpg"]').prettyPhoto({
-            animationSpeed: "normal",
-            hook: "data-rel",
-            padding: 15,
-            opacity: .7,
-            showTitle: !0,
-            allowresize: !0,
-            counter_separator_label: "/",
-            hideflash: !1,
-            deeplinking: !1,
-            modal: !1,
-            callback: function () {
-                location.href.indexOf("#!prettyPhoto") > -1 && (location.hash = "")
-            },
-            social_tools: ""
-        })
-    } catch (err) {
-        window.console && window.console.log && console.log(err)
-    }
 }), "function" != typeof window.vc_google_fonts && (window.vc_google_fonts = function () {
     return !1
 }), window.vcParallaxSkroll = !1, "function" != typeof window.vc_rowBehaviour && (window.vc_rowBehaviour = function () {
@@ -1510,7 +459,7 @@ document.documentElement.className += " js_active ", document.documentElement.cl
         (window.navigator.userAgent.indexOf("MSIE ") > 0 || navigator.userAgent.match(/Trident.*rv\:11\./)) && $(".vc_row-o-full-height").each(function () {
             "flex" === $(this).css("display") && $(this).wrap('<div class="vc_ie-flexbox-fixer"></div>')
         })
-    }(), vc_initVideoBackgrounds(), function () {
+    }(), function () {
         var vcSkrollrOptions, callSkrollInit = !1;
         window.vcParallaxSkroll && window.vcParallaxSkroll.destroy(), $(".vc_parallax-inner").remove(), $("[data-5p-top-bottom]").removeAttr("data-5p-top-bottom data-30p-top-bottom"), $("[data-vc-parallax]").each(function () {
             var skrollrSpeed, skrollrSize, skrollrStart, skrollrEnd, $parallaxElement, parallaxImage, youtubeId;
@@ -1549,7 +498,7 @@ var screen_size = getSizeName();
     panel.parents(".isotope").length && panel.parents(".isotope").each(function () {
         jQuery(this).isotope("layout")
     })
-}), window.vc_googleMapsPointer, jQuery(document).ready(vc_prepareHoverBox), jQuery(window).resize(vc_prepareHoverBox), jQuery(document).ready(function ($) {
+}), window.vc_googleMapsPointer, jQuery(document).ready(function ($) {
     window.vc_js()
 });
 (function () {
@@ -1579,7 +528,7 @@ jQuery(document).ready(function ($) {
             var button = jQuery(this);
             button.addClass("loading");
             var $items = load_wrap.next(".load-items-" + parseInt(pageNum)).find("article");
-            load_wrap.next(".load-items-" + pageNum).load(nextLink + " " + jQuery(this).attr("data-wrap") + " article", function () {
+            load_wrap.next(".load-items-" + pageNum).load(nextLink, function () {
                 var $html = jQuery(this).find("article");
                 load_wrap.append($html);
                 var load_s = jQuery(this);
@@ -3946,948 +2895,10 @@ jQuery(window).on("load", function () {
         skrollr.get().refresh()
     }
 });
-jQuery(".tabs-head").on("click", ".item:not(.active-tab)", function () {
-    jQuery(this).addClass("active-tab").siblings().removeClass("active-tab").parents(".tabs").find(".tabs-body .item").eq(jQuery(this).index()).fadeIn(150).siblings().hide()
-});
-
 function leadZero(n) {
     return (n < 10 ? "0" : "") + n
 }
-
-jQuery(document).ready(function () {
-    jQuery(".tabs").each(function () {
-        var item = jQuery(this).find(".tabs-body > .item"), tabs_head = jQuery(this).find(".tabs-head");
-        item.each(function () {
-            var name = jQuery(this).data("name");
-            tabs_head.append('<div class="item">' + name + "</div>")
-        });
-        tabs_head.find(".item:first-of-type").addClass("active-tab");
-        jQuery(this).find(".tabs-body > .item:first-of-type").css("display", "block")
-    });
-    jQuery(".vertical-parallax-slider").each(function () {
-        jQuery("body").addClass("body-one-screen");
-        var this_el = jQuery(this), el = this_el.find(".item"), delay = 800,
-            dots = this_el.parent().find(".pagination-dots"), nav = this_el.parent().find(".nav-arrows"),
-            status = false;
-        el.each(function () {
-            jQuery(this).css("z-index", parseInt(el.length - jQuery(this).index()));
-            dots.append("<span></span>")
-        });
-
-        function vertical_parallax(coef, index) {
-            index = index === undefined ? false : index;
-            if (coef != false) {
-                var index = this_el.find(".item.active").index() - coef
-            }
-            el.eq(index).removeClass("prev next").addClass("active").siblings().removeClass("active");
-            el.eq(index).prevAll().removeClass("next").addClass("prev");
-            el.eq(index).nextAll().removeClass("prev").addClass("next");
-            dots.find("span").eq(index).addClass("active").siblings().removeClass("active")
-        }
-
-        vertical_parallax(false, 0);
-        this_el.on("mousewheel wheel", function (e) {
-            if (jQuery(window).width() > 992) {
-                e.preventDefault();
-                var cur = this_el.find(".item.active").index();
-                if (status != true) {
-                    status = true;
-                    if (e.originalEvent.deltaY > 0 && cur != parseInt(el.length - 1)) {
-                        vertical_parallax("-1");
-                        setTimeout(function () {
-                            status = false
-                        }, delay)
-                    } else if (e.originalEvent.deltaY < 0 && cur != 0) {
-                        vertical_parallax("1");
-                        setTimeout(function () {
-                            status = false
-                        }, delay)
-                    } else {
-                        status = false
-                    }
-                }
-            }
-        });
-        dots.on("click", "span:not(.active)", function () {
-            jQuery(this).addClass("active").siblings().removeClass("active");
-            vertical_parallax(false, jQuery(this).index())
-        });
-        nav.on("click", ".prev", function () {
-            var cur = this_el.find(".item.active").index();
-            if (cur != parseInt(el.length - 1)) {
-                vertical_parallax("-1")
-            }
-        }).on("click", ".next", function () {
-            var cur = this_el.find(".item.active").index();
-            if (cur != 0) {
-                vertical_parallax("1")
-            }
-        })
-    });
-
-    function equalHeight(group) {
-        if (jQuery(window).width() > "768") {
-            var tallest = 0;
-            jQuery(group).each(function () {
-                var thisHeight = jQuery(this).css("height", "").height();
-                if (thisHeight > tallest) {
-                    tallest = thisHeight
-                }
-            });
-            jQuery(group).height(tallest)
-        } else {
-            jQuery(group).height("auto")
-        }
-    }
-
-    if (jQuery(".navigation > ul > li").length > 6) {
-        jQuery(".navigation").addClass("min")
-    }
-    jQuery(".project-slider").each(function () {
-        var head_slider = jQuery(this);
-        if (head_slider.find(".item").length == 1) {
-            head_slider.parent().removeClass("with-carousel-nav")
-        }
-        if (jQuery(this).find(".item").length > 1) {
-            head_slider.addClass("owl-carousel").owlCarousel({
-                items: 1,
-                nav: true,
-                dots: false,
-                autoplay: false,
-                navClass: ["owl-prev basic-ui-icon-left-arrow", "owl-next basic-ui-icon-right-arrow"],
-                navText: false,
-                autoHeight: true,
-                responsive: {0: {nav: false}, 480: {}, 768: {nav: true}}
-            });
-            var child_carousel = head_slider.next(".project-slider-carousel");
-            var i = 0;
-            var flag = false;
-            var c_items = "4";
-            if (head_slider.find(".owl-item:not(.cloned)").find(".item").length < 4) {
-                c_items = head_slider.find(".owl-item:not(.cloned)").find(".item").length
-            }
-            var child_carousel_c = child_carousel.addClass("owl-carousel").owlCarousel({
-                items: 1,
-                nav: true,
-                dots: false,
-                autoplay: false,
-                navClass: ["owl-prev basic-ui-icon-left-arrow", "owl-next basic-ui-icon-right-arrow"],
-                navText: false,
-                margin: 15,
-                responsive: {0: {nav: false}, 480: {}, 768: {nav: true, items: c_items}}
-            }).on("click initialized.owl.carousel", ".item", function (e) {
-                e.preventDefault();
-                head_slider.trigger("to.owl.carousel", [jQuery(e.target).parents(".owl-item").index(), 300, true]);
-                jQuery(e.target).parents(".owl-item").addClass("active-item").siblings().removeClass("active-item")
-            }).data("owl.carousel");
-            var child_carousel_item = child_carousel.find(".owl-item.active");
-            head_slider.on("change.owl.carousel", function (e) {
-                if (e.namespace && e.property.name === "position" && !flag) {
-                    flag = true;
-                    child_carousel_c.to(e.relatedTarget.relative(e.property.value), 300, true);
-                    head_slider.parent().find(".banner-carousel .owl-item.active").first().addClass("active-item").siblings().removeClass("active-item");
-                    flag = false
-                }
-            }).data("owl.carousel")
-        }
-    });
-    jQuery(document).ready(function () {
-        jQuery(".image-comparison-slider").each(function () {
-            var cur = jQuery(this);
-            var width = cur.width() + "px";
-            cur.find(".resize .old").css("width", width);
-            drags(cur.find(".line"), cur.find(".resize"), cur)
-        })
-    });
-    jQuery(window).resize(function () {
-        jQuery(".image-comparison-slider").each(function () {
-            var cur = jQuery(this);
-            var width = cur.width() + "px";
-            cur.find(".resize .old").css("width", width)
-        })
-    });
-
-    function drags(dragElement, resizeElement, container) {
-        dragElement.on("mousedown touchstart", function (e) {
-            dragElement.addClass("draggable");
-            resizeElement.addClass("resizable");
-            var startX = e.pageX ? e.pageX : e.originalEvent.touches[0].pageX, dragWidth = dragElement.outerWidth(),
-                posX = dragElement.offset().left + dragWidth - startX, containerOffset = container.offset().left,
-                containerWidth = container.outerWidth(), minLeft = containerOffset + 25,
-                maxLeft = containerOffset + containerWidth - dragWidth - 25;
-            dragElement.parents().on("mousemove touchmove", function (e) {
-                var moveX = e.pageX ? e.pageX : e.originalEvent.touches[0].pageX, leftValue = moveX + posX - dragWidth;
-                if (leftValue < minLeft) {
-                    leftValue = minLeft
-                } else if (leftValue > maxLeft) {
-                    leftValue = maxLeft
-                }
-                var widthValue = (leftValue + dragWidth / 2 - containerOffset) * 100 / containerWidth + "%";
-                jQuery(".draggable").css("left", widthValue).on("mouseup touchend touchcancel", function () {
-                    jQuery(this).removeClass("draggable");
-                    resizeElement.removeClass("resizable")
-                });
-                jQuery(".resizable").css("width", widthValue)
-            }).on("mouseup touchend touchcancel", function () {
-                dragElement.removeClass("draggable");
-                resizeElement.removeClass("resizable")
-            });
-            e.preventDefault()
-        }).on("mouseup touchend touchcancel", function (e) {
-            dragElement.removeClass("draggable");
-            resizeElement.removeClass("resizable")
-        })
-    }
-
-    jQuery(".right-click-disable").on("contextmenu", function () {
-        jQuery(".right-click-disable-message").addClass("active");
-        return false
-    });
-    jQuery(".right-click-disable-message:not(.lic)").on("click", function () {
-        jQuery(this).removeClass("active");
-        return false
-    });
-    jQuery(".category-slider-area").each(function () {
-        var el_area = jQuery(this), items = el_area.find(".item"),
-            images_area = el_area.find(".category-slider-images");
-        items.each(function () {
-            jQuery(this).attr("data-eq", jQuery(this).index());
-            images_area.append('<div class="img-item" style="background-image: url(' + jQuery(this).data("image") + ')"><div class="num">' + leadZero(jQuery(this).index() + 1) + "</div></div>")
-        });
-        el_area.find(".category-slider").on("initialized.owl.carousel translated.owl.carousel", function (e) {
-            var eq = jQuery(this).find(".center .item").data("eq");
-            images_area.find(".img-item").eq(eq).addClass("active").siblings().removeClass("active")
-        });
-        el_area.find(".category-slider").owlCarousel({
-            loop: true,
-            items: 1,
-            center: true,
-            autoWidth: true,
-            nav: false,
-            dots: false,
-            autoplay: false,
-            autoplayHoverPause: true,
-            navText: false,
-            slideBy: 1
-        });
-        el_area.on("mousewheel wheel", function (e) {
-            var d = e.originalEvent.deltaY;
-            if (e.originalEvent.deltaY) {
-                d = e.originalEvent.deltaY
-            } else {
-                d = e.deltaY
-            }
-            if (d > 0) {
-                el_area.find(".category-slider").trigger("next.owl")
-            } else {
-                el_area.find(".category-slider").trigger("prev.owl")
-            }
-            e.preventDefault()
-        })
-    });
-    jQuery(".accordion-items .item .top").on("click", function () {
-        if (jQuery(this).parent().hasClass("active")) {
-            jQuery(this).parent().removeClass("active").find(".wrap").slideUp()
-        } else {
-            jQuery(this).parent().addClass("active").find(".wrap").slideDown()
-        }
-    });
-    jQuery(".split-screen").each(function () {
-        var this_el = jQuery(this), slider = jQuery(this).find(".image"), item = this_el.find(".item"), nav_html = "";
-        slider.each(function () {
-            if (jQuery(this).find(".img-item").length > 1) {
-                jQuery(this).addClass("owl-carousel").owlCarousel({
-                    items: 1,
-                    nav: true,
-                    dots: true,
-                    autoplay: false,
-                    navClass: ["owl-prev basic-ui-icon-left-arrow", "owl-next basic-ui-icon-right-arrow"],
-                    navText: false
-                })
-            }
-        });
-        if (item.length > 1) {
-            nav_html = '<div class="portfolio-navigation">';
-            nav_html += '<div class="numbers">';
-            item.each(function () {
-                nav_html += '<div class="num" data-index="' + jQuery(this).index() + '"><span>' + leadZero(jQuery(this).index() + 1) + "</span></div>"
-            });
-            nav_html += "</div>";
-            nav_html += "</div>";
-            this_el.append(nav_html)
-        }
-        jQuery(window).on("load", function () {
-            this_el.find(".item:eq(0), .num:eq(0)").addClass("active")
-        });
-        this_el.on("click", ".num:not(.active)", function () {
-            var el = jQuery(this), index = el.data("index");
-            item.removeClass("active");
-            item.eq(index).delay(500).queue(function (next) {
-                jQuery(this).addClass("active");
-                next()
-            });
-            el.addClass("active").siblings().removeClass("active")
-        })
-    });
-    jQuery(".split-screen-type2").each(function () {
-        jQuery("body").addClass("body-one-screen");
-        var this_el = jQuery(this), el = this_el.find(".screen-item"), delay = 1e3,
-            dots = this_el.parent().find(".pagination-dots"), status = false;
-        el.each(function () {
-            dots.append("<span></span>")
-        });
-
-        function vertical_parallax(coef, index) {
-            index = index === undefined ? false : index;
-            if (coef != false) {
-                var index = this_el.find(".screen-item.active").index() - coef
-            }
-            el.eq(index).removeClass("prev next").addClass("active").siblings().removeClass("active");
-            el.eq(index).prevAll().removeClass("next").addClass("prev");
-            el.eq(index).nextAll().removeClass("prev").addClass("next");
-            dots.find("span").eq(index).addClass("active").siblings().removeClass("active");
-            if (el.eq(index).find(".item-left").hasClass("black")) {
-                jQuery("body").addClass("header-left-white-color").removeClass("header-left-dark-color")
-            } else {
-                jQuery("body").addClass("header-left-dark-color").removeClass("header-left-white-color")
-            }
-            if (el.eq(index).find(".item-right").hasClass("black")) {
-                jQuery("body").addClass("header-right-white-color").removeClass("header-right-dark-color")
-            } else {
-                jQuery("body").addClass("header-right-dark-color").removeClass("header-right-white-color")
-            }
-        }
-
-        vertical_parallax(false, 0);
-        this_el.on("mousewheel wheel", function (e) {
-            e.preventDefault();
-            var cur = this_el.find(".screen-item.active").index();
-            if (status != true) {
-                status = true;
-                if (e.originalEvent.deltaY > 0 && cur != parseInt(el.length - 1)) {
-                    vertical_parallax("-1");
-                    setTimeout(function () {
-                        status = false
-                    }, delay)
-                } else if (e.originalEvent.deltaY < 0 && cur != 0) {
-                    vertical_parallax("1");
-                    setTimeout(function () {
-                        status = false
-                    }, delay)
-                } else {
-                    status = false
-                }
-            }
-        });
-        dots.on("click", "span:not(.active)", function () {
-            jQuery(this).addClass("active").siblings().removeClass("active");
-            vertical_parallax(false, jQuery(this).index())
-        });
-        el.find(".item-left").each(function () {
-            jQuery(this).swipe({
-                swipeUp: function () {
-                    vertical_parallax("-1")
-                }, swipeDown: function () {
-                    vertical_parallax("1")
-                }
-            })
-        });
-        el.find(".item-right").each(function () {
-            jQuery(this).swipe({
-                swipeUp: function () {
-                    vertical_parallax("1")
-                }, swipeDown: function () {
-                    vertical_parallax("-1")
-                }
-            })
-        })
-    });
-    jQuery(".site-header .search-button").on("click", function () {
-        if (jQuery(this).hasClass("active")) {
-            jQuery(this).removeClass("active");
-            jQuery(".search-popup").fadeOut()
-        } else {
-            jQuery(this).addClass("active");
-            jQuery(".search-popup").fadeIn()
-        }
-    });
-    jQuery(".search-popup .close").on("click", function () {
-        jQuery(".site-header .search-button").removeClass("active");
-        jQuery(".search-popup").fadeOut()
-    });
-    jQuery(".nav-button.hidden_menu, .nav-button.visible_menu").on("click", function () {
-        if (jQuery(this).hasClass("active")) {
-            jQuery(this).removeClass("active");
-            jQuery(".navigation").removeClass("active")
-        } else {
-            jQuery(this).addClass("active");
-            jQuery(".navigation").addClass("active")
-        }
-    });
-    jQuery(".nav-button.full_screen").on("click", function () {
-        if (jQuery(this).hasClass("active")) {
-            jQuery(this).removeClass("active");
-            jQuery(".full-screen-nav").fadeOut()
-        } else {
-            jQuery(this).addClass("active");
-            jQuery(".full-screen-nav").fadeIn()
-        }
-    });
-    jQuery(".full-screen-nav .close").on("click", function () {
-        jQuery(".nav-button.full_screen").removeClass("active");
-        jQuery(".full-screen-nav").fadeOut()
-    });
-    jQuery(".full-screen-nav .menu-item-has-children > a").on("click", function () {
-        if (!jQuery(this).hasClass("active")) {
-            jQuery(this).addClass("active").parent().children(".sub-menu").slideDown().parent().siblings().children("a").removeClass("active").next(".sub-menu").slideUp();
-            return false
-        }
-    });
-    jQuery(".side-navigation ul li.menu-item-has-children > a,.side-navigation ul li.page_item_has_children > a").on("click", function () {
-        jQuery(this).parents("li").addClass("active-child");
-        return false
-    });
-    jQuery(".side-navigation .sub-menu .back,.side-navigation .children .back").on("click", function () {
-        jQuery(this).parent().parent().removeClass("active-child");
-        return false
-    });
-    jQuery(".side-bar-button").on("click", function () {
-        jQuery(".side-bar-area").addClass("active")
-    });
-    jQuery(".side-bar-area .close").on("click", function () {
-        jQuery(".side-bar-area").removeClass("active")
-    });
-    jQuery(".banner-right-buttons div.category").on("click", function () {
-        if (jQuery(this).hasClass("active")) {
-            jQuery(this).parents(".banner-area").find(".banner-categories").removeClass("active");
-            jQuery(this).removeClass("active")
-        } else {
-            jQuery(this).parents(".banner-area").find(".banner-categories").addClass("active");
-            jQuery(this).addClass("active").siblings().removeClass("active");
-            jQuery(this).parents(".banner-area").find(".banner-about").removeClass("active")
-        }
-    });
-    jQuery(".banner-right-buttons div.about").on("click", function () {
-        if (jQuery(this).hasClass("active")) {
-            jQuery(this).parents(".banner-area").find(".banner-about").removeClass("active");
-            jQuery(this).removeClass("active")
-        } else {
-            jQuery(this).parents(".banner-area").find(".banner-about").addClass("active");
-            jQuery(this).addClass("active").siblings().removeClass("active");
-            jQuery(this).parents(".banner-area").find(".banner-categories").removeClass("active")
-        }
-    });
-    jQuery(window).on("load resize", function () {
-        if (jQuery(window).width() <= "1200") {
-            jQuery(".navigation .menu-item-has-children > a").on("click", function () {
-                if (!jQuery(this).hasClass("active")) {
-                    jQuery(this).addClass("active").parent().children(".sub-menu").slideDown().siblings().children(".sub-menu").slideUp();
-                    return false
-                }
-            })
-        }
-    });
-    jQuery(window).on("load resize scroll", function () {
-        if (jQuery(document).scrollTop() > 0) {
-            jQuery(".site-header").addClass("fixed")
-        } else {
-            jQuery(".site-header").removeClass("fixed")
-        }
-    });
-    jQuery(document).on("click", ".price-list .item .options .button-style1", function () {
-        if (jQuery(this).parent().hasClass("active")) {
-            jQuery(this).removeClass("active").parent().removeClass("active").find(".wrap").slideUp();
-            if (jQuery(window).width() < 768) {
-                jQuery(this).closest('.owl-carousel').toggleClass('view-opened');
-            }
-        } else {
-            jQuery(this).addClass("active").parent().addClass("active").find(".wrap").slideDown();
-            if (jQuery(window).width() < 768) {
-                jQuery(this).closest('.owl-carousel').toggleClass('view-opened');
-            }
-        }
-        return false
-    });
-    jQuery("#wpadminbar").addClass("wpadminbar");
-    var nav_el = "";
-    if (jQuery(".navigation").hasClass("visible_menu")) {
-        nav_el = "yes"
-    }
-    jQuery(window).on("load resize", function () {
-        jQuery(".header-space").css("height", jQuery(".site-header").outerHeight() + jQuery(".header + .navigation").outerHeight() + jQuery(".ypromo-site-bar").outerHeight());
-        jQuery("main.main-row").css("min-height", jQuery(window).outerHeight() - jQuery(".site-footer").outerHeight() - jQuery(".footer-social-button").outerHeight() - jQuery(".header-space:not(.hide)").outerHeight() - jQuery(".ypromo-site-bar").outerHeight() - jQuery("#wpadminbar").outerHeight());
-        jQuery(".protected-post-form .cell").css("height", jQuery(window).outerHeight() - jQuery(".site-footer").outerHeight() - jQuery(".footer-social-button").outerHeight() - jQuery(".header-space:not(.hide)").outerHeight() - jQuery(".ypromo-site-bar").outerHeight() - jQuery("#wpadminbar").outerHeight());
-        jQuery(".banner:not(.fixed-height)").each(function () {
-            var coef = 0;
-            if (jQuery(this).parents(".banner-area").hasClass("external-indent") && !jQuery(this).parents(".banner-area").hasClass("with-carousel-nav")) {
-                coef = 70
-            }
-            jQuery(this).css("height", jQuery(window).outerHeight() - jQuery(".header-space:not(.hide)").outerHeight() - jQuery("#wpadminbar").outerHeight() - coef);
-            jQuery(this).find(".cell").css("height", jQuery(this).height());
-            jQuery(this).parent().find(".banner-categories .item").css("height", jQuery(this).height());
-            jQuery(this).parent().find(".banner-about .cell").css("height", jQuery(this).height() - 20);
-            jQuery(this).parent().find(".banner-about .image").css("height", jQuery(this).height());
-            jQuery(this).parent().find(".banner-about .text").css("height", jQuery(this).height());
-            jQuery(this).parent().find(".banner-right-buttons .cell").css("height", jQuery(this).height())
-        });
-        jQuery(".banner.fixed-height").each(function () {
-            jQuery(this).find(".cell").css("height", jQuery(this).height());
-            jQuery(this).parent().find(".banner-categories .item").css("height", jQuery(this).height());
-            jQuery(this).parent().find(".banner-about .cell").css("height", jQuery(this).height() - 20);
-            jQuery(this).parent().find(".banner-about .image").css("height", jQuery(this).height());
-            jQuery(this).parent().find(".banner-about .text").css("height", jQuery(this).height());
-            jQuery(this).parent().find(".banner-right-buttons .cell").css("height", jQuery(this).height())
-        });
-        jQuery(".full-screen-nav .cell").css("height", jQuery(window).height() - 20 - jQuery("#wpadminbar").height());
-        jQuery(".side-header .cell").css("height", jQuery(".side-header .wrap").height());
-        if (nav_el == "yes") {
-            if (jQuery(window).width() >= 1200) {
-                jQuery(".navigation").addClass("visible_menu");
-                jQuery(".nav-button").addClass("hidden")
-            } else {
-                jQuery(".navigation").removeClass("visible_menu");
-                jQuery(".nav-button").removeClass("hidden").removeClass("active")
-            }
-        }
-        if (jQuery(window).width() <= "768") {
-            jQuery("body").addClass("is-mobile-body")
-        } else {
-            jQuery("body").removeClass("is-mobile-body")
-        }
-        jQuery('div[data-vc-full-width-mod="true"]').each(function () {
-            var coef = (jQuery(".container").outerWidth() - jQuery("#all").width()) / 2;
-            jQuery(this).css("left", coef).css("width", jQuery("#all").width())
-        });
-        jQuery(".price-list").each(function () {
-            var h = 0;
-            jQuery(this).find(".item").each(function () {
-                if (h < jQuery(this).find(".wrap").outerHeight()) {
-                    h = jQuery(this).find(".wrap").outerHeight()
-                }
-            });
-            jQuery(this).find(".item").css("padding-bottom", h + 130)
-        });
-        jQuery(".blog-type-grid").each(function () {
-        });
-        jQuery(".woocommerce .products").each(function () {
-            equalHeight(jQuery(this).find("article div.product"))
-        });
-        jQuery(".project-horizontal-slider img, .project-horizontal, .project-horizontal-img").css("height", jQuery(window).outerHeight() - jQuery(".header-space:not(.hide)").height() - jQuery(".site-footer").outerHeight() - jQuery("#wpadminbar").outerHeight());
-        jQuery(".project-horizontal .cell").css("height", jQuery(".project-horizontal").outerHeight());
-        jQuery(".split-screen").each(function () {
-            var this_el = jQuery(this);
-            this_el.css("height", jQuery(window).height() - jQuery("#wpadminbar").outerHeight());
-            this_el.find(".img-item").css("height", this_el.height());
-            this_el.find(".cell").css("height", this_el.height())
-        });
-        jQuery(".category-slider-area").each(function () {
-            var this_el = jQuery(this);
-            this_el.css("height", jQuery(window).height() - jQuery("#wpadminbar").outerHeight());
-            this_el.find(".category-slider-images").css("height", this_el.height());
-            this_el.find(".cell").css("height", this_el.height())
-        });
-        jQuery(".vertical-parallax-slider").each(function () {
-            jQuery(this).css("height", jQuery(window).outerHeight() - jQuery(".header-space:not(.hide)").height() - jQuery("#wpadminbar").outerHeight());
-            jQuery(this).find(".cell").css("height", jQuery(this).height())
-        });
-        jQuery(".split-screen-type2").each(function () {
-            jQuery(this).css("height", jQuery(window).outerHeight() - jQuery(".header-space:not(.hide)").height() - jQuery("#wpadminbar").outerHeight());
-            jQuery(this).find(".items .item").css("height", jQuery(this).height())
-        });
-        jQuery(".navigation > ul > li > .sub-menu").each(function () {
-            var left = jQuery(this).offset().left, width = jQuery(this).outerWidth(), window_w = jQuery(window).width();
-            if (!jQuery(this).hasClass("right") && window_w < left + width) {
-                jQuery(this).addClass("right")
-            }
-        });
-        jQuery(".album-area").each(function () {
-            if (jQuery(this).find(".album-cover").length > 0) {
-                var cover_height = jQuery(this).find(".album-cover").outerHeight(),
-                    top_height = jQuery(this).find(".top").outerHeight();
-                jQuery(this).find(".jp-playlist").css("height", cover_height - top_height)
-            }
-        })
-    });
-    jQuery(".project-horizontal-slider").each(function () {
-        var head_slider = jQuery(this);
-        if (head_slider.find(".item").length > 1) {
-            head_slider.imagesLoaded(function () {
-                head_slider.addClass("owl-carousel").owlCarousel({
-                    items: 1,
-                    nav: true,
-                    dots: false,
-                    autoplay: false,
-                    autoWidth: true,
-                    navClass: ["owl-prev basic-ui-icon-left-arrow", "owl-next basic-ui-icon-right-arrow"],
-                    navText: false,
-                    margin: 30,
-                    responsive: {0: {nav: false}, 480: {}, 768: {nav: true}}
-                })
-            })
-        }
-    });
-    jQuery("#scroll-top").on("click", function () {
-        jQuery("body, html").animate({scrollTop: "0"}, 1100);
-        return false
-    });
-    jQuery(window).on("load resize", function () {
-        jQuery(".centered-container").each(function () {
-            var width = parseInt(Math.round(jQuery(this).width()).toFixed(0)),
-                height = parseInt(Math.round(jQuery(this).height()).toFixed(0));
-            jQuery(this).css("width", "").css("height", "");
-            if (width & 1) {
-                jQuery(this).css("width", width + 1 + "px")
-            }
-            if (height & 1) {
-                jQuery(this).css("height", height + 1 + "px")
-            }
-        })
-    });
-    jQuery(window).bind("load", function () {
-        jQuery(".portfolio-items").each(function () {
-            var wrap = jQuery(this);
-            wrap.imagesLoaded(function () {
-                var $grid = wrap.isotope({itemSelector: "article", masonry: {horizontalOrder: true}})
-            });
-            jQuery(this).prev(".filter-button-group").on("click", "button", function () {
-                jQuery(this).addClass("active").siblings().removeClass("active");
-                var filterValue = jQuery(this).attr("data-filter");
-                wrap.isotope({filter: filterValue});
-                jQuery(window).trigger("resize").trigger("scroll")
-            })
-        });
-        jQuery(".post-gallery-grid:not(.disable-iso)").each(function () {
-            var $grid = jQuery(this).addClass("isotope").isotope({itemSelector: ".col-xs-12", horizontalOrder: true})
-        });
-        jQuery(".js-pixproof-gallery").each(function () {
-            var $grid = jQuery(this).addClass("isotope").isotope({itemSelector: ".proof-photo", horizontalOrder: true})
-        })
-    });
-    jQuery(window).bind("load", function () {
-        jQuery(".blog-items").each(function () {
-            var wrap = jQuery(this);
-            var $grid = jQuery(this).isotope({itemSelector: "article"});
-            jQuery(this).prev(".filter-button-group").on("click", "button", function () {
-                jQuery(this).addClass("active").siblings().removeClass("active");
-                var filterValue = jQuery(this).attr("data-filter");
-                wrap.isotope({filter: filterValue});
-                jQuery(window).trigger("resize").trigger("scroll")
-            })
-        })
-    });
-    jQuery(window).on("load", function () {
-        jQuery(".post-gallery-masonry").each(function () {
-            var $grid = jQuery(this).isotope({itemSelector: "div"})
-        })
-    });
-    jQuery(".replytocom").on("click", function () {
-        var id_parent = jQuery(this).attr("data-id");
-        jQuery("#comment_parent").val(id_parent);
-        jQuery("#respond").appendTo(jQuery(this).parents(".comment-item"));
-        jQuery("#cancel-comment-reply-link").show();
-        return false
-    });
-    jQuery("#cancel-comment-reply-link").on("click", function () {
-        jQuery("#comment_parent").val("0");
-        jQuery("#respond").appendTo(jQuery("#commentform-area"));
-        jQuery("#cancel-comment-reply-link").hide();
-        return false
-    });
-    jQuery(window).on("load scroll", function () {
-        jQuery(".background-parallax").each(function () {
-            var wScroll = jQuery(window).scrollTop() - jQuery(this).parent().offset().top + jQuery("#wpadminbar").height() + jQuery(".header-space").height();
-            jQuery(this).css("transform", "translate(0px," + wScroll + "px)");
-            jQuery(this).parents(".owl-carousel").find(".owl-nav div").css("margin-top", wScroll)
-        })
-    });
-    var l_button_index = 0;
-    jQuery(".project-image-load-button .button-style1").on("click", function () {
-        var $this = jQuery(this), $wrap = $this.parents(".project-grid-page"), $load_items = $wrap.find(".load-items"),
-            cout_pages = $load_items.length;
-        l_button_index++;
-        if (cout_pages == 1) {
-            jQuery(this).parent().fadeOut()
-        }
-        var items = $wrap.find(".load-items" + l_button_index).find(".col-xs-12");
-        $wrap.find(".load-items" + l_button_index).remove();
-        $wrap.find(".post-gallery-grid").append(items).isotope("appended", items);
-        return false
-    });
-    jQuery(".quantity .down").on("click", function () {
-        var val = jQuery(this).parent().find(".input-text").val();
-        if (val > 1) {
-            val = parseInt(val) - 1;
-            jQuery(this).parent().find(".input-text").val(val)
-        }
-        return false
-    });
-    jQuery(".quantity .up").on("click", function () {
-        var val = jQuery(this).parent().find(".input-text").val();
-        val = parseInt(val) + 1;
-        jQuery(this).parent().find(".input-text").val(val);
-        return false
-    });
-    jQuery(window).on("load scroll", function () {
-        jQuery(".skill-item .chart").each(function () {
-            var top = jQuery(document).scrollTop() + jQuery(window).height();
-            var pos_top = jQuery(this).offset().top;
-            if (top > pos_top) {
-                jQuery(this).addClass("animated")
-            }
-        })
-    });
-    jQuery(".jquery-background-video").each(function () {
-        jQuery(this).bgVideo({showPausePlay: false})
-    });
-    jQuery(document).on("click", '[href="#"]', function () {
-        return false
-    });
-    jQuery(".photo-carousel .carousel").each(function () {
-        var head_slider = jQuery(this);
-        if (head_slider.find(".item").length > 1) {
-            head_slider.addClass("owl-carousel").owlCarousel({
-                loop: true,
-                items: 1,
-                nav: false,
-                dots: false,
-                autoplay: true,
-                autoplayTimeout: 3e3,
-                smartSpeed: 2e3,
-                autoWidth: false,
-                navText: false,
-                responsive: {
-                    0: {items: 2},
-                    480: {items: 3},
-                    768: {items: 4},
-                    980: {items: 5},
-                    1200: {items: 6},
-                    1400: {items: 7},
-                    1700: {items: 8},
-                    1980: {items: 9}
-                }
-            })
-        }
-    });
-    jQuery(".testimonial-carousel .carousel").each(function () {
-        var head_slider = jQuery(this);
-        if (head_slider.find(".item").length > 1) {
-            head_slider.addClass("owl-carousel").owlCarousel({
-                loop: true,
-                items: 1,
-                nav: false,
-                dots: false,
-                autoplay: true,
-                autoplayTimeout: 14000,
-                autoplaySpeed: 1500,
-                smartSpeed: 1500,
-                autoWidth: false,
-                navText: false
-            })
-        }
-    });
-    if (jQuery(".popup-gallery").length > 0) {
-        jQuery("body").append('<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true"> <div class="pswp__bg"></div><div class="pswp__scroll-wrap"> <div class="pswp__container"> <div class="pswp__item"></div><div class="pswp__item"></div><div class="pswp__item"></div></div><div class="pswp__ui pswp__ui--hidden"> <div class="pswp__top-bar"> <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button> <div class="pswp__preloader"> <div class="pswp__preloader__icn"> <div class="pswp__preloader__cut"> <div class="pswp__preloader__donut"></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"> <div class="pswp__share-tooltip"></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"> </button> <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"> </button> <div class="pswp__caption"> <div class="pswp__caption__center"></div></div></div></div></div>');
-        var $pswp = jQuery(".pswp")[0];
-        jQuery(document).on("click", ".popup-gallery .popup-item a, .popup-gallery.images a", function (event) {
-            if (!jQuery(this).hasClass("permalink")) {
-                console.log(jQuery(this).hasClass("permalink"));
-                event.preventDefault();
-                var image = [];
-                var $pic = jQuery(this).parents(".popup-gallery");
-                var getItems = function () {
-                    var items = [], $el = "";
-                    if ($pic.hasClass("owl-carousel")) {
-                        $el = $pic.find(".owl-item:not(.cloned) a:not(.permalink):visible")
-                    } else if ($pic.hasClass("images")) {
-                        $el = $pic.find("a[data-size]")
-                    } else {
-                        $el = $pic.find(".popup-item a:not(.permalink)")
-                    }
-                    $el.each(function () {
-                        var $href = jQuery(this).attr("href"), $size = jQuery(this).data("size").split("x"),
-                            $width = $size[0], $height = $size[1];
-                        if (jQuery(this).data("type") == "video") {
-                            var item = {html: jQuery(this).data("video")}
-                        } else {
-                            var item = {src: $href, w: $width, h: $height}
-                        }
-                        items.push(item)
-                    });
-                    return items
-                };
-                var items = getItems();
-                jQuery.each(items, function (index, value) {
-                    image[index] = new Image;
-                    if (value["src"]) {
-                        image[index].src = value["src"]
-                    }
-                });
-                var $index = jQuery(this).parents(".popup-item").index();
-                if ($pic.hasClass("owl-carousel")) {
-                    $index = jQuery(this).parents(".portfolio-item").data("id")
-                } else if (jQuery(this).parent().hasClass("thumbnails")) {
-                    $index = jQuery(this).index();
-                    $index++
-                } else if (jQuery(this).parents(".popup-gallery").find(".grid-sizer").length > 0) {
-                    $index = $index - 1
-                }
-                var options = {index: $index, bgOpacity: .7, showHideOpacity: true};
-                var lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
-                lightBox.listen("beforeChange", function () {
-                    var currItem = jQuery(lightBox.currItem.container);
-                    jQuery(".pswp__video").removeClass("active");
-                    var currItemIframe = currItem.find(".pswp__video").addClass("active");
-                    jQuery(".pswp__video").each(function () {
-                        if (!jQuery(this).hasClass("active")) {
-                            jQuery(this).attr("src", jQuery(this).attr("src"))
-                        }
-                    })
-                });
-                lightBox.listen("close", function () {
-                    jQuery(".pswp__item .pswp__zoom-wrap").remove()
-                });
-                lightBox.init()
-            }
-        })
-    }
-});
-jQuery(document).ready(function (jQuery) {
-    jQuery(".banner-59b29bddb0de2").each(function () {
-        function leadZero(n) {
-            return (n < 10 ? "0" : "") + n
-        }
-
-        jQuery(this).on("initialize.owl.carousel", function (property) {
-            jQuery(this).find(".item").each(function () {
-                var num = leadZero(jQuery(this).index() + 1);
-                jQuery(this).find(".num").text(num)
-            })
-        });
-        var head_slider = jQuery(this);
-        if (head_slider.find(".item").length == 1) {
-            head_slider.parent().removeClass("with-carousel-nav")
-        }
-        if (jQuery(this).find(".item").length > 1) {
-            head_slider.addClass("owl-carousel").owlCarousel({
-                loop: false,
-                items: 1,
-                nav: false,
-                dots: true,
-                autoplay: true,
-                autoplayTimeout: 3e3,
-                autoplayHoverPause: true,
-                smartSpeed: 500,
-                navClass: ["owl-prev basic-ui-icon-left-arrow", "owl-next basic-ui-icon-right-arrow"],
-                navText: false,
-                responsive: {0: {nav: false}, 480: {}, 768: {nav: false}}
-            });
-            var child_carousel = head_slider.parent().find(".banner-carousel");
-            var i = 0;
-            var flag = false;
-            var c_items = "3";
-            head_slider.find(".owl-item:not(.cloned)").find(".item").each(function () {
-                i++;
-                var heading = jQuery(this).data("heading");
-                var text = jQuery(this).data("text");
-                if (!child_carousel.hasClass("owl-carousel")) {
-                    child_carousel.append('<div class="item"><div class="num">' + leadZero(i) + '</div><div class="h">' + heading + '</div><div class="p">' + text + "</div></div>")
-                }
-            });
-            if (head_slider.find(".owl-item:not(.cloned)").find(".item").length < 3) {
-                c_items = head_slider.find(".owl-item:not(.cloned)").find(".item").length
-            }
-            var child_carousel_item = child_carousel.find(".owl-item.active");
-            child_carousel_c = child_carousel.addClass("owl-carousel").owlCarousel({
-                items: 1,
-                nav: true,
-                dots: false,
-                autoplay: false,
-                smartSpeed: 500,
-                navClass: ["owl-prev basic-ui-icon-left-arrow", "owl-next basic-ui-icon-right-arrow"],
-                navText: false,
-                margin: 30,
-                responsive: {0: {nav: false}, 480: {}, 768: {nav: true, items: c_items}}
-            }).on("click", ".item", function (e) {
-                e.preventDefault();
-                head_slider.trigger("to.owl.carousel", [jQuery(e.target).parents(".owl-item").index(), 300, true]);
-                jQuery(e.target).parents(".owl-item").addClass("active-item").siblings().removeClass("active-item")
-            }).data("owl.carousel");
-            head_slider.on("change.owl.carousel", function (e) {
-                if (e.namespace && e.property.name === "position" && !flag) {
-                    flag = true;
-                    child_carousel_c.to(e.relatedTarget.relative(e.property.value), 300, true);
-                    flag = false
-                }
-                head_slider.parent().find(".banner-carousel .owl-item.active").first().addClass("active-item").siblings().removeClass("active-item")
-            }).data("owl.carousel");
-            head_slider.on("changed.owl.carousel", function (property) {
-                var current = property.item.index;
-                if (jQuery(property.target).find(".owl-item").eq(current).find("video").length > 0) {
-                    jQuery(property.target).find(".owl-item").eq(current).find("video").get(0).play()
-                }
-            })
-        }
-    })
-});
-jQuery(document).ready(function (jQuery) {
-    jQuery(".price-list-59bbbd75471e6").each(function () {
-        var head_slider = jQuery(this);
-        if (jQuery(this).find(".item").length > 1) {
-            head_slider.addClass("owl-carousel").owlCarousel({
-                loop: true,
-                items: 1,
-                nav: true,
-                dots: false,
-                autoplay: true,
-                autoplayTimeout: 20000,
-                autoplayHoverPause: true,
-                smartSpeed: 500,
-                navClass: ["owl-prev basic-ui-icon-left-arrow", "owl-next basic-ui-icon-right-arrow"],
-                navText: false,
-                responsive: {
-                    0: {nav: false, items: 1},
-                    480: {},
-                    768: {nav: true, items: 1},
-                    980: {items: 2},
-                    1200: {items: 3}
-                }
-            })
-        }
-    })
-});
-!function (a, b) {
-
-    function c() {
-        if (!e) {
-            e = !0;
-            var a, c, d, f, g = -1 !== navigator.appVersion.indexOf("MSIE 10"),
-                h = !!navigator.userAgent.match(/Trident.*rv:11\./),
-                i = b.querySelectorAll("iframe.wp-embedded-content");
-            for (c = 0; c < i.length; c++) {
-                if (d = i[c], !d.getAttribute("data-secret")) f = Math.random().toString(36).substr(2, 10), d.src += "#?secret=" + f, d.setAttribute("data-secret", f);
-                if (g || h) a = d.cloneNode(!0), a.removeAttribute("security"), d.parentNode.replaceChild(a, d)
-            }
-        }
-    }
-
-    var d = !1, e = !1;
-    if (b.querySelector) if (a.addEventListener) d = !0;
-    if (a.wp = a.wp || {}, !a.wp.receiveEmbedMessage) if (a.wp.receiveEmbedMessage = function (c) {
-        var d = c.data;
-        if (d) if (d.secret || d.message || d.value) if (!/[^a-zA-Z0-9]/.test(d.secret)) {
-            var e, f, g, h, i, j = b.querySelectorAll('iframe[data-secret="' + d.secret + '"]'),
-                k = b.querySelectorAll('blockquote[data-secret="' + d.secret + '"]');
-            for (e = 0; e < k.length; e++) k[e].style.display = "none";
-            for (e = 0; e < j.length; e++) if (f = j[e], c.source === f.contentWindow) {
-                if (f.removeAttribute("style"), "height" === d.message) {
-                    if (g = parseInt(d.value, 10), g > 1e3) g = 1e3; else if (~~g < 200) g = 200;
-                    f.height = g
-                }
-                if ("link" === d.message) if (h = b.createElement("a"), i = b.createElement("a"), h.href = f.getAttribute("src"), i.href = d.value, i.host === h.host) if (b.activeElement === f) a.top.location.href = d.value
-            } else ;
-        }
-    }, d) a.addEventListener("message", a.wp.receiveEmbedMessage, !1), b.addEventListener("DOMContentLoaded", c, !1), a.addEventListener("load", c, !1)
-}(window, document);
+// OWL carousel
 (function ($, window, document, undefined) {
     function Owl(element, options) {
         this.settings = null;
@@ -5921,173 +3932,7 @@ jQuery(document).ready(function (jQuery) {
     };
     $.fn.owlCarousel.Constructor.Plugins.AutoHeight = AutoHeight
 })(window.Zepto || window.jQuery, window, document);
-(function ($, window, document, undefined) {
-    var Video = function (carousel) {
-        this._core = carousel;
-        this._videos = {};
-        this._playing = null;
-        this._handlers = {
-            "initialized.owl.carousel": $.proxy(function (e) {
-                if (e.namespace) {
-                    this._core.register({type: "state", name: "playing", tags: ["interacting"]})
-                }
-            }, this), "resize.owl.carousel": $.proxy(function (e) {
-                if (e.namespace && this._core.settings.video && this.isInFullScreen()) {
-                    e.preventDefault()
-                }
-            }, this), "refreshed.owl.carousel": $.proxy(function (e) {
-                if (e.namespace && this._core.is("resizing")) {
-                    this._core.$stage.find(".cloned .owl-video-frame").remove()
-                }
-            }, this), "changed.owl.carousel": $.proxy(function (e) {
-                if (e.namespace && e.property.name === "position" && this._playing) {
-                    this.stop()
-                }
-            }, this), "prepared.owl.carousel": $.proxy(function (e) {
-                if (!e.namespace) {
-                    return
-                }
-                var $element = $(e.content).find(".owl-video");
-                if ($element.length) {
-                    $element.css("display", "none");
-                    this.fetch($element, $(e.content))
-                }
-            }, this)
-        };
-        this._core.options = $.extend({}, Video.Defaults, this._core.options);
-        this._core.$element.on(this._handlers);
-        this._core.$element.on("click.owl.video", ".owl-video-play-icon", $.proxy(function (e) {
-            this.play(e)
-        }, this))
-    };
-    Video.Defaults = {video: false, videoHeight: false, videoWidth: false};
-    Video.prototype.fetch = function (target, item) {
-        var type = function () {
-                if (target.attr("data-vimeo-id")) {
-                    return "vimeo"
-                } else if (target.attr("data-vzaar-id")) {
-                    return "vzaar"
-                } else {
-                    return "youtube"
-                }
-            }(), id = target.attr("data-vimeo-id") || target.attr("data-youtube-id") || target.attr("data-vzaar-id"),
-            width = target.attr("data-width") || this._core.settings.videoWidth,
-            height = target.attr("data-height") || this._core.settings.videoHeight, url = target.attr("href");
-        if (url) {
-            id = url.match(/(http:|https:|)\/\/(player.|www.|app.)?(vimeo\.com|youtu(be\.com|\.be|be\.googleapis\.com)|vzaar\.com)\/(video\/|videos\/|embed\/|channels\/.+\/|groups\/.+\/|watch\?v=|v\/)?([A-Za-z0-9._%-]*)(\&\S+)?/);
-            if (id[3].indexOf("youtu") > -1) {
-                type = "youtube"
-            } else if (id[3].indexOf("vimeo") > -1) {
-                type = "vimeo"
-            } else if (id[3].indexOf("vzaar") > -1) {
-                type = "vzaar"
-            } else {
-                throw new Error("Video URL not supported.")
-            }
-            id = id[6]
-        } else {
-            throw new Error("Missing video URL.")
-        }
-        this._videos[url] = {type: type, id: id, width: width, height: height};
-        item.attr("data-video", url);
-        this.thumbnail(target, this._videos[url])
-    };
-    Video.prototype.thumbnail = function (target, video) {
-        var tnLink, icon, path,
-            dimensions = video.width && video.height ? 'style="width:' + video.width + "px;height:" + video.height + 'px;"' : "",
-            customTn = target.find("img"), srcType = "src", lazyClass = "", settings = this._core.settings,
-            create = function (path) {
-                icon = '<div class="owl-video-play-icon"></div>';
-                if (settings.lazyLoad) {
-                    tnLink = '<div class="owl-video-tn ' + lazyClass + '" ' + srcType + '="' + path + '"></div>'
-                } else {
-                    tnLink = '<div class="owl-video-tn" style="opacity:1;background-image:url(' + path + ')"></div>'
-                }
-                target.after(tnLink);
-                target.after(icon)
-            };
-        target.wrap('<div class="owl-video-wrapper"' + dimensions + "></div>");
-        if (this._core.settings.lazyLoad) {
-            srcType = "data-src";
-            lazyClass = "owl-lazy"
-        }
-        if (customTn.length) {
-            create(customTn.attr(srcType));
-            customTn.remove();
-            return false
-        }
-        if (video.type === "youtube") {
-            path = "//img.youtube.com/vi/" + video.id + "/hqdefault.jpg";
-            create(path)
-        } else if (video.type === "vimeo") {
-            $.ajax({
-                type: "GET",
-                url: "//vimeo.com/api/v2/video/" + video.id + ".json",
-                jsonp: "callback",
-                dataType: "jsonp",
-                success: function (data) {
-                    path = data[0].thumbnail_large;
-                    create(path)
-                }
-            })
-        } else if (video.type === "vzaar") {
-            $.ajax({
-                type: "GET",
-                url: "//vzaar.com/api/videos/" + video.id + ".json",
-                jsonp: "callback",
-                dataType: "jsonp",
-                success: function (data) {
-                    path = data.framegrab_url;
-                    create(path)
-                }
-            })
-        }
-    };
-    Video.prototype.stop = function () {
-        this._core.trigger("stop", null, "video");
-        this._playing.find(".owl-video-frame").remove();
-        this._playing.removeClass("owl-video-playing");
-        this._playing = null;
-        this._core.leave("playing");
-        this._core.trigger("stopped", null, "video")
-    };
-    Video.prototype.play = function (event) {
-        var target = $(event.target), item = target.closest("." + this._core.settings.itemClass),
-            video = this._videos[item.attr("data-video")], width = video.width || "100%",
-            height = video.height || this._core.$stage.height(), html;
-        if (this._playing) {
-            return
-        }
-        this._core.enter("playing");
-        this._core.trigger("play", null, "video");
-        item = this._core.items(this._core.relative(item.index()));
-        this._core.reset(item.index());
-        if (video.type === "youtube") {
-            html = '<iframe width="' + width + '" height="' + height + '" src="//www.youtube.com/embed/' + video.id + "?autoplay=1&rel=0&v=" + video.id + '" frameborder="0" allowfullscreen></iframe>'
-        } else if (video.type === "vimeo") {
-            html = '<iframe src="//player.vimeo.com/video/' + video.id + '?autoplay=1" width="' + width + '" height="' + height + '" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
-        } else if (video.type === "vzaar") {
-            html = '<iframe frameborder="0"' + 'height="' + height + '"' + 'width="' + width + '" allowfullscreen mozallowfullscreen webkitAllowFullScreen ' + 'src="//view.vzaar.com/' + video.id + '/player?autoplay=true"></iframe>'
-        }
-        $('<div class="owl-video-frame">' + html + "</div>").insertAfter(item.find(".owl-video"));
-        this._playing = item.addClass("owl-video-playing")
-    };
-    Video.prototype.isInFullScreen = function () {
-        var element = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement;
-        return element && $(element).parent().hasClass("owl-video-frame")
-    };
-    Video.prototype.destroy = function () {
-        var handler, property;
-        this._core.$element.off("click.owl.video");
-        for (handler in this._handlers) {
-            this._core.$element.off(handler, this._handlers[handler])
-        }
-        for (property in Object.getOwnPropertyNames(this)) {
-            typeof this[property] != "function" && (this[property] = null)
-        }
-    };
-    $.fn.owlCarousel.Constructor.Plugins.Video = Video
-})(window.Zepto || window.jQuery, window, document);
+
 (function ($, window, document, undefined) {
     var Animate = function (scope) {
         this.core = scope;
@@ -6494,6 +4339,804 @@ jQuery(document).ready(function (jQuery) {
     };
     $.fn.owlCarousel.Constructor.Plugins.Hash = Hash
 })(window.Zepto || window.jQuery, window, document);
+
+jQuery(document).ready(function () {
+
+    if (jQuery(".navigation > ul > li").length > 6) {
+        jQuery(".navigation").addClass("min")
+    }
+    jQuery(document).ready(function () {
+        jQuery(".image-comparison-slider").each(function () {
+            var cur = jQuery(this);
+            var width = cur.width() + "px";
+            cur.find(".resize .old").css("width", width);
+            drags(cur.find(".line"), cur.find(".resize"), cur)
+        })
+    });
+    jQuery(window).resize(function () {
+        jQuery(".image-comparison-slider").each(function () {
+            var cur = jQuery(this);
+            var width = cur.width() + "px";
+            cur.find(".resize .old").css("width", width)
+        })
+    });
+
+    function drags(dragElement, resizeElement, container) {
+        dragElement.on("mousedown touchstart", function (e) {
+            dragElement.addClass("draggable");
+            resizeElement.addClass("resizable");
+            var startX = e.pageX ? e.pageX : e.originalEvent.touches[0].pageX, dragWidth = dragElement.outerWidth(),
+                posX = dragElement.offset().left + dragWidth - startX, containerOffset = container.offset().left,
+                containerWidth = container.outerWidth(), minLeft = containerOffset + 25,
+                maxLeft = containerOffset + containerWidth - dragWidth - 25;
+            dragElement.parents().on("mousemove touchmove", function (e) {
+                var moveX = e.pageX ? e.pageX : e.originalEvent.touches[0].pageX, leftValue = moveX + posX - dragWidth;
+                if (leftValue < minLeft) {
+                    leftValue = minLeft
+                } else if (leftValue > maxLeft) {
+                    leftValue = maxLeft
+                }
+                var widthValue = (leftValue + dragWidth / 2 - containerOffset) * 100 / containerWidth + "%";
+                jQuery(".draggable").css("left", widthValue).on("mouseup touchend touchcancel", function () {
+                    jQuery(this).removeClass("draggable");
+                    resizeElement.removeClass("resizable")
+                });
+                jQuery(".resizable").css("width", widthValue)
+            }).on("mouseup touchend touchcancel", function () {
+                dragElement.removeClass("draggable");
+                resizeElement.removeClass("resizable")
+            });
+            e.preventDefault()
+        }).on("mouseup touchend touchcancel", function (e) {
+            dragElement.removeClass("draggable");
+            resizeElement.removeClass("resizable")
+        })
+    }
+
+    jQuery(".right-click-disable").on("contextmenu", function () {
+        jQuery(".right-click-disable-message").addClass("active");
+        return false
+    });
+    jQuery(".right-click-disable-message:not(.lic)").on("click", function () {
+        jQuery(this).removeClass("active");
+        return false
+    });
+    jQuery(".accordion-items .item .top").on("click", function () {
+        if (jQuery(this).parent().hasClass("active")) {
+            jQuery(this).parent().removeClass("active").find(".wrap").slideUp()
+        } else {
+            jQuery(this).parent().addClass("active").find(".wrap").slideDown()
+        }
+    });
+    jQuery(".split-screen").each(function () {
+        var this_el = jQuery(this), slider = jQuery(this).find(".image"), item = this_el.find(".item"), nav_html = "";
+        slider.each(function () {
+            if (jQuery(this).find(".img-item").length > 1) {
+                jQuery(this).addClass("owl-carousel").owlCarousel({
+                    items: 1,
+                    nav: true,
+                    dots: true,
+                    autoplay: false,
+                    navClass: ["owl-prev basic-ui-icon-left-arrow", "owl-next basic-ui-icon-right-arrow"],
+                    navText: false
+                })
+            }
+        });
+        if (item.length > 1) {
+            nav_html = '<div class="portfolio-navigation">';
+            nav_html += '<div class="numbers">';
+            item.each(function () {
+                nav_html += '<div class="num" data-index="' + jQuery(this).index() + '"><span>' + leadZero(jQuery(this).index() + 1) + "</span></div>"
+            });
+            nav_html += "</div>";
+            nav_html += "</div>";
+            this_el.append(nav_html)
+        }
+        jQuery(window).on("load", function () {
+            this_el.find(".item:eq(0), .num:eq(0)").addClass("active")
+        });
+        this_el.on("click", ".num:not(.active)", function () {
+            var el = jQuery(this), index = el.data("index");
+            item.removeClass("active");
+            item.eq(index).delay(500).queue(function (next) {
+                jQuery(this).addClass("active");
+                next()
+            });
+            el.addClass("active").siblings().removeClass("active")
+        })
+    });
+    jQuery(".split-screen-type2").each(function () {
+        jQuery("body").addClass("body-one-screen");
+        var this_el = jQuery(this), el = this_el.find(".screen-item"), delay = 1e3,
+            dots = this_el.parent().find(".pagination-dots"), status = false;
+        el.each(function () {
+            dots.append("<span></span>")
+        });
+
+        function vertical_parallax(coef, index) {
+            index = index === undefined ? false : index;
+            if (coef != false) {
+                var index = this_el.find(".screen-item.active").index() - coef
+            }
+            el.eq(index).removeClass("prev next").addClass("active").siblings().removeClass("active");
+            el.eq(index).prevAll().removeClass("next").addClass("prev");
+            el.eq(index).nextAll().removeClass("prev").addClass("next");
+            dots.find("span").eq(index).addClass("active").siblings().removeClass("active");
+            if (el.eq(index).find(".item-left").hasClass("black")) {
+                jQuery("body").addClass("header-left-white-color").removeClass("header-left-dark-color")
+            } else {
+                jQuery("body").addClass("header-left-dark-color").removeClass("header-left-white-color")
+            }
+            if (el.eq(index).find(".item-right").hasClass("black")) {
+                jQuery("body").addClass("header-right-white-color").removeClass("header-right-dark-color")
+            } else {
+                jQuery("body").addClass("header-right-dark-color").removeClass("header-right-white-color")
+            }
+        }
+
+        vertical_parallax(false, 0);
+        this_el.on("mousewheel wheel", function (e) {
+            e.preventDefault();
+            var cur = this_el.find(".screen-item.active").index();
+            if (status != true) {
+                status = true;
+                if (e.originalEvent.deltaY > 0 && cur != parseInt(el.length - 1)) {
+                    vertical_parallax("-1");
+                    setTimeout(function () {
+                        status = false
+                    }, delay)
+                } else if (e.originalEvent.deltaY < 0 && cur != 0) {
+                    vertical_parallax("1");
+                    setTimeout(function () {
+                        status = false
+                    }, delay)
+                } else {
+                    status = false
+                }
+            }
+        });
+        dots.on("click", "span:not(.active)", function () {
+            jQuery(this).addClass("active").siblings().removeClass("active");
+            vertical_parallax(false, jQuery(this).index())
+        });
+        el.find(".item-left").each(function () {
+            jQuery(this).swipe({
+                swipeUp: function () {
+                    vertical_parallax("-1")
+                }, swipeDown: function () {
+                    vertical_parallax("1")
+                }
+            })
+        });
+        el.find(".item-right").each(function () {
+            jQuery(this).swipe({
+                swipeUp: function () {
+                    vertical_parallax("1")
+                }, swipeDown: function () {
+                    vertical_parallax("-1")
+                }
+            })
+        })
+    });
+    jQuery(".site-header .search-button").on("click", function () {
+        if (jQuery(this).hasClass("active")) {
+            jQuery(this).removeClass("active");
+            jQuery(".search-popup").fadeOut()
+        } else {
+            jQuery(this).addClass("active");
+            jQuery(".search-popup").fadeIn()
+        }
+    });
+    jQuery(".search-popup .close").on("click", function () {
+        jQuery(".site-header .search-button").removeClass("active");
+        jQuery(".search-popup").fadeOut()
+    });
+    jQuery(".nav-button.hidden_menu, .nav-button.visible_menu").on("click", function () {
+        if (jQuery(this).hasClass("active")) {
+            jQuery(this).removeClass("active");
+            jQuery(".navigation").removeClass("active")
+        } else {
+            jQuery(this).addClass("active");
+            jQuery(".navigation").addClass("active")
+        }
+    });
+    jQuery(".nav-button.full_screen").on("click", function () {
+        if (jQuery(this).hasClass("active")) {
+            jQuery(this).removeClass("active");
+            jQuery(".full-screen-nav").fadeOut()
+        } else {
+            jQuery(this).addClass("active");
+            jQuery(".full-screen-nav").fadeIn()
+        }
+    });
+    jQuery(".full-screen-nav .close").on("click", function () {
+        jQuery(".nav-button.full_screen").removeClass("active");
+        jQuery(".full-screen-nav").fadeOut()
+    });
+    jQuery(".full-screen-nav .menu-item-has-children > a").on("click", function () {
+        if (!jQuery(this).hasClass("active")) {
+            jQuery(this).addClass("active").parent().children(".sub-menu").slideDown().parent().siblings().children("a").removeClass("active").next(".sub-menu").slideUp();
+            return false
+        }
+    });
+    jQuery(".side-navigation ul li.menu-item-has-children > a,.side-navigation ul li.page_item_has_children > a").on("click", function () {
+        jQuery(this).parents("li").addClass("active-child");
+        return false
+    });
+    jQuery(".side-navigation .sub-menu .back,.side-navigation .children .back").on("click", function () {
+        jQuery(this).parent().parent().removeClass("active-child");
+        return false
+    });
+    jQuery(".side-bar-button").on("click", function () {
+        jQuery(".side-bar-area").addClass("active")
+    });
+    jQuery(".side-bar-area .close").on("click", function () {
+        jQuery(".side-bar-area").removeClass("active")
+    });
+    jQuery(".banner-right-buttons div.category").on("click", function () {
+        if (jQuery(this).hasClass("active")) {
+            jQuery(this).parents(".banner-area").find(".banner-categories").removeClass("active");
+            jQuery(this).removeClass("active")
+        } else {
+            jQuery(this).parents(".banner-area").find(".banner-categories").addClass("active");
+            jQuery(this).addClass("active").siblings().removeClass("active");
+            jQuery(this).parents(".banner-area").find(".banner-about").removeClass("active")
+        }
+    });
+    jQuery(".banner-right-buttons div.about").on("click", function () {
+        if (jQuery(this).hasClass("active")) {
+            jQuery(this).parents(".banner-area").find(".banner-about").removeClass("active");
+            jQuery(this).removeClass("active")
+        } else {
+            jQuery(this).parents(".banner-area").find(".banner-about").addClass("active");
+            jQuery(this).addClass("active").siblings().removeClass("active");
+            jQuery(this).parents(".banner-area").find(".banner-categories").removeClass("active")
+        }
+    });
+    jQuery(window).on("load resize", function () {
+        if (jQuery(window).width() <= "1200") {
+            jQuery(".navigation .menu-item-has-children > a").on("click", function () {
+                if (!jQuery(this).hasClass("active")) {
+                    jQuery(this).addClass("active").parent().children(".sub-menu").slideDown().siblings().children(".sub-menu").slideUp();
+                    return false
+                }
+            })
+        }
+    });
+    jQuery(window).on("load resize scroll", function () {
+        if (jQuery(document).scrollTop() > 0) {
+            jQuery(".site-header").addClass("fixed")
+        } else {
+            jQuery(".site-header").removeClass("fixed")
+        }
+    });
+    jQuery(document).on("click", ".price-list .item .options .button-style1", function () {
+        if (jQuery(this).parent().hasClass("active")) {
+            jQuery(this).removeClass("active").parent().removeClass("active").find(".wrap").slideUp();
+            if (jQuery(window).width() < 768) {
+                jQuery(this).closest('.owl-carousel').toggleClass('view-opened');
+            }
+        } else {
+            jQuery(this).addClass("active").parent().addClass("active").find(".wrap").slideDown();
+            if (jQuery(window).width() < 768) {
+                jQuery(this).closest('.owl-carousel').toggleClass('view-opened');
+            }
+        }
+        return false
+    });
+    jQuery("#wpadminbar").addClass("wpadminbar");
+    var nav_el = "";
+    if (jQuery(".navigation").hasClass("visible_menu")) {
+        nav_el = "yes"
+    }
+    jQuery(window).on("load resize", function () {
+        jQuery(".header-space").css("height", jQuery(".site-header").outerHeight() + jQuery(".header + .navigation").outerHeight() + jQuery(".ypromo-site-bar").outerHeight());
+        jQuery("main.main-row").css("min-height", jQuery(window).outerHeight() - jQuery(".site-footer").outerHeight() - jQuery(".footer-social-button").outerHeight() - jQuery(".header-space:not(.hide)").outerHeight() - jQuery(".ypromo-site-bar").outerHeight() - jQuery("#wpadminbar").outerHeight());
+        jQuery(".protected-post-form .cell").css("height", jQuery(window).outerHeight() - jQuery(".site-footer").outerHeight() - jQuery(".footer-social-button").outerHeight() - jQuery(".header-space:not(.hide)").outerHeight() - jQuery(".ypromo-site-bar").outerHeight() - jQuery("#wpadminbar").outerHeight());
+        jQuery(".banner:not(.fixed-height)").each(function () {
+            var coef = 0;
+            if (jQuery(this).parents(".banner-area").hasClass("external-indent") && !jQuery(this).parents(".banner-area").hasClass("with-carousel-nav")) {
+                coef = 70
+            }
+            jQuery(this).css("height", jQuery(window).outerHeight() - jQuery(".header-space:not(.hide)").outerHeight() - jQuery("#wpadminbar").outerHeight() - coef);
+            jQuery(this).find(".cell").css("height", jQuery(this).height());
+            jQuery(this).parent().find(".banner-categories .item").css("height", jQuery(this).height());
+            jQuery(this).parent().find(".banner-about .cell").css("height", jQuery(this).height() - 20);
+            jQuery(this).parent().find(".banner-about .image").css("height", jQuery(this).height());
+            jQuery(this).parent().find(".banner-about .text").css("height", jQuery(this).height());
+            jQuery(this).parent().find(".banner-right-buttons .cell").css("height", jQuery(this).height())
+        });
+        jQuery(".banner.fixed-height").each(function () {
+            jQuery(this).find(".cell").css("height", jQuery(this).height());
+            jQuery(this).parent().find(".banner-categories .item").css("height", jQuery(this).height());
+            jQuery(this).parent().find(".banner-about .cell").css("height", jQuery(this).height() - 20);
+            jQuery(this).parent().find(".banner-about .image").css("height", jQuery(this).height());
+            jQuery(this).parent().find(".banner-about .text").css("height", jQuery(this).height());
+            jQuery(this).parent().find(".banner-right-buttons .cell").css("height", jQuery(this).height())
+        });
+        jQuery(".full-screen-nav .cell").css("height", jQuery(window).height() - 20 - jQuery("#wpadminbar").height());
+        jQuery(".side-header .cell").css("height", jQuery(".side-header .wrap").height());
+        if (nav_el == "yes") {
+            if (jQuery(window).width() >= 1200) {
+                jQuery(".navigation").addClass("visible_menu");
+                jQuery(".nav-button").addClass("hidden")
+            } else {
+                jQuery(".navigation").removeClass("visible_menu");
+                jQuery(".nav-button").removeClass("hidden").removeClass("active")
+            }
+        }
+        if (jQuery(window).width() <= "768") {
+            jQuery("body").addClass("is-mobile-body")
+        } else {
+            jQuery("body").removeClass("is-mobile-body")
+        }
+        jQuery('div[data-vc-full-width-mod="true"]').each(function () {
+            var coef = (jQuery(".container").outerWidth() - jQuery("#all").width()) / 2;
+            jQuery(this).css("left", coef).css("width", jQuery("#all").width())
+        });
+        jQuery(".price-list").each(function () {
+            var h = 0;
+            jQuery(this).find(".item").each(function () {
+                if (h < jQuery(this).find(".wrap").outerHeight()) {
+                    h = jQuery(this).find(".wrap").outerHeight()
+                }
+            });
+            jQuery(this).find(".item").css("padding-bottom", h + 130)
+        });
+        jQuery(".blog-type-grid").each(function () {
+        });
+        jQuery(".project-horizontal-slider img, .project-horizontal, .project-horizontal-img").css("height", jQuery(window).outerHeight() - jQuery(".header-space:not(.hide)").height() - jQuery(".site-footer").outerHeight() - jQuery("#wpadminbar").outerHeight());
+        jQuery(".project-horizontal .cell").css("height", jQuery(".project-horizontal").outerHeight());
+        jQuery(".split-screen").each(function () {
+            var this_el = jQuery(this);
+            this_el.css("height", jQuery(window).height() - jQuery("#wpadminbar").outerHeight());
+            this_el.find(".img-item").css("height", this_el.height());
+            this_el.find(".cell").css("height", this_el.height())
+        });
+        jQuery(".vertical-parallax-slider").each(function () {
+            jQuery(this).css("height", jQuery(window).outerHeight() - jQuery(".header-space:not(.hide)").height() - jQuery("#wpadminbar").outerHeight());
+            jQuery(this).find(".cell").css("height", jQuery(this).height())
+        });
+        jQuery(".split-screen-type2").each(function () {
+            jQuery(this).css("height", jQuery(window).outerHeight() - jQuery(".header-space:not(.hide)").height() - jQuery("#wpadminbar").outerHeight());
+            jQuery(this).find(".items .item").css("height", jQuery(this).height())
+        });
+        jQuery(".navigation > ul > li > .sub-menu").each(function () {
+            var left = jQuery(this).offset().left, width = jQuery(this).outerWidth(), window_w = jQuery(window).width();
+            if (!jQuery(this).hasClass("right") && window_w < left + width) {
+                jQuery(this).addClass("right")
+            }
+        });
+        jQuery(".album-area").each(function () {
+            if (jQuery(this).find(".album-cover").length > 0) {
+                var cover_height = jQuery(this).find(".album-cover").outerHeight(),
+                    top_height = jQuery(this).find(".top").outerHeight();
+                jQuery(this).find(".jp-playlist").css("height", cover_height - top_height)
+            }
+        })
+    });
+    jQuery("#scroll-top").on("click", function () {
+        jQuery("body, html").animate({scrollTop: "0"}, 1100);
+        return false
+    });
+    jQuery(window).on("load resize", function () {
+        jQuery(".centered-container").each(function () {
+            var width = parseInt(Math.round(jQuery(this).width()).toFixed(0)),
+                height = parseInt(Math.round(jQuery(this).height()).toFixed(0));
+            jQuery(this).css("width", "").css("height", "");
+            if (width & 1) {
+                jQuery(this).css("width", width + 1 + "px")
+            }
+            if (height & 1) {
+                jQuery(this).css("height", height + 1 + "px")
+            }
+        })
+    });
+    if (window.matchMedia("(min-width: 768px)").matches){
+        jQuery(window).bind("load", function () {
+            jQuery(".portfolio-items").each(function () {
+                var wrap = jQuery(this);
+                wrap.imagesLoaded(function () {
+                    var $grid = wrap.isotope({itemSelector: "article", masonry: {horizontalOrder: true}})
+                });
+                jQuery(this).prev(".filter-button-group").on("click", "button", function () {
+                    jQuery(this).addClass("active").siblings().removeClass("active");
+                    var filterValue = jQuery(this).attr("data-filter");
+                    wrap.isotope({filter: filterValue});
+                    jQuery(window).trigger("resize").trigger("scroll")
+                })
+            });
+            jQuery(".post-gallery-grid:not(.disable-iso)").each(function () {
+                var $grid = jQuery(this).addClass("isotope").isotope({itemSelector: ".col-xs-12", horizontalOrder: true})
+            });
+            jQuery(".js-pixproof-gallery").each(function () {
+                var $grid = jQuery(this).addClass("isotope").isotope({itemSelector: ".proof-photo", horizontalOrder: true})
+            })
+        });
+    }
+    if (window.matchMedia("(max-width: 767.9px)").matches){
+        jQuery(window).bind("load", function () {
+            jQuery(".portfolio-items").each(function () {
+                var wrap = jQuery(this);
+                jQuery(this).prev(".filter-button-group").on("click", "button", function () {
+                    jQuery(this).addClass("active").siblings().removeClass("active");
+                    var filterValue = jQuery(this).attr("data-filter");
+                    wrap.isotope({filter: filterValue});
+                    jQuery(window).trigger("resize").trigger("scroll")
+                })
+            });
+        });
+    }
+    jQuery(window).bind("load", function () {
+        jQuery(".blog-items").each(function () {
+            var wrap = jQuery(this);
+            var $grid = jQuery(this).isotope({itemSelector: "article"});
+            jQuery(this).prev(".filter-button-group").on("click", "button", function () {
+                jQuery(this).addClass("active").siblings().removeClass("active");
+                var filterValue = jQuery(this).attr("data-filter");
+                wrap.isotope({filter: filterValue});
+                jQuery(window).trigger("resize").trigger("scroll")
+            })
+        })
+    });
+    jQuery(window).on("load", function () {
+        jQuery(".post-gallery-masonry").each(function () {
+            var $grid = jQuery(this).isotope({itemSelector: "div"})
+        })
+    });
+    jQuery(".replytocom").on("click", function () {
+        var id_parent = jQuery(this).attr("data-id");
+        jQuery("#comment_parent").val(id_parent);
+        jQuery("#respond").appendTo(jQuery(this).parents(".comment-item"));
+        jQuery("#cancel-comment-reply-link").show();
+        return false
+    });
+    jQuery("#cancel-comment-reply-link").on("click", function () {
+        jQuery("#comment_parent").val("0");
+        jQuery("#respond").appendTo(jQuery("#commentform-area"));
+        jQuery("#cancel-comment-reply-link").hide();
+        return false
+    });
+    jQuery(window).on("load scroll", function () {
+        jQuery(".background-parallax").each(function () {
+            var wScroll = jQuery(window).scrollTop() - jQuery(this).parent().offset().top + jQuery("#wpadminbar").height() + jQuery(".header-space").height();
+            jQuery(this).css("transform", "translate(0px," + wScroll + "px)");
+            jQuery(this).parents(".owl-carousel").find(".owl-nav div").css("margin-top", wScroll)
+        })
+    });
+    var l_button_index = 0;
+    jQuery(".project-image-load-button .button-style1").on("click", function () {
+        var $this = jQuery(this), $wrap = $this.parents(".project-grid-page"), $load_items = $wrap.find(".load-items"),
+            cout_pages = $load_items.length;
+        l_button_index++;
+        if (cout_pages == 1) {
+            jQuery(this).parent().fadeOut()
+        }
+        var items = $wrap.find(".load-items" + l_button_index).find(".col-xs-12");
+        $wrap.find(".load-items" + l_button_index).remove();
+        $wrap.find(".post-gallery-grid").append(items).isotope("appended", items);
+        return false
+    });
+    jQuery(".quantity .down").on("click", function () {
+        var val = jQuery(this).parent().find(".input-text").val();
+        if (val > 1) {
+            val = parseInt(val) - 1;
+            jQuery(this).parent().find(".input-text").val(val)
+        }
+        return false
+    });
+    jQuery(".quantity .up").on("click", function () {
+        var val = jQuery(this).parent().find(".input-text").val();
+        val = parseInt(val) + 1;
+        jQuery(this).parent().find(".input-text").val(val);
+        return false
+    });
+    jQuery(window).on("load scroll", function () {
+        jQuery(".skill-item .chart").each(function () {
+            var top = jQuery(document).scrollTop() + jQuery(window).height();
+            var pos_top = jQuery(this).offset().top;
+            if (top > pos_top) {
+                jQuery(this).addClass("animated")
+            }
+        })
+    });
+    jQuery(".jquery-background-video").each(function () {
+        jQuery(this).bgVideo({showPausePlay: false})
+    });
+    jQuery(document).on("click", '[href="#"]', function () {
+        return false
+    });
+    jQuery(".photo-carousel .carousel").each(function () {
+        var head_slider = jQuery(this);
+        if (head_slider.find(".item").length > 1) {
+            head_slider.addClass("owl-carousel").owlCarousel({
+                loop: true,
+                items: 1,
+                nav: false,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 3e3,
+                smartSpeed: 2e3,
+                autoWidth: false,
+                navText: false,
+                responsive: {
+                    0: {items: 2},
+                    480: {items: 3},
+                    768: {items: 4},
+                    980: {items: 5},
+                    1200: {items: 6},
+                    1400: {items: 7},
+                    1700: {items: 8},
+                    1980: {items: 9}
+                }
+            })
+        }
+    });
+    jQuery(".testimonial-carousel .carousel").each(function () {
+        var head_slider = jQuery(this);
+        if (head_slider.find(".item").length > 1) {
+            head_slider.addClass("owl-carousel").owlCarousel({
+                loop: true,
+                items: 1,
+                nav: false,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 14000,
+                autoplaySpeed: 1500,
+                smartSpeed: 1500,
+                autoWidth: false,
+                navText: false
+            })
+        }
+    });
+    if (jQuery(".popup-gallery").length > 0) {
+        jQuery("body").append('<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true"> <div class="pswp__bg"></div><div class="pswp__scroll-wrap"> <div class="pswp__container"> <div class="pswp__item"></div><div class="pswp__item"></div><div class="pswp__item"></div></div><div class="pswp__ui pswp__ui--hidden"> <div class="pswp__top-bar"> <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title="Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button> <div class="pswp__preloader"> <div class="pswp__preloader__icn"> <div class="pswp__preloader__cut"> <div class="pswp__preloader__donut"></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"> <div class="pswp__share-tooltip"></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"> </button> <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"> </button> <div class="pswp__caption"> <div class="pswp__caption__center"></div></div></div></div></div>');
+        var $pswp = jQuery(".pswp")[0];
+        jQuery(document).on("click", ".popup-gallery .popup-item a, .popup-gallery.images a", function (event) {
+            if (!jQuery(this).hasClass("permalink")) {
+                console.log(jQuery(this).hasClass("permalink"));
+                event.preventDefault();
+                var image = [];
+                var $pic = jQuery(this).parents(".popup-gallery");
+                var getItems = function () {
+                    var items = [], $el = "";
+                    if ($pic.hasClass("owl-carousel")) {
+                        $el = $pic.find(".owl-item:not(.cloned) a:not(.permalink):visible")
+                    } else if ($pic.hasClass("images")) {
+                        $el = $pic.find("a[data-size]")
+                    } else {
+                        $el = $pic.find(".popup-item a:not(.permalink)")
+                    }
+                    $el.each(function () {
+                        var $href = jQuery(this).attr("href"), $size = jQuery(this).data("size").split("x"),
+                            $width = $size[0], $height = $size[1];
+                        if (jQuery(this).data("type") == "video") {
+                            var item = {html: jQuery(this).data("video")}
+                        } else {
+                            var item = {src: $href, w: $width, h: $height}
+                        }
+                        items.push(item)
+                    });
+                    return items
+                };
+                var items = getItems();
+                jQuery.each(items, function (index, value) {
+                    image[index] = new Image;
+                    if (value["src"]) {
+                        image[index].src = value["src"]
+                    }
+                });
+                var $index = jQuery(this).parents(".popup-item").index();
+                if ($pic.hasClass("owl-carousel")) {
+                    $index = jQuery(this).parents(".portfolio-item").data("id")
+                } else if (jQuery(this).parent().hasClass("thumbnails")) {
+                    $index = jQuery(this).index();
+                    $index++
+                } else if (jQuery(this).parents(".popup-gallery").find(".grid-sizer").length > 0) {
+                    $index = $index - 1
+                }
+                var options = {index: $index, bgOpacity: .7, showHideOpacity: true};
+                var lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
+                lightBox.listen("beforeChange", function () {
+                    var currItem = jQuery(lightBox.currItem.container);
+                    jQuery(".pswp__video").removeClass("active");
+                    var currItemIframe = currItem.find(".pswp__video").addClass("active");
+                    jQuery(".pswp__video").each(function () {
+                        if (!jQuery(this).hasClass("active")) {
+                            jQuery(this).attr("src", jQuery(this).attr("src"))
+                        }
+                    })
+                });
+                lightBox.listen("close", function () {
+                    jQuery(".pswp__item .pswp__zoom-wrap").remove()
+                });
+                lightBox.init()
+            }
+        })
+    }
+    jQuery('.portfolio-5ddf7ae958adc').each(function(){
+        var head_slider = jQuery(this);
+        if(head_slider.find('.item').length > 1){
+            head_slider.imagesLoaded( function() {
+                head_slider.addClass('owl-carousel').owlCarousel({
+                    loop:true,
+                    items:1,
+                    center: true,
+                    autoWidth: true,
+                    nav: false,
+                    dots: false,
+                    autoplay: true,
+                    autoplayTimeout: 5000,
+                    autoplayHoverPause: true,
+                    smartSpeed: 300,
+                    navText: false,
+                    margin: 30,
+                    responsive:{
+                        0:{
+                            nav: false,
+                        },
+                        768:{
+                            nav: false,
+                        },
+                    },
+                });
+            });
+        }
+    });
+});
+jQuery(document).ready(function (jQuery) {
+    jQuery(".banner-59b29bddb0de2").each(function () {
+        function leadZero(n) {
+            return (n < 10 ? "0" : "") + n
+        }
+
+        jQuery(this).on("initialize.owl.carousel", function (property) {
+            jQuery(this).find(".item").each(function () {
+                var num = leadZero(jQuery(this).index() + 1);
+                jQuery(this).find(".num").text(num)
+            })
+        });
+        var head_slider = jQuery(this);
+        if (head_slider.find(".item").length == 1) {
+            head_slider.parent().removeClass("with-carousel-nav")
+        }
+        if (jQuery(this).find(".item").length > 1) {
+            head_slider.addClass("owl-carousel").owlCarousel({
+                loop: false,
+                items: 1,
+                nav: false,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 3e3,
+                autoplayHoverPause: true,
+                smartSpeed: 500,
+                navClass: ["owl-prev basic-ui-icon-left-arrow", "owl-next basic-ui-icon-right-arrow"],
+                navText: false,
+                responsive: {0: {nav: false}, 480: {}, 768: {nav: false}}
+            });
+            var child_carousel = head_slider.parent().find(".banner-carousel");
+            var i = 0;
+            var flag = false;
+            var c_items = "3";
+            head_slider.find(".owl-item:not(.cloned)").find(".item").each(function () {
+                i++;
+                var heading = jQuery(this).data("heading");
+                var text = jQuery(this).data("text");
+                if (!child_carousel.hasClass("owl-carousel")) {
+                    child_carousel.append('<div class="item"><div class="num">' + leadZero(i) + '</div><div class="h">' + heading + '</div><div class="p">' + text + "</div></div>")
+                }
+            });
+            if (head_slider.find(".owl-item:not(.cloned)").find(".item").length < 3) {
+                c_items = head_slider.find(".owl-item:not(.cloned)").find(".item").length
+            }
+            var child_carousel_item = child_carousel.find(".owl-item.active");
+            child_carousel_c = child_carousel.addClass("owl-carousel").owlCarousel({
+                items: 1,
+                nav: true,
+                dots: false,
+                autoplay: false,
+                smartSpeed: 500,
+                navClass: ["owl-prev basic-ui-icon-left-arrow", "owl-next basic-ui-icon-right-arrow"],
+                navText: false,
+                margin: 30,
+                responsive: {0: {nav: false}, 480: {}, 768: {nav: true, items: c_items}}
+            }).on("click", ".item", function (e) {
+                e.preventDefault();
+                head_slider.trigger("to.owl.carousel", [jQuery(e.target).parents(".owl-item").index(), 300, true]);
+                jQuery(e.target).parents(".owl-item").addClass("active-item").siblings().removeClass("active-item")
+            }).data("owl.carousel");
+            head_slider.on("change.owl.carousel", function (e) {
+                if (e.namespace && e.property.name === "position" && !flag) {
+                    flag = true;
+                    child_carousel_c.to(e.relatedTarget.relative(e.property.value), 300, true);
+                    flag = false
+                }
+                head_slider.parent().find(".banner-carousel .owl-item.active").first().addClass("active-item").siblings().removeClass("active-item")
+            }).data("owl.carousel");
+            head_slider.on("changed.owl.carousel", function (property) {
+                var current = property.item.index;
+                if (jQuery(property.target).find(".owl-item").eq(current).find("video").length > 0) {
+                    jQuery(property.target).find(".owl-item").eq(current).find("video").get(0).play()
+                }
+            })
+        }
+    });
+});
+jQuery(document).ready(function (jQuery) {
+    jQuery(".price-list-59bbbd75471e6").each(function () {
+        var head_slider = jQuery(this);
+        if (jQuery(this).find(".item").length > 1) {
+            head_slider.addClass("owl-carousel").owlCarousel({
+                loop: true,
+                items: 1,
+                nav: true,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 20000,
+                autoplayHoverPause: true,
+                smartSpeed: 500,
+                navClass: ["owl-prev basic-ui-icon-left-arrow", "owl-next basic-ui-icon-right-arrow"],
+                navText: false,
+                responsive: {
+                    0: {nav: false, items: 1},
+                    480: {},
+                    768: {nav: true, items: 1},
+                    980: {items: 2},
+                    1200: {items: 3}
+                }
+            })
+        }
+        window.setTimeout(function(){
+            // lazy load background image for packages slider
+            if (jQuery.fn.vcwaypoint) {
+                head_slider.vcwaypoint(function () {
+                    head_slider.find(".owl-item > .item").each(function () {
+                        let current_item = jQuery(this);
+                        const current_style = jQuery(current_item).attr('data-style');
+                        jQuery(current_item).attr('style', current_style).removeAttr("data-style");
+                        head_slider.imagesLoaded(function () {
+                            jQuery(window).trigger("resize");
+                        });
+                    });
+                }, {offset: "85%"});
+            };
+        }, 500);
+
+    });
+});
+!function (a, b) {
+
+    function c() {
+        if (!e) {
+            e = !0;
+            var a, c, d, f, g = -1 !== navigator.appVersion.indexOf("MSIE 10"),
+                h = !!navigator.userAgent.match(/Trident.*rv:11\./),
+                i = b.querySelectorAll("iframe.wp-embedded-content");
+            for (c = 0; c < i.length; c++) {
+                if (d = i[c], !d.getAttribute("data-secret")) f = Math.random().toString(36).substr(2, 10), d.src += "#?secret=" + f, d.setAttribute("data-secret", f);
+                if (g || h) a = d.cloneNode(!0), a.removeAttribute("security"), d.parentNode.replaceChild(a, d)
+            }
+        }
+    }
+
+    var d = !1, e = !1;
+    if (b.querySelector) if (a.addEventListener) d = !0;
+    if (a.wp = a.wp || {}, !a.wp.receiveEmbedMessage) if (a.wp.receiveEmbedMessage = function (c) {
+        var d = c.data;
+        if (d) if (d.secret || d.message || d.value) if (!/[^a-zA-Z0-9]/.test(d.secret)) {
+            var e, f, g, h, i, j = b.querySelectorAll('iframe[data-secret="' + d.secret + '"]'),
+                k = b.querySelectorAll('blockquote[data-secret="' + d.secret + '"]');
+            for (e = 0; e < k.length; e++) k[e].style.display = "none";
+            for (e = 0; e < j.length; e++) if (f = j[e], c.source === f.contentWindow) {
+                if (f.removeAttribute("style"), "height" === d.message) {
+                    if (g = parseInt(d.value, 10), g > 1e3) g = 1e3; else if (~~g < 200) g = 200;
+                    f.height = g
+                }
+                if ("link" === d.message) if (h = b.createElement("a"), i = b.createElement("a"), h.href = f.getAttribute("src"), i.href = d.value, i.host === h.host) if (b.activeElement === f) a.top.location.href = d.value
+            } else ;
+        }
+    }, d) a.addEventListener("message", a.wp.receiveEmbedMessage, !1), b.addEventListener("DOMContentLoaded", c, !1), a.addEventListener("load", c, !1)
+}(window, document);
 (function ($, window, document, undefined) {
     var style = $("<support>").get(0).style, prefixes = "Webkit Moz O ms".split(" "), events = {
         transition: {
@@ -6540,15 +5183,15 @@ jQuery(document).ready(function (jQuery) {
     }
 
     if (tests.csstransitions()) {
-        $.support.transition = new String(prefixed("transition"));
+        $.support.transition = String(prefixed("transition"));
         $.support.transition.end = events.transition.end[$.support.transition]
     }
     if (tests.cssanimations()) {
-        $.support.animation = new String(prefixed("animation"));
+        $.support.animation = String(prefixed("animation"));
         $.support.animation.end = events.animation.end[$.support.animation]
     }
     if (tests.csstransforms()) {
-        $.support.transform = new String(prefixed("transform"));
+        $.support.transform = String(prefixed("transform"));
         $.support.transform3d = tests.csstransforms3d()
     }
 })(window.Zepto || window.jQuery, window, document);

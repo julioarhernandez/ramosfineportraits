@@ -1,0 +1,10 @@
+---
+pagination:
+    data: maternity.images
+    size: 6
+---
+{%- for item in pagination.items %}
+    <article class="portfolio-item popup-item col-xs-12 col-sm-2 col-md-2" data-id="{{ loop.index0 }}">
+        {% popupImage item.src, item.alt, '',[1024,768] %}
+    </article>
+{% endfor %}

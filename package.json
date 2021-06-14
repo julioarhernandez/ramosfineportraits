@@ -7,8 +7,8 @@
     "watch:eleventy": "eleventy --serve",
     "start": "npm run-s watch:eleventy",
     "prod:eleventy": "ELEVENTY_PRODUCTION=true eleventy",
-    "prod:postcss": "postcss ./_site/assets/css/styles.css --no-map --replace",
-    "build": "run-s prod:*"
+    "build": "run-s prod:*",
+    "build-live": "ELEVENTY_PRODUCTION=true eleventy --serve"
   },
   "repository": {
     "type": "git",
@@ -28,12 +28,14 @@
     "cssnano": "^4.1.10",
     "embed-json": "^1.2.0",
     "npm-run-all": "^4.1.5",
-    "postcss-cli": "^8.1.0"
+    "postcss-cli": "^8.1.0",
+    "purgecss": "^4.0.3"
   },
   "dependencies": {
     "@11ty/eleventy": "^0.11.0",
     "@11ty/eleventy-img": "^0.2.5",
     "@quasibit/eleventy-plugin-sitemap": "^2.0.3",
+    "clean-css": "^5.1.2",
     "eleventy-plugin-seo": "^0.5.1",
     "html-minifier": "^4.0.0",
     "jquery": "^3.3.1"

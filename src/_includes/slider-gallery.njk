@@ -1,0 +1,27 @@
+<div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid">
+    <div class="wpb_column vc_column_container vc_col-sm-12">
+        <div class="vc_column-inner">
+            <div class="wpb_wrapper">
+                <div class="heading-decor-s tac">
+                    <h2 style="text-align: center" class="h vc_custom_heading">
+                        <div>{{ data.title }}</div>
+                    </h2>
+                </div>
+                <div class="portfolio-items row portfolio-type-masonry portfolio_hover_type_1 portfolio-59c3651ca7662 popup-gallery">
+                    {% for image in data.images.slice(0,6) %}
+                        <article class="portfolio-item popup-item col-xs-12 col-sm-2 col-md-2">
+                            {% popupImage image.src, image.alt, '',[1024,768] %}
+                        </article>
+                    {% endfor %}
+                </div>
+                <div class="load-button tac">
+                    <a href="#" data-wrap=".portfolio-59c3651ca7662" data-max="{{ data.images | maxPagesInChunksOf(6) - 1 }}" data-start-page="0" data-next-link="{{ data.moreLink }}page/1/"
+                       class="button-style1">
+                        <span>Load more</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="vc_row-full-width vc_clearfix"></div>
