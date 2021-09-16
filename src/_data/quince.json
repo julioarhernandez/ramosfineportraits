@@ -95,11 +95,10 @@
       "backgroundImage": "/assets/images/gallery/quinceanera-photography-packages.jpg",
       "price": "$1,299",
       "includes": [
-        "1 Album 16 pg (10x10) - 32 Photos",
+        "1 Album 16 pg (8x11) - 32 Photos",
         "1  20x30 Enlargement",
         "40 digital Pictures accessible from Internet and Pen drive",
         "20 digital images with print release",
-        "1 Quinceañera Gowns, Crown and Accessories",
         "Photoshoot session in one day at one Location",
         "Additional digital images available for purchase"
       ]
@@ -113,7 +112,6 @@
         "1  20x30 Enlargement",
         "60 digital Pictures accessible from Internet and Pen drive",
         "40 digital images with print release",
-        "1 Quinceañera Gowns, Crown and Accessories",
         "Photoshoot session in one day at two locations",
         "Additional digital images available for purchase"
       ]
@@ -121,14 +119,13 @@
     {
       "name": "Diamond package",
       "backgroundImage": "/assets/images/gallery/quinceanera-photography-packages-3.jpg",
-      "price": "$5,500",
+      "price": "$4,500",
       "includes": [
-        "1 Album 30 pg (12x16) - 60 Photos",
-        "1  20x30 Acrylic Enlargement\n",
+        "1 Album 30 pg (11x14) - 60 Photos",
+        "1  20x30 Canvas Enlargement",
         "All digital Pictures accessible from Internet and Pen Drive",
-        "1 Quinceañera Gowns, 2 Dress, Crown and Accessories",
+        "1 Quinceañera Gowns, Crown and Accessories",
         "Studio, Beach and  Other Location 2 days Photoshoot session",
-        "Make up and hairstyle",
         "Additional digital images available for purchase"
       ]
     }
