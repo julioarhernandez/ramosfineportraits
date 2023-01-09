@@ -32,7 +32,7 @@
     "purgecss": "^4.0.3"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy": "^1.0.2",
     "@11ty/eleventy-img": "^0.2.5",
     "@quasibit/eleventy-plugin-sitemap": "^2.0.3",
     "clean-css": "^5.1.2",
