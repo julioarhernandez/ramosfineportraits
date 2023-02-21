@@ -34016,8 +34016,10 @@ textarea.style3 {
 }
 
 .price-list .item .price {
-    font-size: 4em;
-    font-weight: 700
+    font-size: 1.8em;
+    font-weight: 700;
+    text-transform: capitalize;
+    min-height: 115px;
 }
 
 .price-list .item .options {
@@ -34161,6 +34163,10 @@ textarea.style3 {
     box-shadow: 0 0 2px 5px #c48f56;
     color: black;
     font-weight: bold;
+}
+.price-list .owl-next.disabled,
+.price-list .owl-prev.disabled {
+    display: none;
 }
 /* purgecss end ignore */
 

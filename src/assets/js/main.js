@@ -5067,9 +5067,10 @@ jQuery(document).ready(function (jQuery) {
         var head_slider = jQuery(this);
         if (jQuery(this).find(".item").length > 1) {
             head_slider.addClass("owl-carousel").owlCarousel({
-                loop: true,
+                loop: false,
                 items: 1,
                 nav: true,
+                mouseDrag: false,
                 dots: false,
                 autoplay: true,
                 autoplayTimeout: 20000,
