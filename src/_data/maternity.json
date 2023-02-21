@@ -112,7 +112,7 @@
     {
       "name": "Gold package",
       "backgroundImage": "/assets/images/gallery/maternity-photography-1.jpg",
-      "price": "$350",
+      "price": "Call for price",
       "includes": [
         "Up to 1 hour photo session\n",
         "20 high quality digital images",
@@ -125,7 +125,7 @@
     {
       "name": "Platinum package",
       "backgroundImage": "/assets/images/gallery/maternity-photography-2.jpg",
-      "price": "$450",
+      "price": "Call for price",
       "includes": [
         "Up to 2-hour photo session",
         "40 high quality digital images",
@@ -140,7 +140,7 @@
     {
       "name": "Diamond package",
       "backgroundImage": "/assets/images/gallery/maternity-photography-3.jpg",
-      "price": "$550",
+      "price": "Call for price",
       "includes": [
         "Up to 3-hour photo session",
         "All high quality digital images",

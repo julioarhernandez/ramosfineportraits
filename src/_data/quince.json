@@ -93,7 +93,7 @@
     {
       "name": "Gold package",
       "backgroundImage": "/assets/images/gallery/quinceanera-photography-packages.jpg",
-      "price": "$1,299",
+      "price": "Call for price",
       "includes": [
         "1 Album 16 pg (8x11) - 32 Photos",
         "1  20x30 Enlargement",
@@ -106,7 +106,7 @@
     {
       "name": "Platinum package",
       "backgroundImage": "/assets/images/gallery/quinceanera-photography-packages-2.jpg",
-      "price": "$2,399",
+      "price": "Call for price",
       "includes": [
         "1 Album 20 pg (12x12) - 40 Photos",
         "1  20x30 Enlargement",
@@ -119,7 +119,7 @@
     {
       "name": "Diamond package",
       "backgroundImage": "/assets/images/gallery/quinceanera-photography-packages-3.jpg",
-      "price": "$5,500",
+      "price": "Call for price",
       "includes": [
         "1 Album 30 pg (11x14) - 60 Photos",
         "1  20x30 Canvas Enlargement",

@@ -43,7 +43,7 @@
     {
       "name": "Gold Package",
       "backgroundImage": "/assets/images/gallery/fine-art-photography-quince.jpg",
-      "price": "$250",
+      "price": "Call for price",
       "includes": [
         "Up to 1 hour session time",
         "10 High quality digital images",
@@ -57,7 +57,7 @@
     {
       "name": "Platinum Package",
       "backgroundImage": "/assets/images/gallery/professional-kid-studio-photography.jpg",
-      "price": "$350",
+      "price": "Call for price",
       "includes": [
         "Up to 1 hour session time",
         "20 High quality digital images",
@@ -73,7 +73,7 @@
     {
       "name": "Diamond Package",
       "backgroundImage": "/assets/images/gallery/professional-studio-photography.jpg",
-      "price": "$500",
+      "price": "Call for price",
       "includes": [
         "Up to 1 and a half hour session time",
         "All photo session digital images",
