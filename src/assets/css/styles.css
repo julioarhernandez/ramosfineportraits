@@ -30168,6 +30168,19 @@ pre {
 .button-style3:focus{
     color: white;
 }
+.button-style4{
+    padding: 7px 10px !important;
+    display: block;
+    background: rgb(196 143 86 / 44%);
+    border-radius: 3px;
+    color: white;
+}
+.button-style4:hover,
+.button-style4:active,
+.button-style4:focus{
+    color: white;
+}
+
 
 .pixproof-data .button-download:before {
     content: "\e920";
@@ -30879,7 +30892,7 @@ textarea.style3 {
 }
 
 .navigation.hover-style2 > ul > li:not(:last-of-type) {
-    margin: 0
+    /* margin: 0 */
 }
 
 .navigation > ul > li > a {
