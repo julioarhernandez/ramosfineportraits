@@ -1,4 +1,4 @@
-Sitemap: https://ramosfineportraits.com/sitemap.xml
+Sitemap: https://www.ramosfineportraits.com/sitemap.xml
 User-agent: *
 Disallow: /cdn-cgi/
 Disallow: /admin/
