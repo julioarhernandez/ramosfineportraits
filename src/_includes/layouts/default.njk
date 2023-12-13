@@ -158,7 +158,11 @@
 				{%- endblock %}
 			</div>
 		</main>
-
+		{%if lang=='es'%}
+			{% set data=footer_es %}
+		{% else %}
+			{% set data=footer %}
+		{% endif %}
 		{% include "footer.njk" %}
 	</div>
 

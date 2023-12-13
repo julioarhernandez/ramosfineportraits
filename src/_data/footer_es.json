@@ -1,0 +1,32 @@
+
+{
+  "latest":  "Ultimas fotos",
+  "contactMe":  "Contacto",
+  "phoneLabel": "Telefono",
+  "emailLabel": "Email",
+  "locationsLabel": "Servicios en",
+  "footer": {
+    "logoSrc": "/assets/images/footer-signature.png",
+    "tagline": "“Ofrezco una experiencia única de fotografía personalizada de retratos, desde el principio hasta el final. Te ayudaré a planificar la sesión perfecta para capturar tus preciosos recuerdos y conservarlos como una obra de arte para que los disfrutes durante generaciones.”",
+    "images": [
+      {
+        "src": "/assets/images/gallery/150x150(2).jpg",
+        "alt": "Fotos de estilo de vida"
+      },
+      {
+        "src": "/assets/images/gallery/150x150(3).jpg",
+        "alt": "Fotos de maternidad"
+      },
+      {
+        "src": "/assets/images/gallery/150x150(4).jpg",
+        "alt": "Fotos de maternidad"
+      }
+    ]
+  },
+  "contact": {
+    "phone": "+1(786) 312 7324",
+    "email": "yudi@ramosfineportraits.com",
+    "locations": "Condado de Miami-Dade y Broward"
+  },
+  "copyright": "Copyright © 2024 Ramos Fine Portraits. Todos los derechos reservados."
+}
