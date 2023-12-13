@@ -32,7 +32,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPlugin(sitemap, {
         sitemap: {
             lastModifiedProperty: "modified",
-            hostname: "https://ramosfineportraits.com",
+            hostname: "https://www.ramosfineportraits.com",
         },
     });
     eleventyConfig.addNunjucksAsyncShortcode("popupImage", async function (src, alt, className, width = [1024, 768], outputFormat = "jpeg") {
