@@ -11,14 +11,14 @@
                             <div class="options">
                                 <div class="wrap">
                                     <div class="heading-decor">
-                                        <div class="h5">Includes:</div>
+                                        <div class="h5">{% if lang === 'es' %}Incluye:{% else %}Includes:{% endif %}</div>
                                     </div>
                                     {% for list in item.includes %}
                                         <div class="o-row">{{ list }}</div>
                                     {% endfor %}
-                                    <div class="o-row">For additional information, and flexible packages please <strong>Contact Me</strong></div>
+                                    <div class="o-row">{% if lang === 'es' %}Para obtener información adicional y paquetes flexibles, por favor <strong>Contáctame</strong>{% else %}For additional information, and flexible packages please <strong>Contact Me</strong>{% endif %}</div>
                                 </div>
-                                <a href="#" class="button-style1">Includes
+                                <a href="#" class="button-style1">{% if lang === 'es' %}Incluye:{% else %}Includes:{% endif %}
                                     <span></span>
                                 </a>
                             </div>
