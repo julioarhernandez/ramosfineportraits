@@ -1,0 +1,36 @@
+[
+    {
+        "url": "/es/",
+        "title": "Inicio"
+    },
+    {
+        "url": "#",
+        "title": "Inversión",
+        "sub_menu": [
+            {
+                "url": "/es/quinceanera",
+                "title": "Quinceañera"
+            },
+            {
+                "url": "/es/maternidad/",
+                "title": "Maternidad"
+            },
+            {
+                "url": "/es/estudio/",
+                "title": "Estudio"
+            }
+        ]
+    },
+    {
+        "url": "/es/acerca-de/",
+        "title": "Acerca de"
+    },
+    {
+        "url": "/es/galeria/",
+        "title": "Galería"
+    },
+    {
+        "url": "/es/contacto/",
+        "title": "Contáctame"
+    }
+]

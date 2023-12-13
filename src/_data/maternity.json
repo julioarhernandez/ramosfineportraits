@@ -1,5 +1,8 @@
 {
-  "title": "Maternity Photo Gallery",
+  "title": [
+    {"es": "Galeria de fotos de Maternidad"},
+    {"en": "Maternity Photo Gallery"}
+  ],
   "moreLink": "/pages/gallery/maternity/",
   "images": [
     {
@@ -152,5 +155,51 @@
         "Additional digital and printed images available for purchase"
       ]
     }
-  ]
+  ],
+  "paquetes": [
+    {
+        "name": "Paquete Oro",
+        "backgroundImage": "/assets/images/gallery/maternity-photography-1.jpg",
+        "price": "Consultar precio",
+        "includes": [
+            "Sesión de fotos de hasta 1 hora",
+            "20 imágenes digitales de alta calidad",
+            "Uso de nuestros vestidos, accesorios y accesorios de maternidad",
+            "Sesión de fotos en estudio o en ubicación",
+            "Edición artística disponible para compra",
+            "Imágenes digitales y impresas adicionales disponibles para compra"
+        ]
+    },
+    {
+        "name": "Paquete Platino",
+        "backgroundImage": "/assets/images/gallery/maternity-photography-2.jpg",
+        "price": "Consultar precio",
+        "includes": [
+            "Sesión de fotos de hasta 2 horas",
+            "40 imágenes digitales de alta calidad",
+            "2 fotos digitales con edición artística",
+            "1 ampliación de 20x30",
+            "Uso de nuestros vestidos, accesorios y accesorios de maternidad",
+            "Sesión de fotos en estudio o en ubicación",
+            "Edición artística disponible para compra",
+            "Imágenes digitales y impresas adicionales disponibles para compra"
+        ]
+    },
+    {
+        "name": "Paquete Diamante",
+        "backgroundImage": "/assets/images/gallery/maternity-photography-3.jpg",
+        "price": "Consultar precio",
+        "includes": [
+            "Sesión de fotos de hasta 3 horas",
+            "Todas las imágenes digitales de alta calidad",
+            "5 fotos digitales con edición artística",
+            "1 ampliación de 20x30",
+            "Uso de nuestros vestidos, accesorios y accesorios de maternidad",
+            "Sesión de fotos en estudio o en ubicación",
+            "Edición artística disponible para compra",
+            "Imágenes digitales y impresas adicionales disponibles para compra"
+        ]
+    }
+]
+
 }

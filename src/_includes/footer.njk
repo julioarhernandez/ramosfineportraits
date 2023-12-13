@@ -18,9 +18,7 @@
                     </div>
                     <div id="black-studio-tinymce-2" class="widget widget_black_studio_tinymce">
                         <div class="textwidget">
-                            <p>“I offer a unique custom portrait photography experience from start to finish. I will
-                                help you plan the perfect session to capture your precious memories and save them as a
-                                piece of art to be enjoyed for generations.”</p>
+                            <p>{{data.footer.tagline}}</p>
                         </div>
                     </div>
                 </div>
@@ -28,11 +26,11 @@
                     <div id="portfolio-3" class="widget widget_portfolio">
                         <div class="heading-decor">
                             <h2 class="h5">
-                                <span>Latest Photos</span>
+                                <span>{{data.latest}}</span>
                             </h2>
                         </div>
                         <div class="gallery-module row">
-                            {% for image in footer.image %}
+                            {% for image in data.footer.images %}
                            <div class="col-xs-6 col-md-3 item">
                                 <a href="/gallery/">
                                     {% footerImage image.src, image.alt, 'attachment-thumbnail size-thumbnail',[150,150] %}
@@ -46,24 +44,24 @@
                     <div id="custom_html-3" class="widget_text widget widget_custom_html">
                         <div class="heading-decor">
                             <h2 class="h5">
-                                <span>Contact me</span>
+                                <span>{{data.contactMe}}</span>
                             </h2>
                         </div>
                         <div class="textwidget custom-html-widget">
                             <div class="contact-row">
-                                <span>Phone:</span> +1(786) 312 7324
+                                <span>{{data.phoneLabel}}</span> {{data.contact.phone}}
                             </div>
                             <div class="contact-row">
-                                <span>Email:</span> <a href="mailto:yudi@ramosfineportraits.com" >yudi@ramosfineportraits.com</a>
+                                <span>{{data.emailLabel}}</span> <a href="mailto:{{data.contact.email}}" >{{data.contact.email}}</a>
                             </div>
                             <div class="contact-row">
-                                <span>Locations:</span> Miami-Dade and Broward County
+                                <span>{{data.locationsLabel}}</span> {{data.contact.locations}}
                             </div>
                         </div>
                     </div>
                     <div id="custom_html-4" class="widget_text widget widget_custom_html">
                         <div class="textwidget custom-html-widget">
-                            <div class="copyright">Copyright © 2019 Ramos Fine Portraits. All Rights Reserved.</div>
+                            <div class="copyright">{{data.copyright}}</div>
                         </div>
                     </div>
                 </div>

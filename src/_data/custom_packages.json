@@ -1,0 +1,47 @@
+[
+    {
+        "title": [
+            {"es": "Libro de Fotos"},
+            {"en": "Photo book"}
+        ],
+        "items": [
+            {"title": [{"es": "30 páginas 11¼ x 8¾ Tapa dura", "en": "30 pages 11¼ x 8¾ Hardcover"}], "price": 150},
+            {"title": [{"es": "30 páginas 12x12 Tapa laminada", "en": "30 pages 12x12 Laminated cover"}],"price": 200}
+        ]
+    },
+    {
+        "title": [
+            {"es": "Impresion en Canvas"},
+            {"en": "Canvas Prints"}
+        ],
+        "items": [
+            {"title": [{"es": "Impresiones en papel 8x12", "en": "8x12 paper prints"}], "price": 10},
+            {"title": [{"es": "Impresiones en papel 12x18", "en": "12x18 paper prints"}], "price": 25},
+            {"title": [{"es": "Impresiones en papel 20x30", "en": "20x30 paper prints"}], "price": 45}
+        ]
+    },
+    {   
+        
+        "title": [
+            {"es": "Impresiones en papel"},
+            {"en": "Paper Prints"}
+        ],
+        "items": [
+            {"title": [{"es": "Impresiones en lienzo 16x24", "en": "16x24 canvas prints"}], "price": 89},
+            {"title": [{"es": "Impresiones en lienzo 20x30", "en": "20x30 canvas prints"}], "price": 140},
+            {"title": [{"es": "Impresiones en lienzo 24x36", "en": "24x36 canvas prints"}], "price": 160},
+            {"title": [{"es": "Impresiones en lienzo 30x40", "en": "30x40 canvas prints"}], "price": 190}
+        ]
+    },
+    {
+        "title": [
+            {"es": "Impresiones en acrilico"},
+            {"en": "Acrylic Prints"}
+        ],
+        "items": [
+            {"title": [{"es": "Impresiones en acrílico 16x20", "en": "16x20 acrylic prints"}], "price": 135},
+            {"title": [{"es": "Impresiones en acrílico 20x30", "en": "20x30 acrylic prints"}], "price": 180},
+            {"title": [{"es": "Impresiones en acrílico 30x40", "en": "30x40 acrylic prints"}], "price": 295}
+        ]
+    }
+]

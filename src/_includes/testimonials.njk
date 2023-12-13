@@ -1,0 +1,36 @@
+<div class="vc_row wpb_row vc_row-fluid">
+	<div class="wpb_animate_when_almost_visible wpb_fadeInUp fadeInUp wpb_column vc_column_container vc_col-sm-12">
+		<div class="vc_column-inner vc_custom_1506084208527">
+			<div class="wpb_wrapper">
+				<div class="heading-decor-s tac">
+					<h3 style="text-align: center" class="h vc_custom_heading">
+						<div>{% if lang == 'es' %}Testimonios{% else %}Testimonials{% endif %}</div>
+					</h3>
+				</div>
+				<div class="testimonials row testimonials-5d3bbc872a31c testimonial-carousel">
+					<div class="carousel">
+						{% for testimonial in testimonials %}
+							<div class="item">
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 image">
+								<div style="background-image: url('{{ testimonial.item.image }}')"></div>
+								</div>
+								<div class="col-xs-12 col-sm-6 col-sm-offset-6">
+								<div class="quote">
+									<div class="q">“</div>
+						                {{ testimonial.item.quote[lang] }}
+								</div>
+								<h4>{{ testimonial.item.name }}</h4>
+								<div class="post">{{ testimonial.item.post[lang] }}</div>
+								</div>
+							</div>
+							</div>
+						{% endfor %}
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

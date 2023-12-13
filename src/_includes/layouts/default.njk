@@ -1,5 +1,8 @@
+---
+ogtype: website
+---
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="{{lang}}-US">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,6 +12,15 @@
         <link rel="stylesheet" href="/assets/css/styles.css">
     {% endif %}
 	{% seo "" %}
+	<link rel="alternate" hreflang="{{lang}}-US" href="https://www.ramosfineportraits.com{{permalink}}" />
+
+	{%-if lang == 'es' -%}
+		{% set opositelang = 'en' %}
+	{%-else-%}
+		{% set opositelang = 'es' %}
+	{%-endif-%}
+	<link rel="alternate" hreflang="{{opositelang}}-US" href="https://www.ramosfineportraits.com{{alternativePage}}" />
+
 {#	<link type="text/css" media="all" href="/assets/css/styles.css" rel="stylesheet" />#}
 	<link rel="icon" type="image/png" href="/assets/images/favicon.png">
 	<link rel='preconnect' href='//fonts.googleapis.com' crossorigin />
@@ -83,60 +95,12 @@
 					<a href="/"><img width="250" height="55" src="/assets/images/signature-logo.svg" alt="Ramos Fine Portraits Signature Logo"></a>
 				</div>
 				<div class="fr">
-					<nav class="navigation visible_menu hover-style2">
-						<ul id="menu-navigation" class="menu">
-							<li id="menu-item-293" class="{% if page.url == '/' %}current-menu-ancestor {% endif %}menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-page-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-293">
-								<a href="/">
-									<span>Home</span>
-								</a>
-								
-							</li>
-                            <li id="menu-item-292" class="{% if page.url == '/investment/' %}current-menu-ancestor {% endif %}menu-item menu-item-type-post_type menu-item-has-children menu-item-object-page menu-item-home current-page-ancestor current-menu-parent current-page-parent current_page_parent current_page_ancestor menu-item-293">
-                                <a href="#">
-                                    <span>Investment</span>
-                                </a>
-                                <ul class="sub-menu right">
-									<li id="menu-item-853"
-										class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-853">
-										<a href="/quinceanera"><span>Quinceanera</span></a>
-									</li>
-									<li id="menu-item-854"
-										class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-853">
-										<a href="/maternity/"><span>Maternity</span></a>
-									</li>
-                                    <li id="menu-item-855" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-853">
-                                        <a href="/studio/"><span>Studio</span></a>
-                                    </li>
-
-                                </ul>
-                            </li>
-
-						
-							<li id="menu-item-718" class="{% if page.url == '/about/' %}current-menu-ancestor {% endif %}menu-item menu-item-type-custom menu-item-object-custom menu-item-718">
-								<a href="/about/">
-									<span>About</span>
-								</a>
-								
-							</li>
-							<li id="menu-item-738" class="{% if page.url == '/gallery/' %}current-menu-ancestor {% endif %}menu-item menu-item-type-custom menu-item-object-custom menu-item-738">
-								<a href="/gallery/">
-									<span>Gallery</span>
-								</a>
-								
-							</li>
-							<li id="menu-item-846" class="{% if page.url == '/contact-us/' %}current-menu-ancestor {% endif %}menu-item menu-item-type-custom menu-item-object-custom menu-item-846">
-								<a href="/contact-us/">
-									<span>Contact me</span>
-								</a>
-							
-							</li>
-							<li id="menu-item-846" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-846">
-								<a href="{{appointment.link}}" rel="nofollow" target="_top">
-									<span class="button-style3">{{appointment.text}}</span>
-								</a>
-							</li>
-						</ul>
-					</nav>
+					{%if lang=='es'%}
+						{% set data=nav_es %}
+					{% else %}
+						{% set data=nav %}
+					{% endif %}
+					{% include "nav.njk" %}
 					<div class="butter-button nav-button visible_menu">
 						<div></div>
 					</div>
@@ -150,7 +114,11 @@
 				{%- endblock %}
 			</div>
 		</main>
-
+		{%if lang=='es'%}
+			{% set data=footer_es %}
+		{% else %}
+			{% set data=footer %}
+		{% endif %}
 		{% include "footer.njk" %}
 	</div>
 

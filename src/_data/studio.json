@@ -1,5 +1,8 @@
 {
-  "title": "Studio Photo Gallery",
+  "title": [
+    {"es": "Galeria de fotos de Estudio"},
+    {"en": "Studio Photo Gallery"}
+  ],
   "moreLink": "/pages/gallery/studio/",
   "images": [
     {
@@ -86,5 +89,54 @@
         "Outdoor photography session available with extra charge of $100"
       ]
     }
-  ]
+  ],
+  "paquetes": [
+    {
+        "name": "Paquete Oro",
+        "backgroundImage": "/assets/images/gallery/fine-art-photography-quince.jpg",
+        "price": "Consultar precio",
+        "includes": [
+            "Hasta 1 hora de sesión",
+            "10 imágenes digitales de alta calidad",
+            "1 cambio de atuendo",
+            "Galería de visualización en línea privada",
+            "Imágenes digitales adicionales disponibles para compra",
+            "Los productos impresos no están incluidos pero están disponibles para compra",
+            "Sesión de fotografía al aire libre disponible con un cargo adicional de $100"
+        ]
+    },
+    {
+        "name": "Paquete Platino",
+        "backgroundImage": "/assets/images/gallery/professional-kid-studio-photography.jpg",
+        "price": "Consultar precio",
+        "includes": [
+            "Hasta 1 hora de sesión",
+            "20 imágenes digitales de alta calidad",
+            "2 cambios de atuendo",
+            "2 fotos retocadas",
+            "Una impresión en papel de 20x30",
+            "Galería de visualización en línea privada",
+            "Imágenes digitales adicionales disponibles para compra",
+            "Los productos impresos no están incluidos pero están disponibles para compra",
+            "Sesión de fotografía al aire libre disponible con un cargo adicional de $100"
+        ]
+    },
+    {
+        "name": "Paquete Diamante",
+        "backgroundImage": "/assets/images/gallery/professional-studio-photography.jpg",
+        "price": "Consultar precio",
+        "includes": [
+            "Hasta 1 hora y media de sesión",
+            "Todas las imágenes digitales de la sesión de fotos",
+            "Hasta 3 cambios de atuendo",
+            "5 fotos retocadas",
+            "Una impresión en lienzo de 20x30",
+            "Galería de visualización en línea privada",
+            "Imágenes digitales adicionales disponibles para compra",
+            "Los productos impresos no están incluidos pero están disponibles para compra",
+            "Sesión de fotografía al aire libre disponible con un cargo adicional de $100"
+        ]
+    }
+]
+
 }

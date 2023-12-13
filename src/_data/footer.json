@@ -1,16 +1,32 @@
+
 {
-  "image": [
-    {
-      "src": "/assets/images/gallery/150x150(2).jpg",
-      "alt": "Lifestyle photos"
-    },
-    {
-      "src": "/assets/images/gallery/150x150(3).jpg",
-      "alt": "Maternity photos"
-    },
-    {
-      "src": "/assets/images/gallery/150x150(4).jpg",
-      "alt": "Maternity photos"
-    }
-  ]
+  "latest":  "Latest Photos",
+  "contactMe":  "Contact me",
+  "phoneLabel": "phone",
+  "emailLabel": "Email",
+  "locationsLabel": "Locations",
+  "footer": {
+    "logoSrc": "/assets/images/footer-signature.png",
+    "tagline": "“I offer a unique custom portrait photography experience from start to finish. I will help you plan the perfect session to capture your precious memories and save them as a piece of art to be enjoyed for generations.”",
+    "images": [
+      {
+        "src": "/assets/images/gallery/150x150(2).jpg",
+        "alt": "Lifestyle photos"
+      },
+      {
+        "src": "/assets/images/gallery/150x150(3).jpg",
+        "alt": "Maternity photos"
+      },
+      {
+        "src": "/assets/images/gallery/150x150(4).jpg",
+        "alt": "Maternity photos"
+      }
+    ]
+  },
+  "contact": {
+    "phone": "+1(786) 312 7324",
+    "email": "yudi@ramosfineportraits.com",
+    "locations": "Miami-Dade and Broward County"
+  },
+  "copyright": "Copyright © 2024 Ramos Fine Portraits. All Rights Reserved."
 }
