@@ -17,7 +17,7 @@ alternativePage: /gallery
                 <div class="filter-button-group tac">
                     <button data-filter="*" class="active">Todas</button>
                     {% for cat in categories.list %}
-                    <button data-filter=".category-{{ cat.name }}">{{ cat.name }}</button>
+                    <button data-filter=".category-{{ cat.name }}">{{ cat.nombre }}</button>
                     {% endfor %}
 
                 </div>

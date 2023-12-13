@@ -1,22 +1,28 @@
 {
   "list": [
     {
-      "name": "Lifestyle"
+      "name": "Lifestyle",
+      "nombre": "Estilo de Vida"
     },
     {
-      "name": "Studio"
+      "name": "Studio",
+      "nombre": "Estudio"
     },
     {
-      "name": "Outdoor"
+      "name": "Outdoor",
+      "nombre": "Exteriores"
     },
     {
-      "name": "Graduation"
+      "name": "Graduation",
+      "nombre": "Graduacion"
     },
     {
-      "name": "Children"
+      "name": "Children",
+      "nombre": "Niños"
     },
     {
-      "name": "Maternity"
+      "name": "Maternity",
+      "nombre": "Maternidad"
     }
   ]
 }
