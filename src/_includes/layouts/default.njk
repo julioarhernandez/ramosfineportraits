@@ -86,8 +86,12 @@
 					<a href="/"><img width="250" height="55" src="/assets/images/signature-logo.svg" alt="Ramos Fine Portraits Signature Logo"></a>
 				</div>
 				<div class="fr">
+					{%if lang=='es'%}
+						{% set data=nav_es %}
+					{% else %}
+						{% set data=nav %}
+					{% endif %}
 					{% include "nav.njk" %}
-
 					<div class="butter-button nav-button visible_menu">
 						<div></div>
 					</div>

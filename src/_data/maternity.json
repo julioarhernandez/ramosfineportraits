@@ -1,5 +1,8 @@
 {
-  "title": "Maternity Photo Gallery",
+  "title": [
+    {"es": "Galeria de fotos de Maternidad"},
+    {"en": "Maternity Photo Gallery"}
+  ],
   "moreLink": "/pages/gallery/maternity/",
   "images": [
     {

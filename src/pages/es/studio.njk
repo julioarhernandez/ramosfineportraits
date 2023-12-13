@@ -3,6 +3,8 @@ layout: default
 title: "Ramos Fine Portraits"
 description: "Yudi Ramos is an experimenter Photographer located in Miramar, Pembroke Pines and Miami, Florida. She is an expert in artistic portraits of newborn, child, family, weddings, birthdays, graduations, anniversaries, engagements, parties and fashion."
 permalink: es/estudio/
+alternativePage: /studio
+lang: es
 ---
 <div class="vc_row wpb_row vc_row-fluid ">
     <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-md-8 vc_col-md-offset-2 vc_custom_1505137157448">
@@ -55,7 +57,7 @@ permalink: es/estudio/
 {% include "packages.njk" %}
 <!-- end package component -->
 
-{
+{% set data=custom_packages %}
 {% include "custom-packages.njk" %}
 {% include "instagram.njk" %}
 <div class="vc_row-full-width vc_clearfix"></div>

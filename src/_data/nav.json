@@ -1,0 +1,36 @@
+[
+    {
+        "url": "/",
+        "title": "Home"
+    },
+    {
+        "url": "#",
+        "title": "Investment",
+        "sub_menu": [
+            {
+                "url": "/quinceanera",
+                "title": "Quinceanera"
+            },
+            {
+                "url": "/maternity/",
+                "title": "Maternity"
+            },
+            {
+                "url": "/studio/",
+                "title": "Studio"
+            }
+        ]
+    },
+    {
+        "url": "/about/",
+        "title": "About"
+    },
+    {
+        "url": "/gallery/",
+        "title": "Gallery"
+    },
+    {
+        "url": "/contact-us/",
+        "title": "Contact me"
+    }
+]

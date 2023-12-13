@@ -1,5 +1,8 @@
 {
-  "title": "Quinceanera Photo Gallery",
+  "title": [
+    {"es": "Galeria de fotos de Quinceanera"},
+    {"en": "Quinceanera Photo Gallery"}
+  ],
   "moreLink": "/pages/gallery/quinceanera/",
   "images": [
     {
@@ -129,5 +132,47 @@
         "Additional digital images available for purchase"
       ]
     }
-  ]
+  ],
+  "paquetes": [
+    {
+        "name": "Paquete Oro",
+        "backgroundImage": "/assets/images/gallery/quinceanera-photography-packages.jpg",
+        "price": "Consultar precio",
+        "includes": [
+            "1 Álbum 16 páginas (8x11) - 32 Fotos",
+            "1 Ampliación 20x30",
+            "40 Imágenes digitales accesibles desde Internet y Pen drive",
+            "20 Imágenes digitales con autorización de impresión",
+            "Sesión de fotos en un día y una ubicación",
+            "Imágenes digitales adicionales disponibles para compra"
+        ]
+    },
+    {
+        "name": "Paquete Platino",
+        "backgroundImage": "/assets/images/gallery/quinceanera-photography-packages-2.jpg",
+        "price": "Consultar precio",
+        "includes": [
+            "1 Álbum 20 páginas (12x12) - 40 Fotos",
+            "1 Ampliación 20x30",
+            "60 Imágenes digitales accesibles desde Internet y Pen drive",
+            "40 Imágenes digitales con autorización de impresión",
+            "Sesión de fotos en un día y dos ubicaciones",
+            "Imágenes digitales adicionales disponibles para compra"
+        ]
+    },
+    {
+        "name": "Paquete Diamante",
+        "backgroundImage": "/assets/images/gallery/quinceanera-photography-packages-3.jpg",
+        "price": "Consultar precio",
+        "includes": [
+            "1 Álbum 30 páginas (11x14) - 60 Fotos",
+            "1 Ampliación en lienzo 20x30",
+            "Todas las imágenes digitales accesibles desde Internet y Pen Drive",
+            "1 Vestido, Corona y Accesorios de Quinceañera",
+            "Sesión de fotos de 2 días en estudio, playa y otras ubicaciones",
+            "Imágenes digitales adicionales disponibles para compra"
+        ]
+    }
+]
+
 }

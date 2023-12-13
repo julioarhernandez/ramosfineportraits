@@ -97,6 +97,18 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter('maxPagesInChunksOf', function (imageArray, chunkSize) {
         return Math.ceil(imageArray.length / chunkSize);
     });
+    eleventyConfig.addFilter("map", function (array, property) {
+        if (array.length) {
+            // Find the lang key and create an array
+            // this array will create something like
+            // ['title in lang', undefined]
+            let langArray =  array.map(item => item[property]);
+            // clean the undefined items to return ['title in lang']
+            let filteredLangArray = langArray.filter(item => item);
+            return filteredLangArray;
+        }
+        
+    });
     /**
      * Remove any CSS not used on the page and inline the remaining CSS in the
      * <head>.

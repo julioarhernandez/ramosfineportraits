@@ -1,5 +1,8 @@
 {
-  "title": "Studio Photo Gallery",
+  "title": [
+    {"es": "Galeria de fotos de Estudio"},
+    {"en": "Studio Photo Gallery"}
+  ],
   "moreLink": "/pages/gallery/studio/",
   "images": [
     {
