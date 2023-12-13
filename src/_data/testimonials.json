@@ -1,0 +1,45 @@
+[
+    {
+      "item": {
+        "quote": {
+          "es": "“Adoro esta foto Yude!!! Desde cada bucle de pelo que cae en su cara, el paisaje en la ventana, y la perfecta mezcla entre añoranza, nostalgia, y misterio que demuestra su rostro!!!! Mi Mona Lisa Picture!!! Agradecida siempre a ti!!!”",
+          "en": "“I adore this photo Yude!!! From every strand of hair falling on her face, the landscape in the window, and the perfect blend of longing, nostalgia, and mystery that her face shows!!!! My Mona Lisa Picture!!! Forever grateful to you!!!”"
+        },
+        "name": "Yanesy Cruz",
+        "post": {
+          "es": "Fotografía de Niños",
+          "en": "Children Photography"
+        },
+        "image": "/assets/images/testimonial-1.jpg"
+      }
+    },
+    {
+      "item": {
+        "quote": {
+          "es": "“Gracias a Yudi por su excelente gusto y pasion por su trabajo. Nunca habia visto tal dedicacion y nivel de detalles en un fotografo. Realmente ama lo que hace y te hace vivir una experiencia muy bonita!!!”",
+          "en": "“Thanks to Yudi for her excellent taste and passion for her work. I had never seen such dedication and attention to detail in a photographer. She truly loves what she does and makes you live a very beautiful experience!!!”"
+        },
+        "name": "Yalis Almira",
+        "post": {
+          "es": "Fotografía de Retrato de Bellas Artes",
+          "en": "Fine Art Portrait Photography"
+        },
+        "image": "/assets/images/testimonial-2.jpg"
+      }
+    },
+    {
+      "item": {
+        "quote": {
+          "es": "“Feliz, Feliz es la única palabra que puede describir mi satisfacción como Mamá de este pequeño hombrecito, gracias a Ramos Fine Portraits por su profesionalismo y pasión en su trabajo. Los recomiendo 💯 %....... Gracias.!!!”",
+          "en": "“Happy, Happy is the only word that can describe my satisfaction as a Mom of this little guy, thanks to Ramos Fine Portraits for their professionalism and passion in their work. I recommend them 💯 %....... Thank you.!!!”"
+        },
+        "name": "Yadira Sanchez",
+        "post": {
+          "es": "Fotografía de Modelos",
+          "en": "Model Photography"
+        },
+        "image": "/assets/images/testimonial-3.jpg"
+      }
+    }
+  ]
+  

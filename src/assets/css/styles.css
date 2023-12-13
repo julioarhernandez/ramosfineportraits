@@ -32735,6 +32735,25 @@ textarea.style3 {
     max-width: 100%
 }
 
+.vc_custom_1506084117248 {
+    padding-top: 50px !important;
+    padding-right: 40px !important;
+    padding-bottom: 50px !important;
+    padding-left: 50px !important;
+    background-color: #121212 !important;
+}
+.vc_custom_1506084129462 {
+    padding-top: 50px !important;
+    padding-right: 40px !important;
+    padding-bottom: 50px !important;
+    padding-left: 50px !important;
+    background-color: #121212 !important;
+}
+.vc_custom_1505376354305 {
+    padding-top: 96px !important;
+    padding-bottom: 37px !important;
+}
+
 .product-categories, .widget_archive ul, .widget_categories ul, .widget_meta ul, .widget_nav_menu ul, .widget_pages ul, .widget_recent_comments ul, .widget_recent_entries ul, .widget_rss ul {
     background: 0 0;
     padding: 0;
@@ -33810,6 +33829,10 @@ textarea.style3 {
 .site-dark .testimonials .item {
     background: #121212;
     position: relative
+}
+
+.bg-dark {
+    background-color: #121212 !important;
 }
 
 .testimonials .item .image {
